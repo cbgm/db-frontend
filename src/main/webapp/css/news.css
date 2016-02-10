@@ -1,0 +1,165 @@
+.news .entry {
+	border-bottom: 1px solid #F7F7F7;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.news .entry:last-of-type {
+	border: none;
+}
+
+.news .entry-admin {
+	border-bottom: 1px solid lightgray;
+	background-color: white;
+	color: #575757;
+}
+
+.news .entry-admin:hover {
+	background-color: #498388;
+	color: white;
+}
+
+.news .entry-add {
+	cursor: pointer;
+	padding: 6px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.news .entry-info {
+	margin-top:15px;
+}
+
+.news .entry-info .permalink {
+	float: left;
+}
+
+.news .entry-info .posted-date {
+	float: right;
+}
+
+.news .entry-add:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.news .entry-id {
+	padding: 6px;
+	float:left;
+	font-weight: bold;
+	border-right: 1px solid lightgray;
+	width: 50px;
+}
+
+.news .entry-title-edit {
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 14px;
+	margin: 20px 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.news .entry-title-edit input {
+	line-height: 30px;
+	width: 100%;
+}
+
+.news .entry-title {
+	padding: 6px;
+	float:left;
+	max-width: 710px;
+}
+
+.new .entry-title div {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.news .entry-delete {
+	cursor: pointer;
+	padding: 6px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.news .entry-edit {
+	cursor: pointer;
+	padding: 6px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.news .entry-delete:hover {
+	background-color: #01484F;
+}
+
+
+.news .entry-edit:hover {
+	background-color: #01484F;
+}
+
+.news .entry-update {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+	margin-right: 10px;
+}
+
+.news .entry-cancel {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.news .entry-post {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+	margin-right: 10px;
+}
+
+.news .entry-update:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.news .entry-cancel:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.news .entry-post:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+@media only screen and (max-width: 600px) {
+
+	.news .entry-id {
+		float: none;
+		border-right: 0px;;
+	}
+
+	.news .entry-title {
+		float: none;
+	}
+}

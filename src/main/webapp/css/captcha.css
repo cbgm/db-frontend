@@ -1,0 +1,15 @@
+#captchainput {
+	float: left;
+	margin-left: 10px;
+	padding: 5px;
+	border: 1px solid #E5E5E5;
+	width: 40px;
+	box-sizing: border-box;
+	color: #999;
+}
+
+#captchatext {
+	float: left;
+	padding: 5px;
+	
+}

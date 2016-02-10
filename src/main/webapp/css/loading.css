@@ -1,0 +1,21 @@
+.canvas-container {
+	height: 400px;
+	width: 100%;
+	background: white;
+	text-align: center;
+}
+
+.canvas-container:before{
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	width: 0;
+	margin-right: -.25em; /*might want to tweak this. .25em for extra white space */
+	height: 100%;
+}
+
+canvas {
+	display: inline-block;
+	vertical-align: middle;
+	white-space: normal;
+}

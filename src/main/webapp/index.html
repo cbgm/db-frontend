@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>creative_</title>
+		<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+		<link href="css/main.css" rel="stylesheet">
+		<link href="css/timeline-cb.css" rel="stylesheet">
+		<link href="css/gallery-cb.css" rel="stylesheet">
+		<link href="css/about.css" rel="stylesheet">
+		<link href="css/taglist-cb.css" rel="stylesheet">
+		<link href="css/loading.css" rel="stylesheet">
+		<link href="css/news.css" rel="stylesheet">
+		<link href="css/image.css" rel="stylesheet">
+		<link href="css/article.css" rel="stylesheet">		
+		<link href="css/tags.css" rel="stylesheet">		
+		<link href="css/guestbook.css" rel="stylesheet">
+		<link href="css/project.css" rel="stylesheet">
+		<link href="css/gallery.css" rel="stylesheet">
+		<link href="css/login.css" rel="stylesheet">
+		<link href="css/error.css" rel="stylesheet">
+		<link href="css/captcha.css" rel="stylesheet">
+		<link href="css/search-cb.css" rel="stylesheet">
+		<link href="css/jquery-te.css" rel="stylesheet">
+	<!-- @endif -->
+
+		<!-- @if NODE_ENV == 'PRODUCTION' -->	
+		<link href="css/final-cb.min.css" rel="stylesheet">
+		<!-- @endif -->
+		
+	</head>
+	<body>
+		<div id="forbidden-overlay">
+			<div class="overlay-modal">
+				<div><b>This action is not allowed with your rights.</b> Please contact your administrator!</div>
+			</div>
+		</div>
+		<noscript>
+			<div id="alert-overlay">
+				<div class="overlay-modal">
+					<div>Bitte aktivieren Sie Javascript. <br> Please enable Javascript!</div>
+				</div>
+			</div>
+		</noscript>
+		<div id="container">
+		</div>
+
+		<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+		<script data-main="js/app.js" src="js/lib/require.js"></script>
+		<!-- @endif -->
+
+		<!-- @if NODE_ENV == 'PRODUCTION' -->
+		<script  src="js/final-cb.min.js"></script>
+		<!-- @endif -->
+	</body>
+</html>

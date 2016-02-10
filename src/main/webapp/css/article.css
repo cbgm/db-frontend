@@ -1,0 +1,157 @@
+.article .entry {
+	border-bottom: 1px solid #F7F7F7;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.article .entry:last-of-type {
+	border: none;
+}
+
+.article .entry-admin {
+	border-bottom: 1px solid lightgray;
+	background-color: white;
+	color: #575757;
+}
+
+.article .entry-admin:hover {
+	background-color: #498388;
+	color: white;
+}
+
+.article .entry-add {
+	cursor: pointer;
+	padding: 6px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.article .entry-add:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.article .entry-id {
+	padding: 6px;
+	float:left;
+	font-weight: bold;
+	border-right: 1px solid lightgray;
+	width: 50px;
+}
+
+.article .entry-title-edit {
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 14px;
+	margin: 20px 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.article .entry-title-edit input {
+	line-height: 30px;
+	width: 100%;
+}
+
+.article .entry-title {
+	padding: 6px;
+	float:left;
+	max-width: 710px;
+}
+
+.new .entry-title div {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.article .entry-delete {
+	cursor: pointer;
+	padding: 6px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.article .entry-edit {
+	cursor: pointer;
+	padding: 6px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.article .entry-delete:hover {
+	background-color: #01484F;
+}
+
+
+.article .entry-edit:hover {
+	background-color: #01484F;
+}
+
+.article .entry-update {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+	margin-right: 10px;
+}
+
+.article .entry-cancel {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.article .entry-post {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+	margin-right: 10px;
+}
+
+.article .entry-update:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.article .entry-cancel:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.article .entry-post:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.article .to-project {
+	margin-bottom: 10px;
+}
+
+.article .entry-info {
+	margin-top:15px;
+}
+
+.article .entry-info .permalink {
+	float: left;
+}
+
+.article .entry-info .posted-date {
+	float: right;
+}

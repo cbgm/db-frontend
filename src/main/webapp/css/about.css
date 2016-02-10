@@ -1,0 +1,81 @@
+.about ul.download {
+	list-style: none;
+}
+
+.about ul.download li {
+	display: inline;
+	float: left;
+	text-align: center;
+	width: 33%;
+	
+}
+
+.about a.download-link {
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	border-radius: 4px;
+	padding: 2px;
+	display: inline-block;
+}
+
+.about .begin-section {
+	margin-top: 30px;
+	display: inline-block;
+	width: 100%;
+}
+
+.about .descriptive-section {
+	margin-top: 30px;
+	display: inline-block;
+	width: 100%;
+}
+
+.about .section {
+	margin-top: 20px;
+	display: inline-block;
+	width: 100%;
+}
+
+.about .inner-container {
+	margin-top: 10px;
+	overflow: hidden;
+	height: auto;
+	display: block;
+}
+
+.about .anchor{
+	display: block;
+	height: 80px; /*same height as header*/
+	margin-top: -80px; /*same height as header*/
+	visibility: hidden;
+}
+
+.about img[rel="designs"] {
+	height: 200px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.about #sk8-img {
+	height:200px;
+	width: auto;
+	float:right;
+	opacity: 0.7;
+	margin: 5px;
+}
+
+@media only screen and (max-width: 430px) {
+
+	.about img[rel="designs"] {
+		height: 100px;
+	}
+
+	.about #sk8-img {
+		height: 100px;
+	}
+
+	.about ul.timeline li span {
+		white-space: normal;
+	}
+}

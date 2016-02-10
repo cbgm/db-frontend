@@ -1,0 +1,41 @@
+.tags .entry-add {
+	cursor: pointer;
+	padding: 6px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.tags .entry-add:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.tags .entry-delete {
+	cursor: pointer;
+	padding: 6px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.tags .entry-delete div {
+	float: right;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	border-left: 1px solid white;
+}
+
+.tags .entry-add div {
+	float: right;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	border-left: 1px solid white;
+}
+
+.tags .entry-delete:hover {
+	color: white;
+	background-color: #01484F;
+}

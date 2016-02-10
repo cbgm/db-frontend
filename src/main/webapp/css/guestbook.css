@@ -1,0 +1,177 @@
+.guestbook .section {
+	margin-top: 5px;
+	display: inline-block;
+	width: 100%;
+	height: auto;
+	/*background: #e3e3e3;*/
+}
+
+.guestbook .entry {
+	border-bottom: 1px solid #F7F7F7;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	
+}
+
+.guestbook .entry:last-of-type {
+	border: none;
+}
+
+.guestbook .entry-admin {
+	border-bottom: 1px solid lightgray;
+	color: #575757;
+	background-color: white;
+}
+
+.guestbook .entry-admin:hover {
+	color: white;
+	background-color: #498388;
+}
+
+.guestbook .entry-id {
+	padding: 6px;
+	float:left;
+	font-weight: bold;
+	border-right: 1px solid lightgray;
+	width: 50px;
+}
+
+.guestbook .entry-author {
+	padding: 6px;
+	float:left;
+	max-width: 710px;
+}
+
+.guestbook .entry-author div {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.guestbook .entry-delete {
+	cursor: pointer;
+	padding: 6px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.guestbook .entry-update {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+	margin-right: 10px;
+}
+
+.guestbook .entry-cancel {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.guestbook .entry-edit {
+	cursor: pointer;
+	padding: 6px;
+	float:right;
+	width: 60px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.guestbook .entry-update:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.guestbook .entry-cancel:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.guestbook .entry-delete:hover {
+	background-color: #01484F;
+}
+
+
+.guestbook .entry-edit:hover {
+	background-color: #01484F;
+}
+
+.guestbook #expand-new-entry-button {
+	cursor: pointer;
+}
+
+.guestbook #new-entry-container {
+	width: 100%;
+	height: auto;
+	padding-bottom: 10px;
+	margin-top: 40px;
+	display: none;
+}
+
+.guestbook #entry-form-container {
+	height: auto;
+	width: 100%;
+	
+}
+
+.guestbook #entry-form-container
+.entry-name,
+.entry-text {
+	padding: 5px;
+	margin: 0px;
+	border: 1px solid #E5E5E5;
+	width: 100%;
+	box-sizing: border-box;
+	color: #999999;
+}
+
+.guestbook #entry-form-container .entry-text {
+	height: 120px;
+	line-height: 16px;
+	resize: none;
+	overflow: hidden;
+}
+
+.guestbook #entry-form-container .submit-entry {
+	width: 80px; 
+	height: 30px;
+	border: 1px solid #E5E5E5;
+	color: #999999;
+	
+}
+
+.guestbook #entry-form-container .submit-entry:hover {
+	background: rgba(39,66,69,0.2);
+	color: inherit;
+	cursor: pointer;
+	
+}
+
+.guestbook .entry-form table{
+	margin: 0 auto;
+	border-spacing: 0px;
+	width: 100%;
+	max-width: 700px;
+}
+
+@media only screen and (max-width: 600px) {
+
+	.guestbook .entry-id {
+		float: none;
+		border-right: 0px;;
+	}
+
+	.guestbook .entry-author {
+		float: none;
+	}
+}

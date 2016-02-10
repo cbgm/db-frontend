@@ -1,0 +1,233 @@
+.project .entry {
+	border-bottom: 1px solid #F7F7F7;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.project .entry:last-of-type {
+	border: none;
+}
+
+.project .sub-entry-description {
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.project .sub-sentry-holder {
+	display: table;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.project .sub-sentry-holder .box{
+	display: table-cell;
+}
+
+.project .entry-admin {
+	border-bottom: 1px solid lightgray;
+	background-color: white;
+	color: #575757;
+}
+
+.project .entry-add-sub {
+	cursor: pointer;
+	padding: 6px;
+	text-align: center;
+	background-color: lightgrey;
+	color: white;
+}
+
+.project .entry-add-sub:hover {
+	background-color: gray;
+}
+
+.project .entry-show-table {
+	display: table;
+	width: 100%;
+}
+
+.project .entry-show-sub {
+	padding: 6px;
+	display: table-cell;
+	font-weight: bold;
+	border-right: 1px solid lightgray;
+	width: 50px;
+	background-color: white;
+	text-align: center;
+}
+
+.project .entry-main {
+	background-color: white;
+	color: #575757;
+}
+
+.project .entry-main:hover {
+	background-color: #498388;
+	color: white;
+}
+
+.project .entry-sub {
+	display: none;
+	background-color: white;
+	color: #575757;
+}
+
+.project .entry-sub:hover {
+	background-color: #498388;
+	color: white;
+}
+
+.project .sub-entry-holder {
+	display: table-cell;
+	width: calc(100%; -50x);
+}
+
+.project .entry-add {
+	cursor: pointer;
+	padding: 6px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.project .entry-add:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.project .entry-id {
+	padding: 6px;
+	float:left;
+	font-weight: bold;
+	border-right: 1px solid lightgray;
+	width: 50px;
+}
+
+.project .entry-title-edit {
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 14px;
+	margin: 20px 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.project .entry-title-edit input {
+	line-height: 30px;
+	width: 100%;
+}
+
+.project .entry-title {
+	padding: 6px;
+	float:left;
+	max-width: 710px;
+}
+
+.new .entry-title div {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.project .entry-delete,
+.project .entry-delete-sub {
+	cursor: pointer;
+	padding: 6px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.project .entry-edit,
+.project .entry-edit-sub {
+	cursor: pointer;
+	padding: 6px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.project .entry-delete:hover,
+.project .entry-delete-sub:hover {
+	background-color: #01484F;
+}
+
+
+.project .entry-edit:hover,
+.project .entry-edit-sub:hover {
+	background-color: #01484F;
+}
+
+.project .entry-update {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+	margin-right: 10px;
+}
+
+.project .entry-cancel {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.project .entry-post {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+	margin-right: 10px;
+}
+
+.project .entry-update:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.project .entry-cancel:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.project .entry-post:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.project .entry-info {
+	margin-top:15px;
+}
+
+.project .entry-info .permalink {
+	float: left;
+}
+
+.project .entry-info .posted-date {
+	float: right;
+}
+
+@media only screen and (max-width: 600px) {
+
+	.project .entry-id {
+		float: none;
+		border-right: 0px;;
+	}
+
+	.project .entry-title {
+		float: none;
+	}
+}

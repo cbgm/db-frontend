@@ -1,0 +1,198 @@
+.image .entry {
+	border-bottom: 1px solid #F7F7F7;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.image .entry:last-of-type {
+	border: none;
+}
+
+.image .entry-admin {
+	border-bottom: 1px solid lightgray;
+	background-color: white;
+	color: #575757;
+}
+
+.image .entry-admin:hover {
+	background-color: #498388;
+	color: white;
+}
+
+.image .entry-add {
+	cursor: pointer;
+	padding: 6px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.image .entry-add:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.image .entry-id {
+	padding: 6px;
+	float:left;
+	font-weight: bold;
+	border-right: 1px solid lightgray;
+	width: 50px;
+}
+
+.image .entry-title-edit {
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 14px;
+	margin: 20px 0;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.image .entry-title-edit input {
+	line-height: 30px;
+	width: 100%;
+}
+
+.image .entry-title {
+	padding: 6px;
+	float:left;
+	max-width: 710px;
+}
+
+.new .entry-title div {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.image .entry-delete {
+	cursor: pointer;
+	padding: 6px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.image .entry-show {
+	cursor: pointer;
+	padding: 6px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	background-color: transparent;
+}
+
+.image .entry-delete:hover {
+	background-color: #01484F;
+}
+
+
+.image .entry-show:hover {
+	background-color: #01484F;
+}
+
+.image .entry-update {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+	margin-right: 10px;
+}
+
+.image .entry-cancel {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+}
+
+.image .entry-post {
+	cursor: pointer;
+	padding: 6px;
+	float: left;
+	width: 60px;
+	text-align: center;
+	background-color: #498388;
+	color: white;
+	margin-right: 10px;
+}
+
+.image .entry-update:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.image .entry-cancel:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.image .entry-post:hover {
+	color: white;
+	background-color: #01484F;
+}
+
+.image .image-upload-preview {
+	display: table;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-collapse:separate;
+	border-spacing:10px;
+}
+
+.image .file-choose {
+	display: table-cell;
+	width: 300px;
+}
+
+.image .image-preview {
+	display: table-cell;
+	border: 1px solid #575757;
+	border-radius: 5px;
+}
+
+.image canvas {
+	width:80px;
+	height: 80px;
+}
+
+.image .image-show {
+	display: table-cell;
+	border: 1px solid #575757;
+	border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+
+	.image .entry-id {
+		float: none;
+		border-right: 0px;;
+	}
+
+	.image .entry-title {
+		float: none;
+	}
+
+	.image .file-choose {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.image .image-preview {
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	.image .image-show {
+		display: block;
+		display: inline-block;
+	}
+}
