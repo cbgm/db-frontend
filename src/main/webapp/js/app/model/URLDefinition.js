@@ -33,6 +33,9 @@ define([
 	_URLMap.set('adminGalleriesOverview', '^#admin\/galleries$');
 	_URLMap.set('adminGalleriesAdd', '^#admin\/galleries\/add$');
 	_URLMap.set('adminGalleriesEdit', '^#admin\/galleries\/[0-9]{1,}$');
+	_URLMap.set('adminUsersOverview', '^#admin\/users$');
+	_URLMap.set('adminUsersAdd', '^#admin\/users\/add$');
+	_URLMap.set('adminUsersEdit', '^#admin\/users\/.{1,}$');
 
 	function checkkUrl (hash, key) {
 		var pattern = _URLMap.get(key);

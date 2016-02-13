@@ -155,3 +155,22 @@
 .article .entry-info .posted-date {
 	float: right;
 }
+
+.article .loading-spinner {
+	margin: 0 auto;
+	height: 18px;
+	width: 18px;
+	animation: rotate 0.8s infinite linear;
+	border: 2px solid #575757;
+	border-right-color: transparent;
+	border-radius: 50%;
+	top: 25%;
+	transform: translateY(-25%);
+	margin: 0px auto;
+	position: relative;
+	display: none;
+}
+
+.article .loading-spinner.white {
+	border: 2px solid #fff;
+}

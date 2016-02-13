@@ -19,7 +19,7 @@
 	color: white;
 }
 
-.tags .entry-delete div {
+.tags .entry-delete .button-container {
 	float: right;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -27,7 +27,7 @@
 	border-left: 1px solid white;
 }
 
-.tags .entry-add div {
+.tags .entry-add .button-container {
 	float: right;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -38,4 +38,19 @@
 .tags .entry-delete:hover {
 	color: white;
 	background-color: #01484F;
+}
+
+.tags .loading-spinner {
+	margin: 0 auto;
+	height: 18px;
+	width: 18px;
+	animation: rotate 0.8s infinite linear;
+	border: 2px solid #fff;
+	border-right-color: transparent;
+	border-radius: 50%;
+	top: 25%;
+	transform: translateY(-25%);
+	margin: 0px auto;
+	position: relative;
+	display: none;
 }

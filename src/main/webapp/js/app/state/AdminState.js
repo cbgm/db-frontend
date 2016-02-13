@@ -22,6 +22,9 @@ define([
 	'partialview/admin/GalleryView',
 	'partialview/admin/AddGalleryView',
 	'partialview/admin/EditGalleryView',
+	'partialview/admin/UserView',
+	'partialview/admin/EditUserView',
+	'partialview/admin/AddUserView',
 	'lib/jquery'
 	
 ], function (
@@ -48,6 +51,9 @@ define([
 	AdminGalleryView,
 	AdminAddGalleryView,
 	AdminEditGalleryView,
+	AdminUsersView,
+	AdminEditUsersView,
+	AdminAddUsersView,
 	jQuery
 	
 ) {
@@ -79,6 +85,7 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
+				return;
 				
 			}
 
@@ -94,6 +101,7 @@ define([
 						jQuery('[type=file]:enabled').click();
 					});
 				});
+				return;
 				
 			}
 
@@ -105,7 +113,7 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
-				
+				return;
 			}
 
 			if(URLDefinition.checkkUrl(route, "adminTagsOverview")) {
@@ -116,7 +124,7 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
-				
+				return;
 			}
 
 			if(URLDefinition.checkkUrl(route, "adminGuestbookOverview")) {
@@ -127,9 +135,9 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
-				
-
+				return;
 			}
+
 			if(URLDefinition.checkkUrl(route, "adminGuestbookEdit")) {
 				_contentView = new AdminEditGuestbookView();
 				_mainView.appendContent(_loadingView);
@@ -138,7 +146,7 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
-				
+				return;
 			}
 
 			if(URLDefinition.checkkUrl(route, "adminProjectsOverview")) {
@@ -160,6 +168,7 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
+				return;
 			}
 
 			if(URLDefinition.checkkUrl(route, "adminProjectsEdit")) {
@@ -170,7 +179,7 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
-				
+				return;
 			}
 
 			if(URLDefinition.checkkUrl(route, "adminArticlesAdd")) {
@@ -181,6 +190,7 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
+				return;
 			}
 
 			if(URLDefinition.checkkUrl(route, "adminArticlesEdit")) {
@@ -191,7 +201,7 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
-				
+				return;
 			}
 
 			if(URLDefinition.checkkUrl(route, "adminImagesOverview")) {
@@ -213,7 +223,7 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
-				
+				return;
 			}
 
 			if(URLDefinition.checkkUrl(route, "adminGalleriesAdd")) {
@@ -235,7 +245,35 @@ define([
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
 				});
-				
+				return;
+			}
+
+			if(URLDefinition.checkkUrl(route, "adminUsersOverview")) {
+				_contentView = new AdminUsersView();
+				_mainView.appendContent(_loadingView);
+				_loadingView.animate();
+				_contentView.updateEntries(function(){
+					_mainView.appendContent(_contentView.get());
+					_loadingView.disable();
+				});
+				return;
+			}
+
+			if(URLDefinition.checkkUrl(route, "adminUsersAdd")) {
+				_contentView = new AdminAddUsersView();
+				_mainView.appendContent(_contentView.get());
+				return;
+			}
+
+			if(URLDefinition.checkkUrl(route, "adminUsersEdit")) {
+				_contentView = new AdminEditUsersView();
+				_mainView.appendContent(_loadingView);
+				_loadingView.animate();
+				_contentView.updateEntries(function(){
+					_mainView.appendContent(_contentView.get());
+					_loadingView.disable();
+				});
+				return;
 			}
 		}
 

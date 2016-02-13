@@ -3,10 +3,15 @@
 	position: relative;
 }
 
-.login #login-container {
+.login #login-container,
+.login #register-container {
 	 margin: 0 auto;
 	 height: 100vh;
 	 max-width: 390px;
+}
+
+.login #register-container {
+	display: none;
 }
 
 .login ul {
@@ -92,7 +97,65 @@
 	cursor: pointer;
 }
 
+.login .user-add {
+	border: none;
+	display: block;
+	float: left;
+	margin-left: 10px;
+	line-height: 40px;
+	background: rgba(1,72,79,0.5);
+	height: 40px;
+	width: 80px;
+	color: #ffffff;
+	text-align: center;
+	border-radius: 5px;
+	-webkit-transition: all 0.15s linear;
+	-moz-transition: all 0.15s linear;
+	transition: all 0.15s linear;
+	cursor: pointer;
+}
+
+.login .user-go-login {
+	border: none;
+	display: block;
+	float: left;
+	margin-left: 10px;
+	line-height: 40px;
+	background: rgba(1,72,79,0.5);
+	height: 40px;
+	width: 80px;
+	color: #ffffff;
+	text-align: center;
+	border-radius: 5px;
+	-webkit-transition: all 0.15s linear;
+	-moz-transition: all 0.15s linear;
+	transition: all 0.15s linear;
+	cursor: pointer;
+}
+
+.login .user-go-register {
+	border: none;
+	display: block;
+	float: left;
+	margin-left: 10px;
+	line-height: 40px;
+	background: rgba(1,72,79,0.5);
+	height: 40px;
+	width: 80px;
+	color: #ffffff;
+	text-align: center;
+	border-radius: 5px;
+	-webkit-transition: all 0.15s linear;
+	-moz-transition: all 0.15s linear;
+	transition: all 0.15s linear;
+	cursor: pointer;
+}
+
 .login .user-cancel:hover {
+	background: #01484F;
+}
+
+.login .user-add:hover {
 	background: #01484F;
 }
 
@@ -118,11 +181,6 @@
 	margin: 0px auto;
 	position: relative;
 	display: none;
-}
-
-@keyframes rotate {
-  0%    { transform: rotate(0deg); }
-  100%  { transform: rotate(360deg); }
 }
 
 @media only screen and (max-width: 430px) {

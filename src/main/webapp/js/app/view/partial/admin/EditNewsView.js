@@ -26,7 +26,7 @@ define([
 		_view = (function () {
 			var $view = jQuery(
 					"<div id='content' class='admin'>" +
-						"<div id='content-spacer' class='project'>" +
+						"<div id='content-spacer' class='news'>" +
 							"<div id='entries' class='section'>" +
 							"</div>" +
 							"<div style='clear: both;'></div>" +
@@ -77,7 +77,12 @@ define([
 					}
 					result +=			"</ul>" +
 										"<div style='clear: both;'></div>" +
-										"<div class='entry-update'>update</div>"+ 
+										"<div class='entry-update'>" +
+											"<div class='update-text'>Update</div>" +
+											"<div class='spinner-container'>" +
+												"<div class='loading-spinner white'></div>" +
+											"</div>" +
+										"</div>" +
 										"<div class='entry-cancel'>cancel</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>" +
@@ -97,13 +102,21 @@ define([
 					_view.find(".entry-update").bind('click', function () {
 						_news.title = _view.find('input').val();
 						_news.content = _view.find('textarea').val();
+						this.querySelector(".update-text").style.display = "none";
+						this.querySelector(".loading-spinner").style.display = "block";
 
 						NewsController.updateEntry(_news.newsId, _news, function (data) {
 
-							update( function (){
-								Logger.log("update project entry done");
-								window.location.hash = "#admin/news";
-							});
+							if (data === "OK") {
+
+								update( function (){
+									Logger.log("update project entry done");
+									window.location.hash = "#admin/news";
+								});
+							} else {
+								_view.find(".update-text").css("display", "block");
+								_view.find(".loading-spinner").css("display", "none");
+							}
 						});
 					});
 

@@ -9,8 +9,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 				"article entry",
 				json,
 
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 
@@ -19,8 +19,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 		Request.doDelete(Configuration.get("API_URL") + "/admin/projects/" + projectId + "/articles/" +articleId,
 				"article entry",
 
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 
@@ -42,8 +42,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 				"news entry",
 				json,
 
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 

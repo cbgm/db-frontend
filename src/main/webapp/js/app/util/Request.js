@@ -11,7 +11,7 @@ define([
 
 	jQuery.support.cors = true
 	jQuery.ajaxSetup({
-		timeout: 8000,
+		timeout: 25000,
 		beforeSend: function(xhr) {
 			var cookie = null;
 
@@ -43,12 +43,14 @@ define([
 		}).done (function (data, textStatus, jqXHR) {
 				updateCookie (jqXHR);
 				Logger.log("finished posting " + log);
-				callback (data);
+				callback("OK");
 
 		}).fail (function (jqXHR, textStatus, errorThrown) {
 				Logger.log("failure posting " +log);
 				if (jqXHR.status === 401) {
 					window.location.hash = "#login";
+				} else {
+					callback("FAIL");
 				}
 		});
 
@@ -113,10 +115,11 @@ define([
 		}).done (function (data, textStatus, jqXHR) {
 			updateCookie (jqXHR);
 			Logger.log("finished updating " + log);
-			callback (data);
+			callback("OK");
 
 		}).fail (function (jqXHR, textStatus, errorThrown) {
 			Logger.log("failure updating " +log);
+			callback("FAIL");
 		});
 	}
 
@@ -171,10 +174,11 @@ define([
 		}).done (function (data, textStatus, jqXHR) {
 			updateCookie (jqXHR);
 			Logger.log("finished deleting " + log);
-			callback(data);		
+			callback("OK");
 
-		}).fail (function (jqXHR, textStatus, errorThrown) {
+		}).fail (function (data, textStatus, jqXHR) {
 			Logger.log("failure deleting " + log);
+			callback("FAIL");
 		});
 	}
 

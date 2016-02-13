@@ -1,10 +1,12 @@
 define([
 	'controller/ImageController',
 	'util/Logger',
+	'util/Configuration',
 	'lib/jquery'
 ], function (
-		ImageController,
+	ImageController,
 	Logger,
+	Configuration,
 	jQuery
 ) {
 	'use strict';
@@ -36,25 +38,33 @@ define([
 
 		function update (callback){
 
+			_view.find('#entries').empty();
+			
 			ImageController.getEntries(function (data) {
 				_images = data;
 
-				if (_images.length > 0) {
-					_view.find('#entries').empty();
+				_view.find('#entries').empty();
 
-					var result = "<div>" +
-									"<div class='image-upload-preview'>" +
-										"<div class='file-choose'>" +
-											"<input type='file' id='imageLoader' name='imageLoader' accept='image/x-png, image/gif, image/jpeg' />" +
-										"</div>" +
-										"<div class='image-preview'>" +
-											"<canvas id='imageCanvas' class='imageUploadPreview'></canvas>" +
-										"</div>" +
-										"<div class='image-show'>" +
-											"<canvas id='imageCanvas' class='imageShowPreview'></canvas>" +
-										"</div>" +
+				var result = "<div>" +
+								"<div class='image-upload-preview'>" +
+									"<div class='file-choose'>" +
+										"<input type='file' id='imageLoader' name='imageLoader' accept='image/x-png, image/gif, image/jpeg' />" +
 									"</div>" +
-									"<div class='entry-add'>Upload Image</div>"; 
+									"<div class='image-preview'>" +
+										"<canvas id='imageCanvas' class='imageUploadPreview'></canvas>" +
+									"</div>" +
+									"<div class='image-show'>" +
+										"<canvas id='imageCanvas' class='imageShowPreview'></canvas>" +
+									"</div>" +
+								"</div>" +
+								"<div class='entry-add'>" +
+									"<div class='upload-text'>Upload Image</div>" +
+									"<div class='spinner-container'>" +
+										"<div class='loading-spinner white'></div>" +
+									"</div>" +
+								"</div>"; 
+
+				if (_images.length > 0) {
 
 					for (var i = 0; i < _images.length; i++) {
 						result +=	"<div class='entry-admin'>" +
@@ -62,68 +72,83 @@ define([
 										"<div class='entry-title'>" + 
 											"<div>" + _images[i].name + "</div>" +
 										"</div>" +
-										"<div class='entry-delete' id='" + _images[i].imageId + "'>Delete</div>" +
-										"<div class='entry-show' id='" + _images[i].imageId + "'>Show</div>" +
+										"<div class='entry-delete' id='" + _images[i].imageId + "'>" +
+											"<div class='delete-text'>Delete</div>" +
+											"<div class='spinner-container'>" +
+												"<div class='loading-spinner'></div>" +
+											"</div>" +
+										"</div>" +
+										"<div class='entry-show' id='" + _images[i].imageId + "'>" +
+											"<div class='show-text'>Show</div>" +
+											"<div class='spinner-container'>" +
+												"<div class='loading-spinner'></div>" +
+											"</div>" +
+										"</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>";
 					}
-					result += "</div>";
+				} 
 
-					_view.find('#entries').append(result);
+				result += 	"</div>";
 
-					_view.find(".entry-delete").bind('click', function () {
-						var imageId= this.id;
-						jQuery(this).attr("pointer-events", "none");
+				_view.find('#entries').append(result);
 
-						ImageController.deleteEntry(imageId, function (data) {
+				_view.find(".entry-delete").bind('click', function () {
+					var imageId= this.id;
+					jQuery(this).attr("pointer-events", "none");
+					this.querySelector(".delete-text").style.display = "none";
+					this.querySelector(".loading-spinner").style.display = "block";
+
+					ImageController.deleteEntry(imageId, function (data) {
+
+						if (data === "OK") {
 
 							update( function (){
 								jQuery(this).attr("pointer-events", "auto");
 								Logger.log("reloading images entries done");
 							});
-						});
+						} else {
+							_view.find(".delete-text").css("display", "block");
+							_view.find(".loading-spinner").css("display", "none");
+						}
 					});
+				});
 
-					_view.find(".entry-add").bind('click', function () {
+				_view.find(".entry-add").bind('click', function () {
+
+					if (_image.dataUrl !== "") {
+						this.querySelector(".upload-text").style.display = "none";
+						this.querySelector(".loading-spinner").style.display = "block";
 
 						ImageController.postEntry(_image, function (data) {
 
-							update( function (){
-								Logger.log("reloading images entries done");
-							});
+							if (data === "OK") {
+
+								update( function (){
+									Logger.log("reloading images entries done");
+								});
+							} else {
+								_view.find(".upload-text").css("display", "block");
+								_view.find(".loading-spinner").css("display", "none");
+							}
 						});
-					});
-					
-					_view.find(".entry-show").bind('click', function () {
-						var canvas = (_view.find(".imageShowPreview")).get(0);
-						var ctx = canvas.getContext('2d');
-						var imageObj = new Image();
+					}
+				});
 
-						imageObj.onload = function() {
-							ctx.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height, 0, 0, canvas.width, canvas.height);
-						};
-						imageObj.src = "http://localhost:8080/backend/images/" + this.id;
-					});
-				} else {
-					var result = "<div>" +
-									"<label>Image File:</label><br/>" +
-									"<input type='file' id='imageLoader' name='imageLoader'/>" +
-									"<canvas style='width:80px;' id='imageCanvas'></canvas>" +
-									"<div class='entry-add'>Upload Image</div>" +
-								 "</div>";
+				_view.find(".entry-show").bind('click', function () {
+					var canvas = (_view.find(".imageShowPreview")).get(0);
+					var ctx = canvas.getContext('2d');
+					var imageObj = new Image();
+					this.querySelector(".show-text").style.display = "none";
+					this.querySelector(".loading-spinner").style.display = "block";
 
-					_view.find('#entries').append(result);
-
-					_view.find(".entry-add").bind('click', function () {
-
-						ImageController.postEntry(_image, function (data) {
-
-							update( function (){
-								Logger.log("reloading images entries done");
-							});
-						});
-					});
-				}
+					imageObj.onload = function() {
+						ctx.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height, 0, 0, canvas.width, canvas.height);
+						_view.find(".show-text").css("display", "block");
+						_view.find(".loading-spinner").css("display", "none");
+					};
+					imageObj.src = Configuration.get("API_URL") + "/images/" + this.id;
+				});
 
 				_view.find("#imageLoader").on("change", function (e) {
 					var reader = new FileReader();
@@ -138,6 +163,7 @@ define([
 						img.onload = function(){
 							var ratio = 1;
 							var maxWidth = 800;
+							var maxHeight = 800;
 							if(img.width > maxWidth)
 								ratio = maxWidth / img.width;
 							else if(img.height > maxHeight)

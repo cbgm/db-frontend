@@ -75,7 +75,12 @@ define([
 					}
 					result +=			"</ul>" +
 										"<div style='clear: both;'></div>" +
-										"<div class='entry-update'>update</div>"+ 
+										"<div class='entry-update'>" +
+											"<div class='update-text'>Update</div>" +
+											"<div class='spinner-container'>" +
+												"<div class='loading-spinner white'></div>" +
+											"</div>" +
+										"</div>" +
 										"<div class='entry-cancel'>cancel</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>" +
@@ -92,13 +97,21 @@ define([
 					});
 
 					_view.find(".entry-update").bind('click', function () {
+						this.querySelector(".update-text").style.display = "none";
+						this.querySelector(".loading-spinner").style.display = "block";
 
 						GalleryController.updateEntry(_gallery.galleryId, _gallery, function (data) {
 
-							update( function (){
-								Logger.log("update gallery entry done");
-								window.location.hash = "#admin/galleries";
-							});
+							if (data === "OK") {
+
+								update( function (){
+									Logger.log("update gallery entry done");
+									window.location.hash = "#admin/galleries";
+								});
+							} else {
+								_view.find(".update-text").css("display", "block");
+								_view.find(".loading-spinner").css("display", "none");
+							}
 						});
 					});
 

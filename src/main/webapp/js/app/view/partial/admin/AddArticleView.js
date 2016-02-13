@@ -69,7 +69,12 @@ define([
 				}
 				result +=			"</ul>" +
 									"<div style='clear: both;'></div>" +
-									"<div class='entry-post'>Post</div>" +
+									"<div class='entry-post'>" +
+										"<div class='post-text'>Update</div>" +
+										"<div class='spinner-container'>" +
+											"<div class='loading-spinner white'></div>" +
+										"</div>" +
+									"</div>" +
 									"<div class='entry-cancel'>Cancel</div>"+
 									"<div style='clear: both;'></div>" +
 								"</div>" +
@@ -85,13 +90,21 @@ define([
 				_view.find(".entry-post").bind('click', function () {
 					_article.content = _view.find('textarea').val();
 					_article.title = _view.find('input').val();
+					this.querySelector(".post-text").style.display = "none";
+					this.querySelector(".loading-spinner").style.display = "block";
 
 					ArticleController.postEntry(projectId, _article, function (data) {
 
-						update( function (){
-							Logger.log("update article entries done");
-							window.location.hash = "#admin/projects";
-						});
+						if (data === "OK") {
+
+							update( function (){
+								Logger.log("update article entries done");
+								window.location.hash = "#admin/projects";
+							});
+						} else {
+							_view.find(".post-text").css("display", "block");
+							_view.find(".loading-spinner").css("display", "none");
+						}
 					});
 				});
 

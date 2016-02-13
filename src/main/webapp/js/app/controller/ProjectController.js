@@ -11,8 +11,10 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 			var json = jQuery.parseJSON(data);
 			json.sort(SortByID);
 
-			for (var i = 0; i < json.lenth; i++) {
-				json[i].articles.sort(SortByIDSub);
+			for (var i = 0; i < json.length; i++) {
+				var articles = json[i].articles;
+				articles.sort(SortByIDSub);
+				json[i].articles = articles;
 			}
 			callback(json);
 		});
@@ -27,8 +29,10 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 			var json = jQuery.parseJSON(data);
 			json.sort(SortByID);
 
-			for (var i = 0; i < json.lenth; i++) {
-				json[i].articles.sort(SortByIDSub);
+			for (var i = 0; i < json.length; i++) {
+				var articles = json[i].articles;
+				articles.sort(SortByIDSub);
+				json[i].articles = articles;
 			}
 			callback(json);
 		});
@@ -40,8 +44,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 				"project",
 				json,
 
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 
@@ -49,8 +53,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 
 		Request.doDelete(Configuration.get("API_URL") + "/admin/projects/" +id,
 				"news entry",
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 
@@ -62,7 +66,9 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 		function(data) {
 			var json = jQuery.parseJSON(data);
 			json.articles.sort(SortByIDSub);
-
+			var articles = json.articles;
+			articles.sort(SortByIDSub);
+			json.articles = articles;
 			callback(json);
 		});
 	}
@@ -73,8 +79,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 				"project entry",
 				json,
 
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 
@@ -83,7 +89,7 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 	}
 
 	function SortByIDSub(x, y) {
-		return  y.articleId - x.articleId;
+		return  x.articleId - y.articleId;
 	}
 
 	function endOfEntries(){

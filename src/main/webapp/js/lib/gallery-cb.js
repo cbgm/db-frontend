@@ -22,37 +22,40 @@ define([
 		var currentIndex = 0;
 		var gallerySize = 0;
 		var pictureInfo;
-		var waterMark = (window.location.href).indexOf("creativespace.de") === -1 ? true: false; 
+		var waterMark = (window.location.href).indexOf("creative--space.de") === -1 ? true: false; 
 		
 //		if (jQuery(".gallery-overlay").length === 0) {
-			jQuery(".gallery-overlay").remove();
-			body.append("<div class='gallery-overlay'>" +
-							"<div class='gallery-modal'>" +
-								"<div class='gallery-image'>" +
-									"<span class='helper'></span>" +
-									"<img src= ''>" +
-								"</div>" +
-								"<div class='gallery-button-close'></div>" +
-								"<div class='gallery-button-left'></div>" +
-								"<div class='gallery-button-right'></div>" +
-								"<div class='gallery-info'>" +
-									"<div class='picture-info'>16/12</div>" +
-									"<div class='watermark-info'>powered by <a href='http://creativespace.de'>creativespace.de</a></div>" +
-								"</div>" +
+		jQuery(".gallery-overlay").remove();
+		var result = "<div class='gallery-overlay'>" +
+						"<div class='gallery-modal'>" +
+							"<div class='gallery-image'>" +
+								"<span class='helper'></span>" +
+								"<img src= ''>" +
 							"</div>" +
-						"</div>");
+							"<div class='gallery-button-close'></div>" +
+							"<div class='gallery-button-left'></div>" +
+							"<div class='gallery-button-right'></div>" +
+							"<div class='gallery-info'>" +
+								"<div class='picture-info'>16/12</div>";
+		if (waterMark) {
+			result += 			"<div class='watermark-info'>powered by <a href='http://creative--space.de'>creative--space.de</a></div>";
+		}
+		result +=			"</div>" +
+						"</div>" +
+					"</div>";
+		body.append(result);
 
-			affectedElement = jQuery(this);
-			galleryOverlay =  body.find(".gallery-overlay");
-			closeButton =  body.find(".gallery-button-close");
-			nextButton =  body.find(".gallery-button-right");
-			preButton =  body.find(".gallery-button-left");
-			imageHolder =  body.find(".gallery-image");
-			galleryModal =  body.find(".gallery-modal");
-			galleryImage =  body.find(".gallery-image img");
-			pictureInfo =  body.find(".picture-info");
+		affectedElement = jQuery(this);
+		galleryOverlay =  body.find(".gallery-overlay");
+		closeButton =  body.find(".gallery-button-close");
+		nextButton =  body.find(".gallery-button-right");
+		preButton =  body.find(".gallery-button-left");
+		imageHolder =  body.find(".gallery-image");
+		galleryModal =  body.find(".gallery-modal");
+		galleryImage =  body.find(".gallery-image img");
+		pictureInfo =  body.find(".picture-info");
 
-			body.find(".watermark").show();
+		body.find(".watermark").show();
 
 //		}
 
@@ -146,22 +149,43 @@ define([
 			galleryModal.css('height', modalHeight)
 			.css('width', modalWidth);
 
-			//image holder
-			var imageHolderHeight = modalHeight * 0.8;
-			var imageHolderWidth = modalWidth * 0.8; 
-			var imageLeft = (modalWidth -imageHolderWidth) / 2;
-			var imageTop = (modalHeight - imageHolderHeight) / 2;
-			imageHolder.css('height', imageHolderHeight)
-				.css('width', imageHolderWidth)
-				.css('margin-left', imageLeft)
-				.css('margin-top', imageTop);
+			if (modalWidth > 370) {
+				//image holder
+				var imageHolderHeight = modalHeight * 0.8;
+				var imageHolderWidth = modalWidth * 0.8; 
+				var imageLeft = (modalWidth -imageHolderWidth) / 2;
+				var imageTop = (modalHeight - imageHolderHeight) / 2;
+				imageHolder.css('height', imageHolderHeight)
+					.css('width', imageHolderWidth)
+					.css('margin-left', imageLeft)
+					.css('margin-top', imageTop);
 
-			//image
-			galleryImage.css('max-height', imageHolderHeight);
-			galleryImage.css('max-width', imageHolderWidth);
-			preButton.css('margin-left', imageLeft-10-30);
-			nextButton.css('margin-right', imageLeft-10-27-30);
+				//image
+				galleryImage.css('max-height', imageHolderHeight);
+				galleryImage.css('max-width', imageHolderWidth);
+				preButton.css('margin-left', imageLeft-10-30);
+				nextButton.css('margin-right', imageLeft-10-27-30);
+				preButton.css('position', 'relative');
+				nextButton.css('position', 'relative');
+			} else {
+				//image holder
+				var imageHolderHeight = modalHeight * 0.8;
+				var imageHolderWidth = modalWidth * 0.8; 
+				var imageLeft = (modalWidth -imageHolderWidth) / 2;
+				var imageTop = (modalHeight - imageHolderHeight) / 2;
+				imageHolder.css('height', imageHolderHeight)
+					.css('width', imageHolderWidth)
+					.css('margin-left', imageLeft)
+					.css('margin-top', imageTop);
 
+				//image
+				galleryImage.css('max-height', imageHolderHeight);
+				galleryImage.css('max-width', imageHolderWidth);
+				preButton.css('left', 0);
+				nextButton.css('right', 0);
+				preButton.css('position', 'absolute');
+				nextButton.css('position', 'absolute');
+			}
 		}
 
 		function doImageFade(src) {

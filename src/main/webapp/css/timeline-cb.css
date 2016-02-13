@@ -177,3 +177,74 @@ ul.timeline li:nth-child(even) span {
 	white-space: nowrap;
 	/*color: #74c53a;*/
 }
+
+@media only screen and (max-width: 430px) {
+
+	ul.timeline li:nth-child(even) span {
+		white-space: normal;
+	}
+
+	ul.timeline li:nth-child(odd) span {
+		white-space: normal;
+	}
+
+	ul.timeline {
+		border-right: 3px solid #575757;
+	}
+
+	ul.timeline li.graduate:nth-child(2n)::before {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+		left: -16px;
+	}
+
+	ul.timeline li.graduate:nth-child(2n+1)::after {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+		right: -15px;
+	}
+
+	ul.timeline li.event:nth-child(2n)::before {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+		left: -17px;
+	}
+
+	ul.timeline li.event:nth-child(2n+1)::after {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+		right: -14px;
+	}
+
+	ul.timeline li.other:nth-child(2n+1)::after {
+		width: 8px;
+		height: 8px;
+		border: 3px solid #575757;
+		right: -9px;
+	}
+
+	ul.timeline li.other:nth-child(2n)::before {
+		width: 8px;
+		height: 8px;
+		border: 3px solid #575757;
+		right: -9px;
+	}
+
+	ul.timeline li.end:nth-child(2n+1)::after {
+		width: 30px;
+		height: 30px;
+		background-size: 30px 30px;
+		right: -17px;
+	}
+
+	ul.timeline li.end:nth-child(2n)::before {
+		width: 30px;
+		height: 30px;
+		background-size: 30px 30px;
+		right: -17px;
+	}
+}

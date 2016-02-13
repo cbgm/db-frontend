@@ -1,8 +1,10 @@
 define([
+	'util/Configuration',
 	'lib/i18n!partialview/nls/AboutView_strings',
 	'lib/gallery-cb',
 	'lib/jquery'
 ], function (
+	Configuration,
 	Strings,
 	gallery,
 	jQuery
@@ -21,9 +23,9 @@ define([
 					"<div id='content' class='visitor'>" +
 						"<div id='content-spacer' class='about'>" +
 							"<div id='intro' class='begin-section'>" +
-								"<h1>" +
+								"<h2>" +
 									"So you're wondering &quotWho is this guy behind the website?&quot" +
-								"</h1>" +
+								"</h2>" +
 								"<div class='inner-container'>" +
 									"Glad you aked! I'm the kind of person who had to fight for dreams. I'm a complex human being that needs the challenge in life. This also reflects in the variety of things I'm interested in, such as:" +
 									"<ul class='taglist'>" +
@@ -45,9 +47,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='extreme_sports'/>" +
 							"<div id='extreme' class='descriptive-section'>" +
-								"<h2>" +
+								"<h3>" +
 									"#Extreme sports" +
-								"</h2>" +
+								"</h3>" +
 								"<div class='inner-container'>" +
 									"First of all extreme sports. It's facinating what is possible with your body, " +
 									"when you push yourself to the limit. You can't reach anything in these sports if you don't " +
@@ -57,9 +59,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='skateboarding'/>" +
 							"<div id='skateboard' class='section'>" +
-								"<h3>" +
+								"<h4>" +
 									"#Skateboarding" +
-								"</h3>" +
+								"</h4>" +
 								"<div class='inner-container'>" +
 									"Especially skateboarding is my favorite one. Started fairly late in the age of 15, " +
 									"it's still (dominating) my life, my energy saver and haven of peace. The originally trigger was " +
@@ -83,9 +85,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='snowboarding'/>" +
 							"<div id='snowboard' class='section'>" +
-								"<h3>" +
+								"<h4>" +
 									"#Snowboarding" +
-								"</h3>" +
+								"</h4>" +
 								"<div class='inner-container'>" +
 									"I would not go as far as to say, that snowboarding has the same importance as skateboarding. But " +
 									"well, of course it is fun and the best alternative to me if there is no place to skate on some days in winter. " +
@@ -94,9 +96,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='music'/>" +
 							"<div id='Music' class='descriptive-section'>" +
-							"<h2>" +
+							"<h3>" +
 								"#Music" +
-							"</h2>" +
+							"</h3>" +
 								"<div class='inner-container'>" +
 									"Of course everyone loves music but it's not only that I listen to it. First of all I don't like songs which don't make" +
 									" sense and there are quiet alot of them. Furthermore I try to be creativ within my possibilities. And so today I play multiple instruments." +
@@ -104,9 +106,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='keyboard'/>" +
 							"<div id='Keyboard' class='section'>" +
-								"<h3>" +
+								"<h4>" +
 									"#Keyboard" +
-								"</h3>" +
+								"</h4>" +
 								"<div class='inner-container'>" +
 									"In the age of 7 I started playing keyboard with a bit influence of my grandpa ;), but I've never regretted that. " +
 									"Since then I have fun with it but my play also changed into piano style. " +
@@ -116,9 +118,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='drums'/>" +
 							"<div id='Drums' class='section'>" +
-								"<h3>" +
+								"<h4>" +
 									"#Drums" +
-								"</h3>" +
+								"</h4>" +
 								"<div class='inner-container'>" +
 									"Since I was kid I always had a special bind to drums. If I'm honest I don't know exactly the reason. " +
 									"But I couldn't forget this strong instrument until 2011. From this point I bought my first e-drum " +
@@ -129,9 +131,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='technology'/>" +
 							"<div id='Technology' class='descriptive-section'>" +
-							"<h2>" +
+							"<h3>" +
 								"#Technology" +
-							"</h2>" +
+							"</h3>" +
 								"<div class='inner-container'>" +
 									"So now we're getting pretty close at the time in which the choice of study my direction was quit " +
 									"clear, right? Maybe..., Gladly my parents were not afraid of technology. " +
@@ -147,9 +149,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='programming'/>" +
 							"<div id='Programming' class='section'>" +
-							"<h3>" +
+							"<h4>" +
 								"#Programming" +
-							"</h3>" +
+							"</h4>" +
 								"<div class='inner-container'>" +
 									"So what kind of stuff did I do with my programming knowledge since day one? It all started with the first steps in web development, simple static html pages." +
 									" After these steps I discovered Adobe Flash for me and tried my best to define my first dynamic single page with some animations. Then years after my apprenticeship " +
@@ -159,9 +161,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='design'/>" +
 							"<div id='Design' class='descriptive-section'>" +
-							"<h2>" +
+							"<h3>" +
 								"#Design" +
-							"</h2>" +
+							"</h3>" +
 								"<div class='inner-container'>" +
 									"<p>I dont' want to say much at this point. Just watch the following gallery to see my process. I just have to say, I'm <u>not</u> a designer but I do my best.</p>" +
 									"<div style='margin-top: 10px; text-align: center;'>" +
@@ -180,9 +182,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='filming'/>" +
 							"<div id='Filming' class='descriptive-section'>" +
-							"<h2>" +
+							"<h3>" +
 								"#Filming" +
-							"</h2>" +
+							"</h3>" +
 								"<div class='inner-container'>" +
 									"I got into filming through my pasion skateboarding. Of course when you achieve an new trick you want to bann it forever on tape." +
 									" My current camcorder is a Canon Legria HF 200. You see it's not profesional equipment but it fits my needs. Examples will follow!" +
@@ -190,9 +192,9 @@ define([
 							"</div>" +
 							"<a class='anchor' id='editing'/>" +
 							"<div id='Editing' class='descriptive-section'>" +
-							"<h2>" +
+							"<h3>" +
 								"#Editing" +
-							"</h2>" +
+							"</h3>" +
 								"<div class='inner-container'>" +
 									"Filming is not all. It's from time to time enjoyable to watch old tricks, but it gets more exiting if they are set into the correct light. " +
 									"I just say baysteps with Winwos Movie Maker and for a few years now getting semi professional with Sony Vegas. Examples will follow!" +
@@ -201,9 +203,9 @@ define([
 							"<a class='anchor' id='academic_career'/>" +
 							"<div id='work' class='begin-section'>" +
 								"<div id='timeline' >" +
-									"<h1>" +
+									"<h2>" +
 										"So now that you now what drives me, something more about my academic career" +
-									"</h1>" +
+									"</h2>" +
 									"<div class='inner-container'>" +
 										"<div class='timeline-container'>" +
 										"<ul class='timeline'>" +
@@ -287,24 +289,24 @@ define([
 								"</div>" +
 							"</div>" +
 							"<div id='Documents' class='descriptive-section'>" +
-							"<h2>" +
+							"<h3>" +
 								"#Documents" +
-							"</h2>" +
+							"</h3>" +
 								"<div class='inner-container'>" +
 									"Last but no least some documents for you to download if you are interested in me. Thank you for visiting my website!</br>" +
 									"<ul class='download'>" +
 										"<li>" +
-											"<a class='download-link' href=''>" +
+											"<a class='download-link' href='" + Configuration.get('API_URL') + "/download/bachelorcert'>" +
 												"&#9654; Bachelor certificate" +
 											"</a>" +
 										"</li>" +
 										"<li>" +
-											"<a class='download-link' href=''>" +
+											"<a class='download-link' href='" + Configuration.get('API_URL') + "/download/mastercert'>" +
 												"&#9654; Master certificate" +
 											"</a>" +
 										"</li>" +
 										"<li>" +
-											"<a class='download-link' href=''>" +
+											"<a class='download-link' href='" + Configuration.get('API_URL') + "/download/cv'>" +
 												"&#9654; Curriculum vitae" +
 											"</a>" +
 										"</li>" +

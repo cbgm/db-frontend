@@ -31,8 +31,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 				"image",
 				json,
 				
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 		});
 	}
 
@@ -40,8 +40,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 
 		Request.doDelete(Configuration.get("API_URL") + "/admin/images/" +id,
 				"image",
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 

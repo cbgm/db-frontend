@@ -35,54 +35,86 @@ define([
 		})();
 
 		function update (callback){
+			_view.find('#entries').empty();
 
 			TagController.getEntries(function (data) {
 				_tags = data;
 
+				_view.find('#entries').empty();
+
+				var result = "<div>" +
+								"<ul class='taglist'>" +
+									"<li class='tag entry-add'>" +
+										"<input type='text' value='name'></input>" +
+										"<div class='button-container'>" +
+											"<div class='add-text'>Add</div>" +
+											"<div class='spinner-container'>" +
+												"<div class='loading-spinner'></div>" +
+											"</div>" +
+										"</div>" +
+										"<div style='clear: both;'></div>" +
+									"</li>";
+
 				if (_tags.length > 0) {
-					_view.find('#entries').empty();
 
-					var result = "<div>" +
-									"<ul class='taglist'>" +
-										"<li class='tag entry-add'>" +
-											"<input type='text' value='name'></input>" +
-											"<div>Add</div>" +
-											"<div style='clear: both;'></div>" +
-										"</li>";
 					for (var i = 0; i < _tags.length; i++) {
-						result += 		"<li class='tag entry-delete' id='" + _tags[i].tagId + "'>" +
-											"#" + _tags[i].name + " "+
-											"<div id='" + _tags[i].tagId + "'>Delete</div>" +
-											"<div style='clear: both;'></div>"+
-										"</li>";
+						result += 	"<li class='tag entry-delete' id='" + _tags[i].tagId + "'>" +
+										"#" + _tags[i].name + " "+
+										"<div id='" + _tags[i].tagId + "' class='button-container'>" +
+											"<div class='delete-text'>Delete</div>" +
+											"<div class='spinner-container'>" +
+												"<div class='loading-spinner'></div>" +
+											"</div>" +
+										"</div>" +
+										"<div style='clear: both;'></div>"+
+									"</li>";
 					}
-					result += 		"</ul>" +
-								"</div>";
+					
+				}
+				result += 		"</ul>" +
+							"</div>";
 
-					_view.find('#entries').append(result);
-					_view.find(".entry-delete").bind('click', function () {
-						var tagId = this.id;
-						jQuery(this).attr("pointer-events", "none");
+				_view.find('#entries').append(result);
 
-						TagController.deleteEntry(tagId, function (data) {
+				_view.find(".entry-delete").bind('click', function () {
+					var tagId = this.id;
+					jQuery(this).attr("pointer-events", "none");
+					this.querySelector(".delete-text").style.display = "none";
+					this.querySelector(".loading-spinner").style.display = "block";
+
+					TagController.deleteEntry(tagId, function (data) {
+
+						if (data === "OK") {
+
 							update( function (){
 								jQuery(this).attr("pointer-events", "auto");
 								Logger.log("reloading tag entries done");
 							});
-						});
+						} else {
+							_view.find(".delete-text").css("display", "block");
+							_view.find(".loading-spinner").css("display", "none");
+						}
 					});
+				});
 
-					_view.find(".entry-add div").bind('click', function () {
-						_tag.name = _view.find('input').val();
+				_view.find(".entry-add div").bind('click', function () {
+					_tag.name = _view.find('input').val();
+					this.querySelector(".add-text").style.display = "none";
+					this.querySelector(".loading-spinner").style.display = "block";
+					
+					TagController.addEntry(_tag, function (data) {
 
-						TagController.addEntry(_tag, function (data) {
+						if (data === "OK") {
 
 							update(function (){
 								Logger.log("reloading tag entries done");
 							});
-						});
+						} else {
+							_view.find(".add-text").css("display", "block");
+							_view.find(".loading-spinner").css("display", "none");
+						}
 					});
-				}
+				});
 				Logger.log("reloading tag entries done");
 				callback();
 			});

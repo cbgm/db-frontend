@@ -24,9 +24,10 @@ define([
 									"<li><a href='#admin/news'>#News</a></li>" +
 									"<li><a href='#admin/tags'>#Tags</a></li>" +
 									"<li><a href='#admin/projects'>#Projects</a></li>" +
-									"<li><a href='#admin/guestbook'>#Guestbook</a></li>" +
+//									"<li><a href='#admin/guestbook'>#Guestbook</a></li>" +
 									"<li><a href='#admin/galleries'>#Galleries</a></li>" +
 									"<li><a href='#admin/images'>#Images</a></li>" +
+									"<li><a href='#admin/users'>#Users</a></li>" +
 									"<li><a href='#news'></a></li>" +
 									"<li><a class='user-logout'></a></li>" +
 								"</ul>" +
@@ -47,9 +48,10 @@ define([
 									"<li><a id='bla' href='#admin/news'>#News</a></li>" +
 									"<li><a href='#admin/tags'>#Tags</a></li>" +
 									"<li><a href='#admin/projects'>#Projects</a></li>" +
-									"<li><a href='#admin/guestbook'>#Guestbook</a></li>" +
+//									"<li><a href='#admin/guestbook'>#Guestbook</a></li>" +
 									"<li><a href='#admin/galleries'>#Galleries</a></li>" +
 									"<li><a href='#admin/images'>#Images</a></li>" +
+									"<li><a href='#admin/users'>#Users</a></li>" +
 									"<li><a href='#news'>#Visitor</a></li>" +
 									"<li><a class='user-logout'>#Logout</a></li>" +
 								"</ul>" +

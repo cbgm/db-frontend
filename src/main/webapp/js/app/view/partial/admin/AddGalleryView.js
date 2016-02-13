@@ -64,7 +64,12 @@ define([
 				}
 				result +=			"</ul>" +
 									"<div style='clear: both;'></div>" +
-									"<div class='entry-post'>Post</div>" +
+									"<div class='entry-post'>" +
+										"<div class='post-text'>Post</div>" +
+										"<div class='spinner-container'>" +
+											"<div class='loading-spinner white'></div>" +
+										"</div>" +
+									"</div>" +
 									"<div class='entry-cancel'>Cancel</div>"+
 									"<div style='clear: both;'></div>" +
 								"</div>" +
@@ -78,13 +83,21 @@ define([
 
 				_view.find(".entry-post").bind('click', function () {
 					_gallery.name = _view.find('input').val();
+					this.querySelector(".post-text").style.display = "none";
+					this.querySelector(".loading-spinner").style.display = "block";
 
 					GalleryController.postEntry(_gallery, function (data) {
 
-						update( function (){
-							Logger.log("update gallery entries done");
-							window.location.hash = "#admin/galleries";
-						});
+						if (data === "OK") {
+
+							update( function (){
+								Logger.log("update gallery entries done");
+								window.location.hash = "#admin/galleries";
+							});
+						} else {
+							_view.find(".post-text").css("display", "block");
+							_view.find(".loading-spinner").css("display", "none");
+						}
 					});
 				});
 

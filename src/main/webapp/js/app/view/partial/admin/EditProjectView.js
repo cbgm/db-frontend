@@ -76,7 +76,12 @@ define([
 					}
 					result +=			"</ul>" +
 										"<div style='clear: both;'></div>" +
-										"<div class='entry-update'>update</div>"+ 
+										"<div class='entry-update'>" +
+											"<div class='update-text'>Update</div>" +
+											"<div class='spinner-container'>" +
+												"<div class='loading-spinner white'></div>" +
+											"</div>" +
+										"</div>" +
 										"<div class='entry-cancel'>cancel</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>" +
@@ -95,13 +100,21 @@ define([
 						_project.projectId;
 						_project.title = _view.find('input').val();
 						_project.description = _view.find('textarea').val();
+						this.querySelector(".update-text").style.display = "none";
+						this.querySelector(".loading-spinner").style.display = "block";
 
 						ProjectController.updateEntry(_project.projectId, _project, function (data) {
 
-							update( function (){
-								Logger.log("update project entry done");
-								window.location.hash = "#admin/projects";
-							});
+							if (data === "OK") {
+
+								update( function (){
+									Logger.log("update project entry done");
+									window.location.hash = "#admin/projects";
+								});
+							} else {
+								_view.find(".update-text").css("display", "block");
+								_view.find(".loading-spinner").css("display", "none");
+							}
 						});
 					});
 

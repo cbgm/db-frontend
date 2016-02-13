@@ -51,7 +51,12 @@ define([
 										"<div class='entry-author'>" + 
 											"<div>" + _guestbook[i].author + "</div>" +
 										"</div>" +
-										"<div class='entry-delete' id='" + _guestbook[i].guestbookEntryId + "'>Delete</div>" +
+										"<div class='entry-delete' id='" + _guestbook[i].guestbookEntryId + "'>" +
+											"<div class='delete-text'>Delete</div>" +
+											"<div class='spinner-container'>" +
+												"<div class='loading-spinner'></div>" +
+											"</div>" +
+										"</div>" +
 										"<div class='entry-edit' id='" + _guestbook[i].guestbookEntryId + "'>Edit</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>";
@@ -63,13 +68,21 @@ define([
 					_view.find(".entry-delete").bind('click', function () {
 						var guestbookEntryId = this.id;
 						jQuery(this).attr("pointer-events", "none");
+						this.querySelector(".delete-text").style.display = "none";
+						this.querySelector(".loading-spinner").style.display = "block";
 
 						GuestbookController.deleteEntry(guestbookEntryId, function (data) {
-							
-							update( function (){
-								jQuery(this).attr("pointer-events", "auto");
-								Logger.log("reloading guestbook entries done");
-							});
+
+							if (data === "OK") {
+
+								update( function (){
+									jQuery(this).attr("pointer-events", "auto");
+									Logger.log("reloading guestbook entries done");
+								});
+							} else {
+								_view.find(".delete-text").css("display", "block");
+								_view.find(".loading-spinner").css("display", "none");
+							}
 						});
 					});
 

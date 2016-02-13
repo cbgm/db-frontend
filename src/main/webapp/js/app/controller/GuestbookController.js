@@ -46,8 +46,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 				"guestbook entry", '{"author":"' + entry.author
 						+ '","content":"' + entry.content + '"}',
 
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 
@@ -57,8 +57,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 				"guestbook entry", '{"author":"' + entry[0].value
 						+ '","content":"' + entry[1].value + '"}',
 
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 
@@ -67,8 +67,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 		Request.doDelete(Configuration.get("API_URL") + "/admin/guestbook/" +id,
 				"guestbook",
 
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 

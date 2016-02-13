@@ -43,7 +43,12 @@ define([
 					var result = "<div>";
 						result +=	"<div>" +
 										"<textarea class='entry-content'>" + _guestbookEntry.content + "</textarea>" +
-										"<div class='entry-update'>Update</div>"+ 
+										"<div class='entry-update'>" +
+											"<div class='update-text'>Update</div>" +
+											"<div class='spinner-container'>" +
+												"<div class='loading-spinner white'></div>" +
+											"</div>" +
+										"</div>" +
 										"<div class='entry-cancel'>Cancel</div>" +
 									"</div>";
 
@@ -58,13 +63,21 @@ define([
 
 					_view.find(".entry-update").bind('click', function () {
 						_guestbookEntry.content = _view.find('textarea').val();
+						this.querySelector(".update-text").style.display = "none";
+						this.querySelector(".loading-spinner").style.display = "block";
 
 						GuestbookController.updateEntry(_guestbookEntry.guestbookEntryId, _guestbookEntry, function (data) {
 
-							update( function (){
-								Logger.log("update guestbook entries done");
-								window.location.hash = "#admin/guestbook";
-							});
+							if (data === "OK") {
+
+								update( function (){
+									Logger.log("update guestbook entries done");
+									window.location.hash = "#admin/guestbook";
+								});
+							} else {
+								_view.find(".update-text").css("display", "block");
+								_view.find(".loading-spinner").css("display", "none");
+							}
 						});
 					});
 				callback();

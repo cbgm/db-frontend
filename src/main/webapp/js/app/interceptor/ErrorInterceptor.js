@@ -47,7 +47,9 @@ define([
 				},
 				0: function (data, textStatus, jqxhr) {
 
-//					window.location.hash = '#timeout';
+//					if(textStatus === "timeout") {
+//						window.location.hash = '#timeout';
+//					}
 				}
 				
 			}

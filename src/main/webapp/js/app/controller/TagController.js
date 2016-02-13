@@ -22,8 +22,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 				"tags entry",
 				json,
 
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 
@@ -32,8 +32,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 		Request.doDelete(Configuration.get("API_URL") + "/admin/tags/" +id,
 				"tags entry",
 
-				function() {
-					callback();
+				function(data) {
+					callback(data);
 				});
 	}
 

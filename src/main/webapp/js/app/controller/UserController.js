@@ -5,7 +5,7 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 
 	function getEntries(callback) {
 
-		Request.doGet(Configuration.get("API_URL") + "/galleries", "gallery",
+		Request.doGet(Configuration.get("API_URL") + "/users", "users",
 
 		function(data) {
 			var json = jQuery.parseJSON(data);
@@ -16,8 +16,8 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 
 	function postEntry(entry, callback) {
 		var json = JSON.stringify(entry);
-		Request.doPost(Configuration.get("API_URL") + "/admin/galleries/add",
-				"gallery entry",
+		Request.doPost(Configuration.get("API_URL") + "/admin/users/add",
+				"user entry",
 				json,
 
 				function(data) {
@@ -25,20 +25,20 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 				});
 	}
 
-	function deleteEntry(id, callback) {
+	function deleteEntry(name, callback) {
 
-		Request.doDelete(Configuration.get("API_URL") + "/admin/galleries/" +id,
-				"gallery entry",
+		Request.doDelete(Configuration.get("API_URL") + "/admin/users/" + name,
+				"user entry",
 
 				function(data) {
 					callback(data);
 				});
 	}
 
-	function getEntry(id, callback) {
+	function getEntry(name, callback) {
 
-		Request.doGet(Configuration.get("API_URL") + "/galleries/" + id,
-				"gallery",
+		Request.doGet(Configuration.get("API_URL") + "/users/" + name,
+				"news",
 
 		function(data) {
 			var json = jQuery.parseJSON(data);
@@ -46,10 +46,10 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 		});
 	}
 
-	function updateEntry(id, entry, callback) {
+	function updateEntry(name, entry, callback) {
 		var json = JSON.stringify(entry);
-		Request.doUpdate(Configuration.get("API_URL") + "/admin/galleries/"+ id,
-				"gallery entry",
+		Request.doUpdate(Configuration.get("API_URL") + "/admin/users/"+ name,
+				"user entry",
 				json,
 
 				function(data) {
@@ -58,7 +58,7 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 	}
 
 	function SortByID(x, y) {
-		return  y.galleryId - x.galleryId;
+		return  y.userId - x.userId;
 	}
 
 	function endOfEntries(){

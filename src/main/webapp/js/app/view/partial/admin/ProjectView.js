@@ -38,16 +38,19 @@ define([
 		})();
 		
 		function update (callback){
-//			var entries;
+			_view.find('#entries').empty();
+
 			ProjectController.getEntries(function (data) {
 				_projects = data;
 
-				if (_projects.length > 0) {
-					_view.find('#entries').empty();
+				_view.find('#entries').empty();
 
-					//pages add
-					var result = "<div>" +
-									"<div class='entry-add'>Add Project</div>";
+				//pages add
+				var result = "<div>" +
+								"<div class='entry-add'>Add Project</div>";
+
+				if (_projects.length > 0) {
+
 					for (var i = 0; i < _projects.length; i++) {
 						result +=	"<div class='entry-admin'>" +
 										"<div class='entry-main'>" +
@@ -55,7 +58,12 @@ define([
 											"<div class='entry-title'>" + 
 												"<div>" + _projects[i].title + "</div>" +
 											"</div>" +
-											"<div class='entry-delete' id='" + _projects[i].projectId + "'>Delete</div>" +
+											"<div class='entry-delete' id='" + _projects[i].projectId + "'>" +
+												"<div class='delete-text'>Delete</div>" +
+												"<div class='spinner-container'>" +
+													"<div class='loading-spinner'></div>" +
+												"</div>" +
+											"</div>" +
 											"<div class='entry-edit' id='" + _projects[i].projectId + "'>Edit</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +
@@ -71,7 +79,12 @@ define([
 													"<div class='entry-title'>" + 
 														"<div>" + articles[x].title + "</div>" +
 													"</div>" +
-													"<div class='entry-delete-sub' id='" + _projects[i].projectId + "/"  + articles[x].articleId + "'" + articles[x].articleId + "'>Delete</div>" +
+													"<div class='entry-delete-sub' id='" + _projects[i].projectId + "/"  + articles[x].articleId + "'" + articles[x].articleId + "'>" +
+														"<div class='delete-text'>Delete</div>" +
+														"<div class='spinner-container'>" +
+															"<div class='loading-spinner'></div>" +
+														"</div>" +
+													"</div>" +
 													"<div class='entry-edit-sub' id='" + _projects[i].projectId + "/"  + articles[x].articleId + "'" + articles[x].articleId + "'>Edit</div>" +
 													"<div style='clear: both;'></div>" +
 												"</div>";
@@ -80,82 +93,85 @@ define([
 										"</div>" +
 									"</div>";
 					}
-					result += "</div>";
+				}
+				result += "</div>";
 
-					_view.find('#entries').append(result);
+				_view.find('#entries').append(result);
 
-					_view.find(".entry-delete").bind('click', function () {
-						var projectId = this.id;
-						jQuery(this).attr("pointer-events", "none");
+				_view.find(".entry-delete").bind('click', function () {
+					var projectId = this.id;
+					jQuery(this).attr("pointer-events", "none");
+					this.querySelector(".delete-text").style.display = "none";
+					this.querySelector(".loading-spinner").style.display = "block";
 
-						ProjectController.deleteEntry(projectId, function (data) {
+					ProjectController.deleteEntry(projectId, function (data) {
+
+						if (data === "OK") {
 
 							update( function (){
 								jQuery(this).attr("pointer-events", "auto");
 								Logger.log("reloading project entries done");
 							});
-						});
+						} else {
+							_view.find(".delete-text").css("display", "block");
+							_view.find(".loading-spinner").css("display", "none");
+						}
 					});
+				});
 
-					_view.find(".entry-delete-sub").bind('click', function () {
-						var split = this.id.split("/"); 
-						var projectId = split[0];
-						var articleId = split[1];
+				_view.find(".entry-delete-sub").bind('click', function () {
+					var split = this.id.split("/"); 
+					var projectId = split[0];
+					var articleId = split[1];
+					this.querySelector(".delete-text").style.display = "none";
+					this.querySelector(".loading-spinner").style.display = "block";
 
-						ArticleController.deleteEntry(projectId, articleId, function (data) {
+					ArticleController.deleteEntry(projectId, articleId, function (data) {
+
+						if (data === "OK") {
 
 							update( function (){
 								Logger.log("reloading project entries done");
 							});
-						});
-					});
-
-					_view.find(".entry-add").bind('click', function () {
-						window.location.hash = "#admin/projects/add";
-					});
-
-					_view.find(".entry-add-sub").bind('click', function () {
-						window.location.hash = "#admin/projects/" + this.id + "/articles/add";
-					});
-
-					_view.find(".entry-show-sub").bind('click', function () {
-						var classRef = this.id;
-						var button = jQuery(this);
-
-						if(jQuery("." + classRef + ":visible").length) {
-							jQuery("." + classRef + "").hide();
-							button.html("+");
 						} else {
-							jQuery("." + classRef + "").show();
-							button.html("-");
+							_view.find(".delete-text").css("display", "block");
+							_view.find(".loading-spinner").css("display", "none");
 						}
 					});
+				});
 
-					_view.find(".entry-edit-sub").bind('click', function () {
-						var split = this.id.split("/"); 
-						var projectId = split[0];
-						var articleId = split[1];
-						window.location.hash = "#admin/projects/" + projectId + "/articles/" + articleId;
-					});
+				_view.find(".entry-add").bind('click', function () {
+					window.location.hash = "#admin/projects/add";
+				});
 
-					_view.find(".entry-edit").bind('click', function () {
-						var projectId = this.id;
-						window.location.hash = "#admin/projects/" + projectId;
-					});
-				} else {
-					_view.find('#entries').empty();
+				_view.find(".entry-add-sub").bind('click', function () {
+					window.location.hash = "#admin/projects/" + this.id + "/articles/add";
+				});
 
-					//pages add
-					var result = "<div>" +
-									"<div class='entry-add'>Add Project</div>" +
-								"</div>";
+				_view.find(".entry-show-sub").bind('click', function () {
+					var classRef = this.id;
+					var button = jQuery(this);
 
-					_view.find('#entries').append(result);
-					
-					_view.find(".entry-add").bind('click', function () {
-						window.location.hash = "#admin/projects/add";
-					});
-				}
+					if(jQuery("." + classRef + ":visible").length) {
+						jQuery("." + classRef + "").hide();
+						button.html("+");
+					} else {
+						jQuery("." + classRef + "").show();
+						button.html("-");
+					}
+				});
+
+				_view.find(".entry-edit-sub").bind('click', function () {
+					var split = this.id.split("/"); 
+					var projectId = split[0];
+					var articleId = split[1];
+					window.location.hash = "#admin/projects/" + projectId + "/articles/" + articleId;
+				});
+
+				_view.find(".entry-edit").bind('click', function () {
+					var projectId = this.id;
+					window.location.hash = "#admin/projects/" + projectId;
+				});
 				callback();
 			});
 		}

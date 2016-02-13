@@ -19,13 +19,13 @@ define([
 					"<div id='banner-container'>" +
 						"<div id='banner'>" +
 							"<div id='banner-logo'>" +
-								"<img src='img/logo-test2.png' alt=''/>" +
+								"<img src='img/logo4.png' alt=''/>" +
 							"</div>" +
 							"<div id='banner-slogan'>" +
-//								"I'm a <a style='color:white;' href='http://en.wikipedia.org/wiki/Developer'><span style='background:grey;'>developer</span></a> !<a style='color:white;' href='http://en.wikipedia.org/wiki/Designer'><span style='background:grey;'>designer</span></a>" +
-//								"</br><span style='font-size: 0.8em;'>...but pretty much creative</span>" +
-//								"</br><span style='font-size: 0.7em;'>...and this is my <b>_</b></span>" +
-								"Because creativity is infinite" +
+								"I'm a <a style='color:white;' href='http://en.wikipedia.org/wiki/Developer'><span style='background:grey;'>developer</span></a> !<a style='color:white;' href='http://en.wikipedia.org/wiki/Designer'><span style='background:grey;'>designer</span></a>" +
+								"</br><span style='font-size: 0.8em;'>...but pretty much creative</span>" +
+								"</br><span style='font-size: 0.7em;'>...and this is my <b>_</b></span>" +
+//								"Because creativity is infinite" +
 							"</div>" +
 						"</div>" +
 					"</div>" +

@@ -65,50 +65,50 @@ define([
 					"</div>");
 			$view.find(".entry-form").captcha();
 
-			$view.find(".entry-name").keydown(function(e) {
-				var key = e.key;
-				key = key.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß ]+/g,"");
-				if (key == "") {
+//			$view.find(".entry-name").keydown(function(e) {
+//				var key = e.key;
+//				key = key.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß ]+/g,"");
+//				if (key == "") {
+//
+//					e.preventDefault();
+//					var position = this.selectionStart;
+//					var field = this;
+//					var value = field.value;
+//
+//					if (value.length == 0) {
+//						value += key;
+//					} else {
+//						value = [value.slice(0, position), key, value.slice(position)].join('');
+//					}	
+//					$view.find(".entry-name").val(value);
+//				}
+//			});
 
-					e.preventDefault();
-					var position = this.selectionStart;
-					var field = this;
-					var value = field.value;
-
-					if (value.length == 0) {
-						value += key;
-					} else {
-						value = [value.slice(0, position), key, value.slice(position)].join('');
-					}	
-					$view.find(".entry-name").val(value);
-				}
-			});
-
-			$view.find(".entry-text").keydown(function(e) {
-				var key = e.key;
-				key = key.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß,:/'". \d-#+]+/g,"");
-
-				if (key == "") {
-					e.preventDefault();
-					var position = this.selectionStart;
-					var field = this;
-					var value = field.value;
-
-					if (value.length == 0) {
-						value += key;
-					} else {
-						value = [value.slice(0, position), key, value.slice(position)].join('');
-					}
-					$view.find(".entry-text").val(value);
-				}
-
-			});
+//			$view.find(".entry-text").keydown(function(e) {
+//				var key = e.key;
+//				key = key.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß,:/'". \d-#+]+/g,"");
+//
+//				if (key == "") {
+//					e.preventDefault();
+//					var position = this.selectionStart;
+//					var field = this;
+//					var value = field.value;
+//
+//					if (value.length == 0) {
+//						value += key;
+//					} else {
+//						value = [value.slice(0, position), key, value.slice(position)].join('');
+//					}
+//					$view.find(".entry-text").val(value);
+//				}
+//
+//			});
 
 			$view.find(".entry-form").bind('submit', function () {
 				var form = $view.find(".entry-form");
 				var data = form.serializeArray();
-				data[0].value =  data[0].value.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß ]+/g,"");
-				data[1].value =  data[1].value.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß,:/'". \d-#+]+/g,"");
+//				data[0].value =  data[0].value.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß ]+/g,"");
+//				data[1].value =  data[1].value.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß,:/'". \d-#+]+/g,"");
 
 				GuestbookController.postEntry (data, function (data) {
 					_currentPage = 1;
