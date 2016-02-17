@@ -45,14 +45,14 @@ define([
 				_view.find('#entries').empty();
 
 				var result =	"<div class='entry'>" +
-								"<div><h2>" + Locale.setContentByLocale(_projects.title, _projects.titleAlt) + "</h2></div>" +
+								"<div><h2>" + Locale.setContentByLocale(_project.title, _project.titleAlt) + "</h2></div>" +
 								"<ul class='taglist'>";
 				var tags = _project.tags;
 								for (var x =0; x < tags.length; x++) {
 									result += "<li><a href=''>#" + tags[x].name + "</a></li>";
 								}
 				result +=		"</ul>" +
-								"<div class='section'>" + Locale.setContentByLocale(_projects.description, _projects.descriptionAlt) + "</div>" +
+								"<div class='section'>" + Locale.setContentByLocale(_project.description, _project.descriptionAlt) + "</div>" +
 								"<div>" +
 								"<p class='sub-entry-description'>" + Strings.relatedarticles_text + "</p>";
 				var articles = _project.articles;

@@ -21,6 +21,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	/*
 	 * ##################################################################################
@@ -70,7 +71,8 @@ module.exports = function(grunt) {
 			all: ['target'],
 			js: ['<%= PRODUCTION_JS %>app', '<%= PRODUCTION_JS %>lib', '<%= PRODUCTION_JS %>app.js'],
 			css: ['<%= PRODUCTION_CSS %>*.css', '!<%= PRODUCTION_CSS %>final-cb.min.css', '<%= PRODUCTION_CSS %>lib'],
-			template: ['<%= PRODUCTION_PATH %>template']
+			template: ['<%= PRODUCTION_PATH %>template'],
+			psd: ['<%= PRODUCTION_PATH %>img/**/*.psd'],
 		},
 		
 		env : {
@@ -224,10 +226,21 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
+		imagemin: {                          // Task
+			dynamic: {                         // Another target
+				files: [{
+					expand: true,                  // Enable dynamic expansion
+					cwd: '<%= PRODUCTION_PATH %>img/',                   // Src matches are relative to this path
+					src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+					dest: '<%= PRODUCTION_PATH %>img/'                  // Destination path prefix
+				}]
+			}
+		}
 	});
 
 //	grunt.registerTask('production', []);
-	grunt.registerTask('production', ['clean:all', 'bowercopy', 'copy', 'env:prod', 'preprocess', 'concat', 'clean:css', 'requirejs','clean:js', 'clean:template', 'cacheBust']);
+	grunt.registerTask('production', ['clean:all', 'bowercopy', 'copy', 'env:prod', 'preprocess', 'concat', 'clean:css', 'requirejs','clean:js', 'clean:template', 'cacheBust', 'imagemin', 'clean:psd']);
 //	grunt.registerTask('production', ['clean:all', 'bowercopy', 'copy', 'env:dev', 'preprocess']);
 
 
