@@ -2,11 +2,13 @@ define([
 	'controller/GuestbookController',
 	'util/Logger',
 	'util/Captcha',
+	'lib/i18n!partialview/nls/GuestbookView_strings',
 	'lib/jquery'
 ], function (
 	GuestbookController,
 	Logger,
 	Captcha,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -29,24 +31,24 @@ define([
 					"<div id='content' class='visitor'>" +
 						"<div id='content-spacer' class='guestbook'>" +
 							"<div id='entry-navigation-top' class='section'>" +
-								"<a class='prePage specialColor'>&#9664; older</a><a id='expand-new-entry-button' class='specialColor'>New entry &#9660;</a><a class='nextPage specialColor'>newer &#9654;</a>" +
+								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a id='expand-new-entry-button' class='specialColor'>" + Strings.newentry_button_text + " &#9660;</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
 								"<div id='new-entry-container' class='section'>" +
 									"<div id='entry-form-container'>" +
 										"<form class='entry-form' onsubmit='return false' autocomplete='on'>" +
 											"<table>" +
 												"<tr>" +
 													"<td>" +
-														"<input class='entry-name' name='author' type='text' placeholder='John Doe' pattern='.{3,}' required/>" +
+														"<input class='entry-name' name='author' type='text' placeholder='" + Strings.author_placeholder_text + "' pattern='.{3,}' required/>" +
 													"</td>" +
 												"</tr>" +
 												"<tr>" +
 													"<td>" +
-														"<textarea class='entry-text' name='content' placeholder='Write something to me' required/>" +
+														"<textarea class='entry-text' name='content' placeholder='" + Strings.content_placeholder_text + "' required/>" +
 													"</td>" +
 												"</tr>" +
 												"<tr>" +
 													"<td style='text-align:right;'>" +
-														"<input class='submit-entry' type='submit' value='Send' />" +
+														"<input class='submit-entry' type='submit' value='" + Strings.send_button_text + "' />" +
 													"</td>" +
 												"</tr>" +
 											"</table>" +
@@ -58,57 +60,16 @@ define([
 							"<div id='entries' class='section'>" +
 							"</div>" +
 							"<div id='entry-navigation-bottom' class='section'>" +
-								"<a class='prePage specialColor'>&#9664; older</a><a class='nextPage specialColor'>newer &#9654;</a>" +
+								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
 							"</div>" +
 							"<div style='clear:both;'></div>" +
 						"</div>" +
 					"</div>");
 			$view.find(".entry-form").captcha();
 
-//			$view.find(".entry-name").keydown(function(e) {
-//				var key = e.key;
-//				key = key.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß ]+/g,"");
-//				if (key == "") {
-//
-//					e.preventDefault();
-//					var position = this.selectionStart;
-//					var field = this;
-//					var value = field.value;
-//
-//					if (value.length == 0) {
-//						value += key;
-//					} else {
-//						value = [value.slice(0, position), key, value.slice(position)].join('');
-//					}	
-//					$view.find(".entry-name").val(value);
-//				}
-//			});
-
-//			$view.find(".entry-text").keydown(function(e) {
-//				var key = e.key;
-//				key = key.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß,:/'". \d-#+]+/g,"");
-//
-//				if (key == "") {
-//					e.preventDefault();
-//					var position = this.selectionStart;
-//					var field = this;
-//					var value = field.value;
-//
-//					if (value.length == 0) {
-//						value += key;
-//					} else {
-//						value = [value.slice(0, position), key, value.slice(position)].join('');
-//					}
-//					$view.find(".entry-text").val(value);
-//				}
-//
-//			});
-
 			$view.find(".entry-form").bind('submit', function () {
 				var form = $view.find(".entry-form");
 				var data = form.serializeArray();
-//				data[0].value =  data[0].value.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß ]+/g,"");
-//				data[1].value =  data[1].value.replace(/[^a-zA-Z-äöüÄÖÜéàèÉÈß,:/'". \d-#+]+/g,"");
 
 				GuestbookController.postEntry (data, function (data) {
 					_currentPage = 1;
@@ -129,7 +90,6 @@ define([
 				});
 			});
 
-//			var result = updateEntries();
 			$view.find("#expand-new-entry-button").on('click', function () {
 				var button = jQuery(this);
 				var content = $view.find("#new-entry-container");
@@ -137,7 +97,7 @@ define([
 				content.slideToggle(500, function () {
 
 					button.html(function () {
-						return content.is(":visible") ? "New entry &#9650;" : "New entry &#9660;";
+						return content.is(":visible") ? "" + Strings.newentry_button_text + " &#9650;" : "" + Strings.newentry_button_text + " &#9660;";
 					});
 				});
 
@@ -201,7 +161,7 @@ define([
 					for (var i = 0; i <_guestbook.length; i++) {
 						result +=	"<div class='entry'>" +
 										"<div>" +
-											"<div style='float: left; font-weight: bold;'>" + _guestbook[i].guestbookEntryId + ".&nbsp;&nbsp;&nbsp;&nbsp;Author: " + _guestbook[i].author + "</div>" +
+											"<div style='float: left; font-weight: bold;'>" + _guestbook[i].guestbookEntryId + ".&nbsp;&nbsp;&nbsp;&nbsp;" + Strings.author_text + ": " + _guestbook[i].author + "</div>" +
 											"<div style='float: right; font-weight: bold;'>" + _guestbook[i].date + "</div>" +
 													"<div style='clear: both;'></div>" +
 										"</div>" +

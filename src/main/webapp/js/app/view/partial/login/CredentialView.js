@@ -1,10 +1,12 @@
 define([
 	'controller/LoginController',
 	'util/Logger',
+	'lib/i18n!partialview/nls/CredentialView_strings',
 	'lib/jquery'
 ], function (
 	LoginController,
 	Logger,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -27,25 +29,25 @@ define([
 							"<div id='login-container'>" +
 								"<div class='form-container'>" +
 									"<div class='size-container'>" +
-										"<h1>Admin Login</h1>" +
-										"<p>For the adminstration of the website content, please login.  </p>" +
+										"<h1>" + Strings.admin_text + "</h1>" +
+										"<p>" + Strings.description_text + "</p>" +
 										"<form>" +
 											"<ul>" +
 												"<li>" +
-													"<input id='username' type='text' required placeholder='Username' />" +
+													"<input id='username' type='text' required placeholder='" + Strings.name_placeholder_text + "' />" +
 												"</li>" +
 												"<li>" +
-													"<input id='password' type='password' required placeholder='Password' />" +
+													"<input id='password' type='password' required placeholder='" + Strings.password_placeholder_text + "' />" +
 												"</li>" +
 												"<li>" +
 													"<div class='user-login'>" +
-														"<div id='login-text'>Login</div>" +
+														"<div id='login-text'>" + Strings.login_button_text + "</div>" +
 														"<div class='spinner-container'>" +
 															"<div class='login-spinner'></div>" +
 														"</div>" +
 													"</div>" +
 													"<div class='user-cancel'>" +
-														"<div id='button-text'>Cancel</div>" +
+														"<div id='button-text'>" + Strings.cancel_button_text + "</div>" +
 													"</div>" +
 //													"<div class='user-go-register'>" +
 //														"<div id='button-text'>Go to register</div>" +

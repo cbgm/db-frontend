@@ -1,12 +1,16 @@
 define([
 	'controller/ArticleController',
 	'util/Logger',
+	'util/Locale',
 	'lib/gallery-cb',
+	'lib/i18n!partialview/nls/ArticleView_strings',
 	'lib/jquery'
 ], function (
 	ArticleController,
 	Logger,
+	Locale,
 	gallery,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -44,18 +48,18 @@ define([
 					_view.find('#entries').empty();
 					
 					var result =	"<div class='entry'>" +
-										"<div><h2>" + _article.title + "</h2></div>" +										
+										"<div><h2>" + Locale.setContentByLocale(_article.title, _article.titleAlt) + "</h2></div>" +
 										"<ul class='taglist'>";
 						var tags = _article.tags;
 										for (var x =0; x < tags.length; x++) {
 											result += "<li><a href=''>#" + tags[x].name + "</a></li>";
 										}
 						result +=		"</ul>" +
-										"<div class='to-project'>&#9654; &nbsp;<a href='#projects/" + projectId + "'>Go to related project</a></div>" +
-										"<div class='section'>" + _article.content + "</div>" +
+										"<div class='to-project'>&#9654; &nbsp;<a href='#projects/" + projectId + "'>" + Strings.relatedproject_button_text + "</a></div>" +
+										"<div class='section'>" + Locale.setContentByLocale(_article.content, _article.contentAlt) + "</div>" +
 										"<div class='entry-info'>" +
 											"<div class='permalink'><a href='#projects/" + projectId + "/articles/" + _article.articleId + "'>Permalink</a></div>" +
-											"<div class='posted-date'>Posted: " + _article.date + "</div>" +
+											"<div class='posted-date'>" + Strings.posted_text + ": " + _article.date + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +
 									"</div>";

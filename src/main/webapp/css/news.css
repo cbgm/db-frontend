@@ -53,10 +53,9 @@
 }
 
 .news .entry-title-edit {
-	border: 1px solid black;
-	border-radius: 5px;
-	font-size: 14px;
-	margin: 20px 0;
+	/*border: 1px solid lightgray;
+	border-radius: 5px;*/
+	margin-top: 20px;
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -64,6 +63,7 @@
 .news .entry-title-edit input {
 	line-height: 30px;
 	width: 100%;
+	font-size: 14px;
 }
 
 .news .entry-title {
@@ -82,16 +82,32 @@
 	cursor: pointer;
 	padding: 6px;
 	float: right;
-	width: 60px;
+	min-width: 60px;
 	text-align: center;
 	background-color: transparent;
+}
+
+.news .entry-edit-content-holder {
+	border: 1px solid lightgray;
+	border-radius: 5px;
+}
+
+.news select[name=languages] {
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 14px;
+	border: medium none;
+	background: lightgray none repeat scroll 0% 0%;
+	font-weight: bold;
+	height: 30px;
 }
 
 .news .entry-edit {
 	cursor: pointer;
 	padding: 6px;
 	float: right;
-	width: 60px;
+	min-width: 60px;
 	text-align: center;
 	background-color: transparent;
 }
@@ -109,7 +125,7 @@
 	cursor: pointer;
 	padding: 6px;
 	float: left;
-	width: 60px;
+	min-width: 60px;
 	text-align: center;
 	background-color: #498388;
 	color: white;
@@ -120,7 +136,7 @@
 	cursor: pointer;
 	padding: 6px;
 	float: left;
-	width: 60px;
+	min-width: 60px;
 	text-align: center;
 	background-color: #498388;
 	color: white;
@@ -130,7 +146,7 @@
 	cursor: pointer;
 	padding: 6px;
 	float: left;
-	width: 60px;
+	min-width: 60px;
 	text-align: center;
 	background-color: #498388;
 	color: white;

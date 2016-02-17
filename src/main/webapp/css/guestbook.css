@@ -52,7 +52,7 @@
 	cursor: pointer;
 	padding: 6px;
 	float: right;
-	width: 60px;
+	min-width: 60px;
 	text-align: center;
 	background-color: transparent;
 }
@@ -61,7 +61,7 @@
 	cursor: pointer;
 	padding: 6px;
 	float: left;
-	width: 60px;
+	min-width: 60px;
 	text-align: center;
 	background-color: #498388;
 	color: white;
@@ -72,7 +72,7 @@
 	cursor: pointer;
 	padding: 6px;
 	float: left;
-	width: 60px;
+	min-width: 60px;
 	text-align: center;
 	background-color: #498388;
 	color: white;
@@ -82,7 +82,7 @@
 	cursor: pointer;
 	padding: 6px;
 	float:right;
-	width: 60px;
+	min-width: 60px;
 	text-align: center;
 	background-color: transparent;
 }

@@ -1,10 +1,12 @@
 define([
 	'controller/GalleryController',
 	'util/Logger',
+	'lib/i18n!partialview/nls/GalleryView_strings',
 	'lib/jquery'
 ], function (
 	GalleryController,
 	Logger,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -44,7 +46,7 @@ define([
 				_view.find('#entries').empty();
 
 				var result = "<div>" +
-								"<div class='entry-add'>Add Gallery</div>";
+								"<div class='entry-add'>" + Strings.add_button_text + "</div>";
 
 				if (_gallery.length > 0) {
 
@@ -56,12 +58,12 @@ define([
 											"<div>" + _gallery[i].name + "</div>" +
 										"</div>" +
 										"<div class='entry-delete' id='" + _gallery[i].galleryId + "'>" +
-											"<div class='delete-text'>Delete</div>" +
+											"<div class='delete-text'>" + Strings.delete_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner'></div>" +
 											"</div>" +
 										"</div>" +
-										"<div class='entry-edit' id='" + _gallery[i].galleryId + "'>Edit</div>" +
+										"<div class='entry-edit' id='" + _gallery[i].galleryId + "'>" + Strings.edit_button_text + "</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>";
 								

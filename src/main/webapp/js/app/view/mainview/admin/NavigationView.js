@@ -1,8 +1,12 @@
 define([
-    'controller/LoginController',
+	'util/Locale',
+	'controller/LoginController',
+	'lib/i18n!mainview/nls/NavigationView_strings',
 	'lib/jquery'
 ], function (
+	Locale,
 	LoginController,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -12,7 +16,8 @@ define([
 	 */
 	return function () {
 		//some vars
-		var _view;
+		var _view,
+			_locales = Locale.getAvailableLocalizations();
 
 		_view = (function () {
 			var $view = jQuery(
@@ -21,17 +26,18 @@ define([
 							"<div id='admin-logo'><img src='img/admin-logo.png' alt=''/></div>" +
 							"<div class='list'>" +
 								"<ul>" +
-									"<li><a href='#admin/news'>#News</a></li>" +
-									"<li><a href='#admin/tags'>#Tags</a></li>" +
-									"<li><a href='#admin/projects'>#Projects</a></li>" +
+									"<li><a href='#admin/news'>" + Strings.news_button_text + "</a></li>" +
+									"<li><a href='#admin/tags'>" + Strings.tags_button_text + "</a></li>" +
+									"<li><a href='#admin/projects'>" + Strings.projects_button_text + "</a></li>" +
 //									"<li><a href='#admin/guestbook'>#Guestbook</a></li>" +
-									"<li><a href='#admin/galleries'>#Galleries</a></li>" +
-									"<li><a href='#admin/images'>#Images</a></li>" +
-									"<li><a href='#admin/users'>#Users</a></li>" +
+									"<li><a href='#admin/galleries'>" + Strings.galleries_button_text + "</a></li>" +
+									"<li><a href='#admin/images'>" + Strings.images_button_text + "</a></li>" +
+									"<li><a href='#admin/users'>" + Strings.users_button_text + "</a></li>" +
 									"<li><a href='#news'></a></li>" +
 									"<li><a class='user-logout'></a></li>" +
 								"</ul>" +
 							"</div>" +
+							"<div class='locales locales-big'></div>" +
 						"</div>" +
 						"<div id='navigation-small'>" +
 							"<div id='admin-logo'><img src='img/admin-logo.png' alt=''/></div>" +
@@ -45,20 +51,37 @@ define([
 							"<div id='navigation-small-divider'></div>" +
 							"<div class='list'>" +
 								"<ul>" +
-									"<li><a id='bla' href='#admin/news'>#News</a></li>" +
-									"<li><a href='#admin/tags'>#Tags</a></li>" +
-									"<li><a href='#admin/projects'>#Projects</a></li>" +
+									"<li><a id='bla' href='#admin/news'>" + Strings.news_button_text + "</a></li>" +
+									"<li><a href='#admin/tags'>" + Strings.tags_button_text + "</a></li>" +
+									"<li><a href='#admin/projects'>" + Strings.projects_button_text + "</a></li>" +
 //									"<li><a href='#admin/guestbook'>#Guestbook</a></li>" +
-									"<li><a href='#admin/galleries'>#Galleries</a></li>" +
-									"<li><a href='#admin/images'>#Images</a></li>" +
-									"<li><a href='#admin/users'>#Users</a></li>" +
-									"<li><a href='#news'>#Visitor</a></li>" +
-									"<li><a class='user-logout'>#Logout</a></li>" +
+									"<li><a href='#admin/galleries'>" + Strings.galleries_button_text + "</a></li>" +
+									"<li><a href='#admin/images'>" + Strings.images_button_text + "</a></li>" +
+									"<li><a href='#admin/users'>" + Strings.users_button_text + "</a></li>" +
+									"<li><a href='#news'>" + Strings.visitor_button_text + "</a></li>" +
+									"<li><a class='user-logout'>" + Strings.logout_button_text + "</a></li>" +
+									"<li class='locales locales-small'></li>" +
 								"</ul>" +
 							"</div>" +
 						"</div>" +
 					"</div>");
-			
+
+			for (var i = 0; i < _locales.length; i++) {
+
+				if (i > 0) {
+					$view.find('.locales').append("<span class='locale-delimiter'>|</span>");
+				}
+
+				var $localeButton = jQuery("<span class='locale-button'>" + _locales[i].toUpperCase() + "</span>")
+						.on('click', (function (locale) {
+							return function () {
+								Locale.setLocale(locale);
+							}
+						})(_locales[i]));
+
+				$view.find('.locales').append($localeButton);
+			}
+
 			$view.find(".user-logout").bind('click', function () {
 				LoginController.doLogout(function (data) {
 

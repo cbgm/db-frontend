@@ -1,12 +1,16 @@
 define([
 	'controller/ProjectController',
 	'util/Logger',
+	'util/Locale',
 	'lib/gallery-cb',
+	'lib/i18n!partialview/nls/ProjectView_strings',
 	'lib/jquery'
 ], function (
 	ProjectController,
 	Logger,
+	Locale,
 	gallery,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -29,13 +33,13 @@ define([
 					"<div id='content' class='visitor'>" +
 						"<div id='content-spacer' class='project'>" +
 							"<div id='entry-navigation-top' class='section'>" +
-								"<a class='prePage specialColor'>&#9664; older</a><a class='nextPage specialColor'>newer &#9654;</a>" +
+								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
 							"</div>" +
 							"<div style='clear: both;'></div>" +
 							"<div id='entries' class='section'>" +
 							"</div>" +
 							"<div id='entry-navigation-bottom' class='section'>" +
-								"<a class='prePage specialColor'>&#9664; older</a><a class='nextPage specialColor'>newer &#9654;</a>" +
+								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
 							"</div>" +
 							"<div style='clear: both;'></div>" +
 						"</div>" +
@@ -97,29 +101,29 @@ define([
 					//pages add
 					for (var i = 0; i < _projects.length; i++) {
 						result +=	"<div class='entry'>" +
-										"<div><h2>" + _projects[i].title + "</h2></div>" +
+										"<div><h2>" + Locale.setContentByLocale(_projects[i].title, _projects[i].titleAlt) + "</h2></div>" +
 										"<ul class='taglist'>";
 						var tags = _projects[i].tags;
 										for (var x =0; x < tags.length; x++) {
 											result += "<li><a href=''>#" + tags[x].name + "</a></li>";
 										}
 						result +=		"</ul>" +
-										"<div class='section'>" + _projects[i].description + "</div>" +
+										"<div class='section'>" + Locale.setContentByLocale(_projects[i].description, _projects[i].descriptionAlt) + "</div>" +
 										"<div>" +
-										"<p class='sub-entry-description'>Related articles:</p>";
+										"<p class='sub-entry-description'>" + Strings.relatedarticles_text + "</p>";
 						var articles = _projects[i].articles;
 
 						for (var x = 0; x < articles.length; x++) {
 							result +=		"<div class='sub-sentry-holder'>" +
 												"<div class='box'>&#9654; &nbsp;</div>" +
-												"<div class='box'><a class='sub-entry-ref' id='" + _projects[i].projectId + "/"  + articles[x].articleId + "'>" + articles[x].title + "</a></div>" +
+												"<div class='box'><a class='sub-entry-ref' id='" + _projects[i].projectId + "/"  + articles[x].articleId + "'>" + Locale.setContentByLocale(articles[x].title, articles[x].titleAlt) + "</a></div>" +
 												"<div style='clear: both;'></div>" +
 											"</div>"; 
 						}
 						result +=		"</div>" +
 										"<div class='entry-info'>" +
 											"<div class='permalink'><a href='#projects/" + _projects[i].projectId + "'>Permalink</a></div>" +
-											"<div class='posted-date'>Posted: " + _projects[i].date + "</div>" +
+											"<div class='posted-date'>" + Strings.posted_text + ": " + _projects[i].date + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +
 									"</div>";

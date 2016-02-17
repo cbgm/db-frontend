@@ -1,10 +1,12 @@
 define([
 	'controller/TagController',
 	'util/Logger',
+	'lib/i18n!partialview/nls/TagView_strings',
 	'lib/jquery'
 ], function (
 	TagController,
 	Logger,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -47,7 +49,7 @@ define([
 									"<li class='tag entry-add'>" +
 										"<input type='text' value='name'></input>" +
 										"<div class='button-container'>" +
-											"<div class='add-text'>Add</div>" +
+											"<div class='add-text'>" + Strings.add_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner'></div>" +
 											"</div>" +
@@ -61,7 +63,7 @@ define([
 						result += 	"<li class='tag entry-delete' id='" + _tags[i].tagId + "'>" +
 										"#" + _tags[i].name + " "+
 										"<div id='" + _tags[i].tagId + "' class='button-container'>" +
-											"<div class='delete-text'>Delete</div>" +
+											"<div class='delete-text'>" + Strings.delete_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner'></div>" +
 											"</div>" +

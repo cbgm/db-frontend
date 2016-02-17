@@ -1,12 +1,16 @@
 define([
 	'controller/NewsController',
 	'util/Logger',
+	'util/Locale',
 	'lib/gallery-cb',
+	'lib/i18n!partialview/nls/NewsView_strings',
 	'lib/jquery'
 ], function (
 	NewsController,
 	Logger,
+	Locale,
 	gallery,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -29,13 +33,13 @@ define([
 					"<div id='content' class='visitor'>" +
 						"<div id='content-spacer' class='news'>" +
 							"<div id='entry-navigation-top' class='section'>" +
-								"<a class='prePage specialColor'>&#9664; older</a><a class='nextPage specialColor'>newer &#9654;</a>" +
+								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
 							"</div>" +
 							"<div style='clear: both;'></div>" +
 							"<div id='entries' class='section'>" +
 							"</div>" +
 							"<div id='entry-navigation-bottom' class='section'>" +
-								"<a class='prePage specialColor'>&#9664; older</a><a class='nextPage specialColor'>newer &#9654;</a>" +
+								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
 							"</div>" +
 							"<div style='clear: both;'></div>" +
 						"</div>" +
@@ -100,7 +104,7 @@ define([
 					for (var i = 0; i < _news.length; i++) {
 						result +=	"<div class='entry'>" +
 //										"<div><h4>" + entries[i].newsId + "</h4></div>" +
-										"<div><h2>" + _news[i].title + "</h2></div>" +
+										"<div><h2>" + Locale.setContentByLocale(_news[i].title, _news[i].titleAlt) + "</h2></div>" +
 //										"<h2>#" + entries[i].newsId + "&nbsp;&nbsp;|&nbsp;&nbsp;" + entries[i].title + "</h2>" +
 										
 										"<ul class='taglist'>";
@@ -109,10 +113,10 @@ define([
 											result += "<li><a href=''>#" + tags[x].name + "</a></li>";
 										}
 						result +=		"</ul>" +
-										"<div class='section'>" + _news[i].content + "</div>" +
+										"<div class='section'>" + Locale.setContentByLocale(_news[i].content, _news[i].contentAlt) + "</div>" +
 										"<div class='entry-info'>" +
 											"<div class='permalink'><a href='#news/" + _news[i].newsId + "'>Permalink</a></div>" +
-											"<div class='posted-date'>Posted: " + _news[i].date + "</div>" +
+											"<div class='posted-date'>" + Strings.posted_text + ": " + _news[i].date + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +
 									"</div>";

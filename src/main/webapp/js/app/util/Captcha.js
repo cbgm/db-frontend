@@ -1,7 +1,9 @@
 define([
-'lib/jquery'
+	'lib/i18n!util/nls/Captcha_strings',
+	'lib/jquery'
  
 ], function (
+	Strings,
 	jQuery
 ) {
 	'use strict';	
@@ -24,7 +26,7 @@ define([
 		randomNr1 = Math.floor(Math.random()*10);
 		randomNr2 = Math.floor(Math.random()*10);
 		totalNr = randomNr1 + randomNr2;
-		var texti = "What is "+randomNr1+" + "+randomNr2;
+		var texti = Strings.whatis_text + randomNr1+" + "+randomNr2;
 		jQuery(label).text(texti);
 	
 		jQuery(input).keyup(function(){

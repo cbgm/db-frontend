@@ -1,6 +1,8 @@
 define([
+	'lib/i18n!mainview/nls/FooterView_strings',
 	'lib/jquery'
 ], function (
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -17,8 +19,8 @@ define([
 					"<div id='footer'>" +
 						"<div id='footer-overflow'>" +
 							"<div id='like-container'>" +
-								"<p>Like what you see?</p>" +
-								"<p>So then give me a follow or get in contact with me. I've got ideas for days just for your needs!</p>" +
+								"<p>" + Strings.like_text + "</p>" +
+								"<p>" + Strings.follow_text + "</p>" +
 								"<div id='social-container'>" +
 									"<div id='social-positioner'>" +
 										"<div class='social-img-box'>" +

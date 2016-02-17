@@ -1,8 +1,12 @@
 define([
+	'util/Locale',
 	'lib/search-cb',
+	'lib/i18n!mainview/nls/NavigationView_strings',
 	'lib/jquery'
 ], function (
+	Locale,
 	Search,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -12,7 +16,9 @@ define([
 	 */
 	return function () {
 		//some vars
-		var _view;
+		var _view,
+			_moved =false,
+			_locales = Locale.getAvailableLocalizations();
 
 		_view = (function () {
 			var $view = jQuery(
@@ -21,14 +27,16 @@ define([
 							"<div id='visitor-logo'><img src='img/visitor-logo.png' alt=''/></div>" +
 							"<div class='list'>" +
 								"<ul>" +
-									"<li><a href='#news'>#News</a></li>" +
-									"<li><a href='#about'>#About</a></li>" +
-									"<li><a href='#projects'>#Projects</a></li>" +
-									"<li><a href='#guestbook'>#Guestbook</a></li>" +
+									"<li><a href='#news'>" + Strings.news_button_text + "</a></li>" +
+									"<li><a href='#about'>" + Strings.about_button_text + "</a></li>" +
+									"<li><a href='#projects'>" + Strings.projects_button_text + "</a></li>" +
+									"<li><a href='#guestbook'>" + Strings.guestbook_button_text + "</a></li>" +
 									"<li><a href='#admin/news'></a></li>" +
-									"<li><div id='search-box'><div><input type='text' id='text-search' placeholder='live search' autofocus/><img alt='' src='img/search-icon.png'></div></div></li>" +
+									"<li><div id='search-box'><div><input type='text' id='text-search' placeholder='" + Strings.livesearch_placeholder_text + "' autofocus/><img alt='' src='img/search-icon.png'></div></div></li>" +
+//									"<li class='locales' style='width: 100%; display: inline-block; color: rgb(87, 87, 87); line-height: 50px; vertical-align: middle; background: white none repeat scroll 0% 0%;'></li>" +
 								"</ul>" +
 							"</div>" +
+							"<div class='locales locales-big'></div>" +
 						"</div>" +
 						"<div id='navigation-small'>" +
 							"<div id='static-logo'><img src='img/visitor-logo.png' alt=''/></div>" +
@@ -42,34 +50,43 @@ define([
 							"<div id='navigation-small-divider'></div>" +
 							"<div class='list'>" +
 								"<ul>" +
-									"<li><a id='bla' href='#news'>#News</a></li>" +
-									"<li><a href='#about'>#About</a></li>" +
-									"<li><a href='#projects'>#Projects</a></li>" +
-									"<li><a href='#guestbook'>#Guestbook</a></li>" +
-									"<li><a href='#admin/news'>#Admin</a></li>" +
+									"<li><a id='bla' href='#news'>" + Strings.news_button_text + "</a></li>" +
+									"<li><a href='#about'>" + Strings.about_button_text + "</a></li>" +
+									"<li><a href='#projects'>" + Strings.projects_button_text + "</a></li>" +
+									"<li><a href='#guestbook'>" + Strings.guestbook_button_text + "</a></li>" +
+									"<li><a href='#admin/news'>" + Strings.admin_button_text + "</a></li>" +
+									"<li class='locales locales-small'></li>" +
 								"</ul>" +
 							"</div>" +
 						"</div>" +
 					"</div>");
 
-			var moved =false;
-
-			function neonSign(logo, speed){
-				var speed=100; 
-
-				logo.animate({'opacity':0},speed,function(){
-					logo.animate({'opacity':1},speed);
-				});
-			}
+			
 
 			jQuery('#navigation-container').addClass('bottom-shadow');
 			$view.find('#navigation-small').mobileNavButton();
 			$view.find('#search-box input').initSearch("#content-container");
-			
+
+			for (var i = 0; i < _locales.length; i++) {
+
+				if (i > 0) {
+					$view.find('.locales').append("<span class='locale-delimiter'>|</span>");
+				}
+
+				var $localeButton = jQuery("<span class='locale-button'>" + _locales[i].toUpperCase() + "</span>")
+						.on('click', (function (locale) {
+							return function () {
+								Locale.setLocale(locale);
+							}
+						})(_locales[i]));
+
+				$view.find('.locales').append($localeButton);
+			}
+
 			jQuery(window).bind('scroll', function () {
 				var num = jQuery('#header-container').height();
 				var currentScroll = jQuery(window).scrollTop()
-				//back to top moved herre because not to have two scroll binds
+				//back to top _moved herre because not to have two scroll binds
 				if (jQuery(window).scrollTop() > 500 ) {
 					jQuery('#back-to-top').addClass('show');
 				} else {
@@ -78,9 +95,9 @@ define([
 
 				if (currentScroll > num) {
 
-					if(!moved){
+					if(!_moved){
 						jQuery("#content-container").css('padding-top',"100px");
-						moved = true;
+						_moved = true;
 						var logo = jQuery("#visitor-logo");
 						logo.show();
 						logo.animate({'opacity':1},1500);
@@ -89,8 +106,8 @@ define([
 					jQuery('#navigation-shadowbox').addClass('navigation-down');
 				} else {
 
-					if(moved){
-						moved = false;
+					if(_moved){
+						_moved = false;
 						var logo = jQuery("#visitor-logo");
 						logo.hide();
 						logo.css({'opacity':'0'});

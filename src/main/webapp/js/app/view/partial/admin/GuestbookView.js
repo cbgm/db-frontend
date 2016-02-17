@@ -1,10 +1,12 @@
 define([
 	'controller/GuestbookController',
 	'util/Logger',
+	'lib/i18n!partialview/nls/GuestbookView_strings',
 	'lib/jquery'
 ], function (
 	GuestbookController,
 	Logger,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -52,12 +54,12 @@ define([
 											"<div>" + _guestbook[i].author + "</div>" +
 										"</div>" +
 										"<div class='entry-delete' id='" + _guestbook[i].guestbookEntryId + "'>" +
-											"<div class='delete-text'>Delete</div>" +
+											"<div class='delete-text'>" + Strings.delete_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner'></div>" +
 											"</div>" +
 										"</div>" +
-										"<div class='entry-edit' id='" + _guestbook[i].guestbookEntryId + "'>Edit</div>" +
+										"<div class='entry-edit' id='" + _guestbook[i].guestbookEntryId + "'>" + Strings.edit_button_text + "</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>";
 					}

@@ -41,7 +41,6 @@ html, h1, h2 , h3, h4, body, ul, li, div, form, table, td, tr, p, input, span {
 
 body {
 	text-align: center;
-	background: #274245;
 	color: #575757;
 }
 
@@ -167,8 +166,10 @@ img {
 	height: auto;
 	width: 100%;
 	padding: 0;
-	/*z-index: -100;*/
+	position: relative;
+	z-index: -100;
 	/*background: #e56038;*/
+	background: #274245;
 	text-align: center;
 	/*opacity:0;*/
 	
@@ -512,6 +513,34 @@ img {
 	background: none repeat scroll 0% 0% red;
 }
 
+.locales-big {
+	display: inline-block;
+	color: rgb(87, 87, 87);
+	line-height: 50px;
+	vertical-align: middle;
+	position: absolute;
+	right: 0px;
+	margin-right: 15px;
+}
+
+.locales-small {
+	width: 100%;
+	display: inline-block;
+	color: rgb(87, 87, 87);
+	line-height: 50px;
+	vertical-align: middle;
+	background: white none repeat scroll 0% 0%;
+}
+
+.locales-big span,
+.locales-small span {
+	cursor: pointer;
+}
+
+.locales-big span:hover,
+.locales-small span:hover {
+	color: #2d2d2d;
+}
 
 /*footer view*/
 

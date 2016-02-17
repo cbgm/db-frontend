@@ -1,5 +1,5 @@
 define([
-	'lib/i18n!partialview/nls/AboutView_strings',
+	'lib/i18n!partialview/nls/ErrorView_strings',
 	'lib/jquery'
 ], function (
 	Strings,
@@ -20,14 +20,14 @@ define([
 						"<div id='content-spacer' class='error'>" +
 							"<div id='error-holder'>" +
 								"<div id='error-text'>" +
-									"<p id='error-code'><b>404 Error</b></p>" +
+									"<p id='error-code'><b>" + Strings.errorhead_text + "</b></p>" +
 									"<dl>" +
-										"<dt id='error-description'>The page you requested was not found, and I have a fine guess why.</dt>" +
+										"<dt id='error-description'>" + Strings.errordescription_text + "</dt>" +
 										"<dd>" +
 											"<ul >" +
-												"<li>If you typed the URL directly, please make sure the spelling is correct.</li>" +
-												"<li>If you clicked on a link to get here, the link is outdated.</li>" +
-												"<li>If the link you clicked to get here included '.html' on the end, delete that and try again.</li>" +
+												"<li>" + Strings.errorhint_text + "</li>" +
+												"<li>" + Strings.errorhint2_text + "</li>" +
+												"<li>" + Strings.errorhint3_text + "</li>" +
 											"</ul>" +
 										"</dd>" +
 									"</dl>" +

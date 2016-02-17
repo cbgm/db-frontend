@@ -2,11 +2,13 @@ define([
 	'controller/ProjectController',
 	'controller/ArticleController',
 	'util/Logger',
+	'lib/i18n!partialview/nls/ProjectView_strings',
 	'lib/jquery'
 ], function (
 	ProjectController,
 	ArticleController,
 	Logger,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -47,7 +49,7 @@ define([
 
 				//pages add
 				var result = "<div>" +
-								"<div class='entry-add'>Add Project</div>";
+								"<div class='entry-add'>" + Strings.add_button_text + "</div>";
 
 				if (_projects.length > 0) {
 
@@ -59,18 +61,18 @@ define([
 												"<div>" + _projects[i].title + "</div>" +
 											"</div>" +
 											"<div class='entry-delete' id='" + _projects[i].projectId + "'>" +
-												"<div class='delete-text'>Delete</div>" +
+												"<div class='delete-text'>" + Strings.delete_button_text + "</div>" +
 												"<div class='spinner-container'>" +
 													"<div class='loading-spinner'></div>" +
 												"</div>" +
 											"</div>" +
-											"<div class='entry-edit' id='" + _projects[i].projectId + "'>Edit</div>" +
+											"<div class='entry-edit' id='" + _projects[i].projectId + "'>" + Strings.edit_button_text + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +
 										"<div class='entry-show-table'>" +
 											"<div class='entry-show-sub' id='ref" + _projects[i].projectId + "'>+</div>" +
 											"<div class='sub-entry-holder'>" +
-												"<div class='entry-add-sub' id='" + _projects[i].projectId + "'>Add Article</div>";
+												"<div class='entry-add-sub' id='" + _projects[i].projectId + "'>" + Strings.add_sub_button_text + "</div>";
 						var articles = _projects[i].articles;
 
 						for (var x = 0; x < articles.length; x++) {
@@ -80,12 +82,12 @@ define([
 														"<div>" + articles[x].title + "</div>" +
 													"</div>" +
 													"<div class='entry-delete-sub' id='" + _projects[i].projectId + "/"  + articles[x].articleId + "'" + articles[x].articleId + "'>" +
-														"<div class='delete-text'>Delete</div>" +
+														"<div class='delete-text'>" + Strings.delete_button_text + "</div>" +
 														"<div class='spinner-container'>" +
 															"<div class='loading-spinner'></div>" +
 														"</div>" +
 													"</div>" +
-													"<div class='entry-edit-sub' id='" + _projects[i].projectId + "/"  + articles[x].articleId + "'" + articles[x].articleId + "'>Edit</div>" +
+													"<div class='entry-edit-sub' id='" + _projects[i].projectId + "/"  + articles[x].articleId + "'" + articles[x].articleId + "'>" + Strings.edit_button_text + "</div>" +
 													"<div style='clear: both;'></div>" +
 												"</div>";
 						}						

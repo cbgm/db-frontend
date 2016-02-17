@@ -28,5 +28,12 @@ define( function () {
 
 	});
 
+	try {
+		if (localStorage.getItem('creativespace_locale') !== null) {
+			requirejs.config({ locale : localStorage.getItem('creativespace_locale') });
+		}
+	} catch (e) {
+
+	}
 	require(['js/app/main']);
 });

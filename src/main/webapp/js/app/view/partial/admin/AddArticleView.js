@@ -3,6 +3,7 @@ define([
 	'controller/TagController',
 	'util/Logger',
 	'lib/jquery-te',
+	'lib/i18n!partialview/nls/ArticleView_strings',
 	'lib/jquery'
 	
 ], function (
@@ -10,6 +11,7 @@ define([
 	TagController,
 	Logger,
 	jqte,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -23,10 +25,13 @@ define([
 			_article = {
 				title: "",
 				content: "",
+				titleAlt: "",
+				contentAlt: "",
 //				date: '',
 				tags: [],
 			},
-			_tags;
+			_tags,
+			_langSelect = "DE";
 
 		_view = (function () {
 			var $view = jQuery(
@@ -60,8 +65,16 @@ define([
 				
 				var result = "<div>";
 				result +=		"<div>" +
-									"<div class='entry-title-edit'><input type='text' value='Input the article title'></input></div>" +
-									"<textarea id='jqtetext'>Input the article text</textarea>" +
+									"<div class='entry-edit-content-holder'>" +
+										"<div>" +
+											"<select id='language-switch' name='languages'>" +
+												"<option value='DE' selected>DE</option>" +
+												"<option value='EN'>EN</option>" +
+											"</select>" +
+										"</div>" +
+										"<div class='entry-title-edit'><input type='text' value='" + Strings.title_placeholder_text + "'></input></div>" +
+										"<textarea id='jqtetext'>" + Strings.content_placeholder_text + "</textarea>" +
+									"</div>" +
 									"<ul class='taglist'>";
 
 				for (var i = 0; i < _tags.length; i++) {					
@@ -70,12 +83,12 @@ define([
 				result +=			"</ul>" +
 									"<div style='clear: both;'></div>" +
 									"<div class='entry-post'>" +
-										"<div class='post-text'>Update</div>" +
+										"<div class='post-text'>" + Strings.post_button_text + "</div>" +
 										"<div class='spinner-container'>" +
 											"<div class='loading-spinner white'></div>" +
 										"</div>" +
 									"</div>" +
-									"<div class='entry-cancel'>Cancel</div>"+
+									"<div class='entry-cancel'>" + Strings.cancel_button_text + "</div>"+
 									"<div style='clear: both;'></div>" +
 								"</div>" +
 							"</div>";
@@ -87,9 +100,31 @@ define([
 					window.location.hash = "#admin/projects";
 				});
 
+				_view.find('#language-switch').on('change', function() {
+					var lang = _view.find('select[name=languages]').val();
+					var text = _view.find('#jqtetext');
+					var editor = jQuery('.jqte_editor');
+					var title = _view.find('.entry-title-edit input');
+					_langSelect = lang;
+
+					if (lang !== "DE") {
+						_article.content = text.val();
+						_article.title = title.val();
+						text.val((_article.contentAlt === ""? Strings.content_placeholder_text : _article.contentAlt));
+						//because textarea is hidden, set also jqte area
+						editor.html((_article.contentAlt === ""? Strings.content_placeholder_text : _article.contentAlt));
+						title.val((_article.titleAlt === ""? Strings.title_placeholder_text : _article.titleAlt));
+					} else {
+						_article.contentAlt = text.val();
+						_article.titleAlt = title.val();
+						text.val((_article.content === ""? Strings.content_placeholder_text : _article.content));
+						editor.html((_article.content === ""? Strings.content_placeholder_text : _article.content));
+						title.val((_article.title === ""? Strings.title_placeholder_text : _article.title));
+					}
+				});
+
 				_view.find(".entry-post").bind('click', function () {
-					_article.content = _view.find('textarea').val();
-					_article.title = _view.find('input').val();
+					setValueByLanguage();
 					this.querySelector(".post-text").style.display = "none";
 					this.querySelector(".loading-spinner").style.display = "block";
 
@@ -132,6 +167,19 @@ define([
 						return;
 					}
 				});
+
+				function setValueByLanguage () {
+					var text = _view.find('#jqtetext');
+					var title = _view.find('.entry-title-edit input');
+
+					if (_langSelect === "DE") {
+						_article.content = text.val();
+						_article.title = title.val();
+					} else {
+						_article.contentAlt = text.val();
+						_article.titleAlt = title.val();
+					}
+				}
 				callback();
 			});	
 		}

@@ -1,10 +1,14 @@
 define([
 	'controller/NewsController',
+	'util/Locale',
 	'util/Logger',
+	'lib/i18n!partialview/nls/NewsView_strings',
 	'lib/jquery'
 ], function (
 	NewsController,
+	Locale,
 	Logger,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -45,7 +49,7 @@ define([
 				_view.find('#entries').empty();
 
 				var result = "<div>" +
-								"<div class='entry-add'>Add News</div>";
+								"<div class='entry-add'>" + Strings.add_button_text + "</div>";
 
 				if (_news.length > 0) {
 					//pages add
@@ -54,15 +58,15 @@ define([
 						result +=	"<div class='entry-admin'>" +
 										"<div class='entry-id'>" + _news[i].newsId + "</div>" +
 										"<div class='entry-title'>" + 
-											"<div>" + _news[i].title + "</div>" +
+											"<div>" + Locale.setContentByLocale(_news[i].title, _news[i].titleAlt) + "</div>" +
 										"</div>" +
 										"<div class='entry-delete' id='" + _news[i].newsId + "'>" +
-											"<div class='delete-text'>Delete</div>" +
+											"<div class='delete-text'>" + Strings.delete_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner'></div>" +
 											"</div>" +
 										"</div>" +
-										"<div class='entry-edit' id='" + _news[i].newsId + "'>Edit</div>" +
+										"<div class='entry-edit' id='" + _news[i].newsId + "'>" + Strings.edit_button_text + "</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>";
 					}
@@ -83,7 +87,7 @@ define([
 
 							update( function (){
 								jQuery(this).attr("pointer-events", "auto");
-								Logger.log("reloading guestbook entries done");
+								Logger.log("reloading news entries done");
 							});
 						} else {
 							_view.find(".delete-text").css("display", "block");

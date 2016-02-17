@@ -1,8 +1,10 @@
 define([
 	'lib/mobile-nav',
+	'lib/i18n!mainview/nls/ModalView_strings',
 	'lib/jquery'
 ], function (
 	MobileNav,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -22,9 +24,9 @@ define([
 								"<img src='img/logo4.png' alt=''/>" +
 							"</div>" +
 							"<div id='banner-slogan'>" +
-								"I'm a <a style='color:white;' href='http://en.wikipedia.org/wiki/Developer'><span style='background:grey;'>developer</span></a> !<a style='color:white;' href='http://en.wikipedia.org/wiki/Designer'><span style='background:grey;'>designer</span></a>" +
-								"</br><span style='font-size: 0.8em;'>...but pretty much creative</span>" +
-								"</br><span style='font-size: 0.7em;'>...and this is my <b>_</b></span>" +
+								Strings.developer_text +
+								"</br><span style='font-size: 0.8em;'>" + Strings.creative_text + "</span>" +
+								"</br><span style='font-size: 0.7em;'>" + Strings.space_text + "</span>" +
 //								"Because creativity is infinite" +
 							"</div>" +
 						"</div>" +

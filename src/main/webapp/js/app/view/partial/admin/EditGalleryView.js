@@ -3,6 +3,7 @@ define([
 	'controller/ImageController',
 	'util/Logger',
 	'util/Configuration',
+	'lib/i18n!partialview/nls/GalleryView_strings',
 	'lib/jquery'
 	
 ], function (
@@ -10,6 +11,7 @@ define([
 	ImageController,
 	Logger,
 	Configuration,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -76,12 +78,12 @@ define([
 					result +=			"</ul>" +
 										"<div style='clear: both;'></div>" +
 										"<div class='entry-update'>" +
-											"<div class='update-text'>Update</div>" +
+											"<div class='update-text'>" + Strings.update_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner white'></div>" +
 											"</div>" +
 										"</div>" +
-										"<div class='entry-cancel'>cancel</div>" +
+										"<div class='entry-cancel'>" + Strings.cancel_button_text + "</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>" +
 								"</div>";

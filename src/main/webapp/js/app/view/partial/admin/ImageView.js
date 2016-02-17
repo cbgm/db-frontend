@@ -2,11 +2,13 @@ define([
 	'controller/ImageController',
 	'util/Logger',
 	'util/Configuration',
+	'lib/i18n!partialview/nls/ImageView_strings',
 	'lib/jquery'
 ], function (
 	ImageController,
 	Logger,
 	Configuration,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -58,7 +60,7 @@ define([
 									"</div>" +
 								"</div>" +
 								"<div class='entry-add'>" +
-									"<div class='upload-text'>Upload Image</div>" +
+									"<div class='upload-text'>" + Strings.add_button_text + "</div>" +
 									"<div class='spinner-container'>" +
 										"<div class='loading-spinner white'></div>" +
 									"</div>" +
@@ -73,13 +75,13 @@ define([
 											"<div>" + _images[i].name + "</div>" +
 										"</div>" +
 										"<div class='entry-delete' id='" + _images[i].imageId + "'>" +
-											"<div class='delete-text'>Delete</div>" +
+											"<div class='delete-text'>" + Strings.delete_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner'></div>" +
 											"</div>" +
 										"</div>" +
 										"<div class='entry-show' id='" + _images[i].imageId + "'>" +
-											"<div class='show-text'>Show</div>" +
+											"<div class='show-text'>" + Strings.show_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner'></div>" +
 											"</div>" +

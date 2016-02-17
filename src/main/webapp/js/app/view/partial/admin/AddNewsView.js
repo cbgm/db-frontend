@@ -2,14 +2,18 @@ define([
 	'controller/NewsController',
 	'controller/TagController',
 	'util/Logger',
+	'util/Locale',
 	'lib/jquery-te',
+	'lib/i18n!partialview/nls/NewsView_strings',
 	'lib/jquery'
 	
 ], function (
 	NewsController,
 	TagController,
 	Logger,
+	Locale,
 	jqte,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -23,10 +27,13 @@ define([
 			_news = {
 				title: "",
 				content: "",
+				titleAlt: "",
+				contentAlt: "",
 //				date: '',
 				tags: [],
 			},
-			_tags;
+			_tags,
+			_langSelect = "DE";
 		
 		_view = (function () {
 			var $view = jQuery(
@@ -58,8 +65,16 @@ define([
 
 				var result = "<div>";
 				result +=		"<div>" +
-									"<div class='entry-title-edit'><input type='text' value='Input the news title'></input></div>" +
-									"<textarea id='jqtetext'>Input the news text</textarea>" +
+									"<div class='entry-edit-content-holder'>" +
+										"<div>" +
+											"<select id='language-switch' name='languages'>" +
+												"<option value='DE' selected>DE</option>" +
+												"<option value='EN'>EN</option>" +
+											"</select>" +
+										"</div>" +
+										"<div class='entry-title-edit'><input type='text' value='" + Strings.title_placeholder_text + "'></input></div>" +
+										"<textarea id='jqtetext'>" + Strings.content_placeholder_text + "</textarea>" +
+									"</div>" +
 									"<ul class='taglist'>";
 		
 				for (var i = 0; i < _tags.length; i++) {					
@@ -68,12 +83,12 @@ define([
 				result +=			"</ul>" +
 									"<div style='clear: both;'></div>" +
 									"<div class='entry-post'>" +
-										"<div class='post-text'>Post</div>" +
+										"<div class='post-text'>" + Strings.post_button_text + "</div>" +
 										"<div class='spinner-container'>" +
 											"<div class='loading-spinner white'></div>" +
 										"</div>" +
 									"</div>" +
-									"<div class='entry-cancel'>Cancel</div>"+
+									"<div class='entry-cancel'>" + Strings.cancel_button_text + "</div>"+
 									"<div style='clear: both;'></div>" +
 								"</div>" +
 							"</div>";
@@ -85,9 +100,31 @@ define([
 					window.location.hash = "#admin/news";
 				});
 
+				_view.find('#language-switch').on('change', function() {
+					var lang = _view.find('select[name=languages]').val();
+					var text = _view.find('#jqtetext');
+					var editor = jQuery('.jqte_editor');
+					var title = _view.find('.entry-title-edit input');
+					_langSelect = lang;
+
+					if (lang !== "DE") {
+						_news.content = text.val();
+						_news.title = title.val();
+						text.val((_news.contentAlt === ""? Strings.content_placeholder_text : _news.contentAlt));
+						//because textarea is hidden, set also jqte area
+						editor.html((_news.contentAlt === ""? Strings.content_placeholder_text : _news.contentAlt));
+						title.val((_news.titleAlt === ""? Strings.title_placeholder_text : _news.titleAlt));
+					} else {
+						_news.contentAlt = text.val();
+						_news.titleAlt = title.val();
+						text.val((_news.content === ""? Strings.content_placeholder_text : _news.content));
+						editor.html((_news.content === ""? Strings.content_placeholder_text : _news.content));
+						title.val((_news.title === ""? Strings.title_placeholder_text : _news.title));
+					}
+				});
+
 				_view.find(".entry-post").bind('click', function () {
-					_news.content = _view.find('textarea').val();
-					_news.title = _view.find('input').val();
+					setValueByLanguage();
 					this.querySelector(".post-text").style.display = "none";
 					this.querySelector(".loading-spinner").style.display = "block";
 
@@ -130,8 +167,21 @@ define([
 						return;
 					}
 				});
+
+				function setValueByLanguage () {
+					var text = _view.find('#jqtetext');
+					var title = _view.find('.entry-title-edit input');
+
+					if (_langSelect === "DE") {
+						_news.content = text.val();
+						_news.title = title.val();
+					} else {
+						_news.contentAlt = text.val();
+						_news.titleAlt = title.val();
+					}
+				}
 				callback();
-			});		
+			});
 
 		}
 

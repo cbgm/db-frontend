@@ -1,10 +1,12 @@
 define([
 	'controller/UserController',
 	'util/Logger',
+	'lib/i18n!partialview/nls/UserView_strings',
 	'lib/jquery'
 ], function (
 	UserController,
 	Logger,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -45,7 +47,7 @@ define([
 				_view.find('#entries').empty();
 
 				var result = "<div>" +
-								"<div class='entry-add'>Add User</div>";
+								"<div class='entry-add'>" + Strings.add_button_text + "</div>";
 
 				if (_users.length > 0) {
 					//pages add
@@ -57,12 +59,12 @@ define([
 											"<div>" + _users[i].roles[0].role + "</div>" +
 										"</div>" +
 										"<div class='entry-delete' id='" + _users[i].username + "'>" +
-											"<div class='delete-text'>Delete</div>" +
+											"<div class='delete-text'>" + Strings.delete_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner'></div>" +
 											"</div>" +
 										"</div>" +
-										"<div class='entry-edit' id='" + _users[i].username + "'>Edit</div>" +
+										"<div class='entry-edit' id='" + _users[i].username + "'>" + Strings.edit_button_text + "</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>";
 					}

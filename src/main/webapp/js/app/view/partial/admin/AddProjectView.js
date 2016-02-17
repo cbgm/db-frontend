@@ -3,13 +3,15 @@ define([
 	'controller/TagController',
 	'util/Logger',
 	'lib/jquery-te',
+	'lib/i18n!partialview/nls/ProjectView_strings',
 	'lib/jquery'
 	
 ], function (
-		ProjectController,
+	ProjectController,
 	TagController,
 	Logger,
 	jqte,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -23,10 +25,13 @@ define([
 			_project = {
 				title: "",
 				description: "",
+				titleAlt: "",
+				descriptionAlt: "",
 //				date: '',
 				tags: [],
 			},
-			_tags;
+			_tags,
+			_langSelect = "DE";
 		
 		_view = (function () {
 			var $view = jQuery(
@@ -58,8 +63,16 @@ define([
 				
 				var result = "<div>";
 				result +=		"<div>" +
-									"<div class='entry-title-edit'><input type='text' value='Input the project title'></input></div>" +
-									"<textarea id='jqtetext'>Input the project description</textarea>" +
+									"<div class='entry-edit-content-holder'>" +
+										"<div>" +
+											"<select id='language-switch' name='languages'>" +
+												"<option value='DE' selected>DE</option>" +
+												"<option value='EN'>EN</option>" +
+											"</select>" +
+										"</div>" +
+										"<div class='entry-title-edit'><input type='text' value='" + Strings.title_placeholder_text + "'></input></div>" +
+										"<textarea id='jqtetext'>" + Strings.content_placeholder_text + "</textarea>" +
+									"</div>" +
 									"<ul class='taglist'>";
 		
 				for (var i = 0; i < _tags.length; i++) {					
@@ -68,12 +81,12 @@ define([
 				result +=			"</ul>" +
 									"<div style='clear: both;'></div>" +
 									"<div class='entry-post'>" +
-										"<div class='post-text'>Update</div>" +
+										"<div class='post-text'>" + Strings.post_button_text + "</div>" +
 										"<div class='spinner-container'>" +
 											"<div class='loading-spinner white'></div>" +
 										"</div>" +
 									"</div>" +
-									"<div class='entry-cancel'>Cancel</div>"+
+									"<div class='entry-cancel'>" + Strings.cancel_button_text + "</div>"+
 									"<div style='clear: both;'></div>" +
 								"</div>" +
 							"</div>";
@@ -85,9 +98,31 @@ define([
 					window.location.hash = "#admin/projects";
 				});
 
+				_view.find('#language-switch').on('change', function() {
+					var lang = _view.find('select[name=languages]').val();
+					var text = _view.find('#jqtetext');
+					var editor = jQuery('.jqte_editor');
+					var title = _view.find('.entry-title-edit input');
+					_langSelect = lang;
+
+					if (lang !== "DE") {
+						_project.description = text.val();
+						_project.title = title.val();
+						text.val((_project.descriptionAlt === ""? Strings.content_placeholder_text : _project.descriptionAlt));
+						//because textarea is hidden, set also jqte area
+						editor.html((_project.descriptionAlt === ""? Strings.content_placeholder_text : _project.descriptionAlt));
+						title.val((_project.titleAlt === ""? Strings.title_placeholder_text : _project.titleAlt));
+					} else {
+						_project.descriptionAlt = text.val();
+						_project.titleAlt = title.val();
+						text.val((_project.description === ""? Strings.content_placeholder_text : _project.description));
+						editor.html((_project.description === ""? Strings.content_placeholder_text : _project.description));
+						title.val((_project.title === ""? Strings.title_placeholder_text : _project.title));
+					}
+				});
+
 				_view.find(".entry-post").bind('click', function () {
-					_project.description = _view.find('textarea').val();
-					_project.title = _view.find('input').val();
+					setValueByLanguage();
 					this.querySelector(".post-text").style.display = "none";
 					this.querySelector(".loading-spinner").style.display = "block";
 
@@ -130,6 +165,19 @@ define([
 						return;
 					}
 				});
+
+				function setValueByLanguage () {
+					var text = _view.find('#jqtetext');
+					var title = _view.find('.entry-title-edit input');
+
+					if (_langSelect === "DE") {
+						_project.description = text.val();
+						_project.title = title.val();
+					} else {
+						_project.descriptionAlt = text.val();
+						_project.titleAlt = title.val();
+					}
+				}
 				callback();
 			});		
 		}

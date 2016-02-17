@@ -1,5 +1,5 @@
 define([
-	'lib/i18n!partialview/nls/AboutView_strings',
+	'lib/i18n!partialview/nls/ErrorView_strings',
 	'lib/jquery'
 ], function (
 	Strings,
@@ -20,12 +20,12 @@ define([
 						"<div id='content-spacer' class='error'>" +
 							"<div id='error-holder'>" +
 								"<div id='error-text'>" +
-									"<p id='error-code'><b>Server Error</b></p>" +
+									"<p id='error-code'><b>" + Strings.timeouthead_text + "</b></p>" +
 									"<dl>" +
-										"<dt id='error-description'>Something went totally wrong, there was no response from the server.</dt>" +
+										"<dt id='error-description'>" + Strings.timeoutdescription_text + "</dt>" +
 										"<dd>" +
 											"<ul >" +
-												"<li>Please try again in a while or contact the administrator.</li>" +
+												"<li>" + Strings.timeouthint_text + "</li>" +
 											"</ul>" +
 										"</dd>" +
 									"</dl>" +

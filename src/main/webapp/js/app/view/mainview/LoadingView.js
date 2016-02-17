@@ -19,18 +19,25 @@ define([
 		_view = (function () {
 			var $loadingView = jQuery(
 					"<div id='content'>" +
-					"<div id='content-spacer'>" +
-						"<div class='canvas-container'></div>" +
+					"<div id='content-spacer' class='loading'>" +
+						"<div class='canvas-container'>" +
+							"<div id='spinner-holder'>" +
+								"<div class='spinner-container'>" +
+									"<div class='loading-spinner'></div>" +
+								"</div>" +
+							"</div>" +
+						"</div>" +
+						
 					"</div>" +
 				"</div>");
 
-			if (Util.isCanvasSupported()) {
-				_loadingCanvas = new LoadingCanvas();
-
-				$loadingView.find('.canvas-container').append(_loadingCanvas.get());
-			} else {
-				$loadingView.find('.canvas-container').append("<p>Loading...</p>");
-			}
+//			if (Util.isCanvasSupported()) {
+//				_loadingCanvas = new LoadingCanvas();
+//
+//				$loadingView.find('.canvas-container').append(_loadingCanvas.get());
+//			} else {
+//				$loadingView.find('.canvas-container').append("<p>Loading...</p>");
+//			}
 
 			return $loadingView;
 		})();
@@ -45,15 +52,15 @@ define([
 		};
 
 		this.animate = function () {
-			if (Util.isCanvasSupported()) {
-				_loadingCanvas.animate();
-			}
+//			if (Util.isCanvasSupported()) {
+//				_loadingCanvas.animate();
+//			}
 		};
 		
 		this.disable = function () {
-			if (Util.isCanvasSupported()) {
-				_loadingCanvas.disable();
-			}
+//			if (Util.isCanvasSupported()) {
+//				_loadingCanvas.disable();
+//			}
 		};
 
 

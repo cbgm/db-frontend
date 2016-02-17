@@ -2,12 +2,14 @@ define([
 	'controller/UserController',
 	'util/Logger',
 	'lib/jquery-te',
+	'lib/i18n!partialview/nls/UserView_strings',
 	'lib/jquery'
 	
 ], function (
 	UserController,
 	Logger,
 	jqte,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -34,11 +36,11 @@ define([
 							"<div id='entries' class='section'>" +
 								"<div>" +
 									"<div>" +
-										"<div class='entry-name-edit' disabled><input type='text' placeholder='Input the username' disabled></input></div>" +
-										"<div class='entry-pw-edit'><input type='password' placeholder='Input the password'></input></div>" +
-										"<div class='entry-pwapprove-edit'><input type='password' placeholder='Input the password for approval'></input></div>" +
+										"<div class='entry-name-edit' disabled><input type='text' disabled></input></div>" +
+										"<div class='entry-pw-edit'><input type='password' placeholder='" + Strings.password_placeholder_text + "'></input></div>" +
+										"<div class='entry-pwapprove-edit'><input type='password' placeholder='" + Strings.passwordapp_placeholder_text + "'></input></div>" +
 										"<div class='entry-role-edit'>" +
-											"<select id='role-select' name='roles' size='3'>" +
+											"<select id='role-select' name='roles'>" +
 												"<option value='ROLE_ADMIN'>ROLE_ADMIN</option>" +
 												"<option value='ROLE_MODERATOR' selected>ROLE_MODERATOR</option>" +
 												"<option value='ROLE_WATCHER'>ROLE_WATCHER</option>" +
@@ -46,12 +48,12 @@ define([
 										"<div class='entry-error'>The passwords do not match</div>" +
 										"<div style='clear: both;'></div>" +
 										"<div class='entry-update'>" +
-											"<div class='update-text'>Post</div>" +
+											"<div class='update-text'>" + Strings.update_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner white'></div>" +
 											"</div>" +
 										"</div>" +
-										"<div class='entry-cancel'>Cancel</div>"+
+										"<div class='entry-cancel'>" + Strings.cancel_button_text + "</div>"+
 										"<div style='clear: both;'></div>" +
 									"</div>" +
 								"</div>"+

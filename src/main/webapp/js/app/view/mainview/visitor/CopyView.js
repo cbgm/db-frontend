@@ -1,6 +1,8 @@
 define([
+	'lib/i18n!mainview/nls/CopyView_strings',
 	'lib/jquery'
 ], function (
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -15,7 +17,7 @@ define([
 		_view = (function () {
 			var $view = jQuery(
 					"<div id='copy' style='padding-top: 5px; padding-bottom: 5px;'>" +
-						"<p id='copy-text'>Copyright &copy; " + new Date().getFullYear() + " &middot; All Rights Reserved &middot; <a href='http://creative--space.de/' >creative_</a>.</p>" +
+						"<p id='copy-text'>Copyright &copy; " + new Date().getFullYear() + " &middot; " + Strings.rightsreserved_text + " &middot; <a href='http://creative--space.de/' >creative_</a>.</p>" +
 					"</div>");
 
 			return $view;

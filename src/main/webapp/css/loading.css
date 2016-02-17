@@ -1,12 +1,13 @@
-.canvas-container {
+.loading .canvas-container {
 	height: 400px;
 	width: 100%;
 	background: white;
 	text-align: center;
+	display: table;
 }
 
-.canvas-container:before{
-	content: "";
+.loading .canvas-container:before{
+	/*content: "";*/
 	display: inline-block;
 	vertical-align: middle;
 	width: 0;
@@ -14,8 +15,27 @@
 	height: 100%;
 }
 
-canvas {
+.loading canvas {
 	display: inline-block;
 	vertical-align: middle;
 	white-space: normal;
+}
+
+.loading #spinner-holder {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.loading .spinner-container {
+	margin: 0 auto;
+	height: 30px;
+	width: 30px;
+	animation: rotate 0.8s infinite linear;
+	border: 2px solid #575757;
+	border-right-color: transparent;
+	border-radius: 50%;
+	top: 25%;
+	transform: translateY(-25%);
+	margin: 0px auto;
+	position: relative;
 }

@@ -2,12 +2,14 @@ define([
 	'controller/GuestbookController',
 	'util/Logger',
 	'lib/jquery-te',
+	'lib/i18n!partialview/nls/GuestbookView_strings',
 	'lib/jquery'
 	
 ], function (
 	GuestbookController,
 	Logger,
 	jqte,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -44,12 +46,12 @@ define([
 						result +=	"<div>" +
 										"<textarea class='entry-content'>" + _guestbookEntry.content + "</textarea>" +
 										"<div class='entry-update'>" +
-											"<div class='update-text'>Update</div>" +
+											"<div class='update-text'>" + Strings.update_button_text + "</div>" +
 											"<div class='spinner-container'>" +
 												"<div class='loading-spinner white'></div>" +
 											"</div>" +
 										"</div>" +
-										"<div class='entry-cancel'>Cancel</div>" +
+										"<div class='entry-cancel'>" + Strings.cancel_button_text + "</div>" +
 									"</div>";
 
 					result += "</div>";

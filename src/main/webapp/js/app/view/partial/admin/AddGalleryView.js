@@ -3,6 +3,7 @@ define([
 	'controller/ImageController',
 	'util/Logger',
 	'util/Configuration',
+	'lib/i18n!partialview/nls/GalleryView_strings',
 	'lib/jquery'
 	
 ], function (
@@ -10,6 +11,7 @@ define([
 	ImageController,
 	Logger,
 	Configuration,
+	Strings,
 	jQuery
 ) {
 	'use strict';
@@ -56,7 +58,7 @@ define([
 
 				var result = "<div>";
 				result +=		"<div>" +
-									"<div class='entry-title-edit'><input type='text' value='Input the gallery name'></input></div>" +
+									"<div class='entry-title-edit'><input type='text' value='" + Strings.title_placeholder_text + "'></input></div>" +
 									"<ul class='imagelist'>";
 		
 				for (var i = 0; i < _images.length; i++) {					
@@ -65,12 +67,12 @@ define([
 				result +=			"</ul>" +
 									"<div style='clear: both;'></div>" +
 									"<div class='entry-post'>" +
-										"<div class='post-text'>Post</div>" +
+										"<div class='post-text'>" + Strings.post_button_text + "</div>" +
 										"<div class='spinner-container'>" +
 											"<div class='loading-spinner white'></div>" +
 										"</div>" +
 									"</div>" +
-									"<div class='entry-cancel'>Cancel</div>"+
+									"<div class='entry-cancel'>" + Strings.cancel_button_text + "</div>"+
 									"<div style='clear: both;'></div>" +
 								"</div>" +
 							"</div>";
