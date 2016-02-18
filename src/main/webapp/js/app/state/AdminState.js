@@ -65,7 +65,7 @@ define([
 	return function (URLMap) {
 		//some vars
 		var _mainView = null,
-			_loadingView = null,
+			_loadingView = new LoadingView(),
 			_headerView = null,
 			_navigationView = null,
 			_footerView = null,
@@ -75,7 +75,6 @@ define([
 		//private functions
 		this.updateState =function (route) {
 			var newRoute = route;
-			_loadingView = new LoadingView();
 
 			if(URLDefinition.checkkUrl(route, "adminNewsOverview")) {
 				_contentView = new AdminNewsView();

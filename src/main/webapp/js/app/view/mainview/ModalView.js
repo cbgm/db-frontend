@@ -1,10 +1,12 @@
 define([
 	'lib/mobile-nav',
 	'lib/i18n!mainview/nls/ModalView_strings',
+	'lib/highlight',
 	'lib/jquery'
 ], function (
 	MobileNav,
 	Strings,
+	highlight,
 	jQuery
 ) {
 	'use strict';
@@ -102,6 +104,8 @@ define([
 			}
 			contentContainer.empty();
 			contentContainer.append(content.get());
+			contentContainer.find('.visitor pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
+
 		};
 
 		this.get = function () {

@@ -407,6 +407,11 @@ define([
 			toolbar.find('.jqte_tool_23 a').bind('click', function(){
 				jQuery('.gallery_toolbar').toggle();
 			});
+			
+			toolbar.append('<div style="float: left; margin: 0;	padding-left: 4px;	cursor: pointer;" class="jqte_tool_24 unselectable jqte_hiddenField" role="button"><a class="code_icon unselectable"></a></div>');
+			toolbar.find('.jqte_tool_24 a').bind('click', function(){
+				addCode();
+			});
 			//costumization
 			
 			// the default value of the link-type
@@ -785,6 +790,17 @@ define([
 //				editor.focus();
 //				editor.val( textBefore + html + textAfter );
 
+			}
+			
+			function addCode() {
+				var html = "<pre class='code' lang='js'></pre>";
+				var editor = jQuery('#jqtetext');
+				var cursorPos = editor.prop('selectionStart'),
+				v = editor.val(),
+				textBefore = v.substring(0,  cursorPos ),
+				textAfter  = v.substring( cursorPos, v.length );
+				editor.focus();
+				editor.val( textBefore + html + textAfter );
 			}
 			//costumization
 
@@ -1211,6 +1227,7 @@ define([
 						//costumization
 						jQuery(".jqte_tool_22").removeClass(vars.css+"_hiddenField");
 						jQuery(".jqte_tool_23").removeClass(vars.css+"_hiddenField");
+						jQuery(".jqte_tool_24").removeClass(vars.css+"_hiddenField");
 						//costumization
 						
 						
@@ -1243,7 +1260,8 @@ define([
 						
 						//costumization
 						jQuery(".jqte_tool_22").addClass(vars.css+"_hiddenField");
-						jQuery(".jqte_tool_23").removeClass(vars.css+"_hiddenField");
+						jQuery(".jqte_tool_23").addClass(vars.css+"_hiddenField");
+						jQuery(".jqte_tool_24").addClass(vars.css+"_hiddenField");
 						jQuery(".image_toolbar").hide();
 						jQuery(".gallery_toolbar").hide();
 

@@ -42,7 +42,7 @@ define([
 
 					if (pos >= 0) {
 						var spannode = document.createElement('span');
-						spannode.className = 'highlight';
+						spannode.className = 'highlight-search';
 						var middlebit = node.splitText(pos);
 						var endbit = middlebit.splitText(pat.length);
 						var middleclone = middlebit.cloneNode(true);
@@ -89,7 +89,7 @@ define([
 				}
 			}
 
-			return this.find("span.highlight").each(function() {
+			return this.find("span.highlight-search").each(function() {
 				var thisParent = this.parentNode;
 				thisParent.replaceChild(this.firstChild, this);
 				newNormalize(thisParent);
