@@ -669,11 +669,13 @@ img {
 
 #entry-navigation-bottom {
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 1.0em;
 }
 
 #entry-navigation-bottom #center-box {
 	margin: 0 auto;
+	display: inline-block;
+	padding-top: 5px;	
 }
 
 #center-box .plus {
@@ -692,8 +694,8 @@ img {
 }
 
 .loadmore-spinner {
-	height: 13px;
-	width: 13px;
+	height: 9px;
+	width: 9px;
 	animation: rotate 0.8s infinite linear;
 	border: 2px solid #575757;
 	border-right-color: transparent;

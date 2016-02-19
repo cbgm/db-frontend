@@ -40,13 +40,12 @@ define([
 							"</div>" +
 							"<div id='entry-navigation-bottom' class='section'>" +
 								"<div id='center-box'>" +
-									"<span class='plus'>+</span>" +
 									"<div id='spinner-holder'>" +
 										"<div class='spinner-container'>" +
 											"<div class='loadmore-spinner'></div>" +
 										"</div>" +
 									"</div>" +
-									"<a class='loadMore'>" + Strings.loadmore_button_text + "</a>" +
+									"<a class='loadMore'><span class='plus'>+</span>" + Strings.loadmore_button_text + "</a>" +
 								"</div>" +
 							"</div>" +
 							"<div style='clear: both;'></div>" +
