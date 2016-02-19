@@ -141,11 +141,7 @@ define([
 						NewsController.updateEntry(_news.newsId, _news, function (data) {
 
 							if (data === "OK") {
-
-								update( function (){
-									Logger.log("update project entry done");
-									window.location.hash = "#admin/news";
-								});
+								window.location.hash = "#admin/news";
 							} else {
 								_view.find(".update-text").css("display", "block");
 								_view.find(".loading-spinner").css("display", "none");

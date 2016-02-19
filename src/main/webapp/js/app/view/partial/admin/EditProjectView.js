@@ -139,11 +139,7 @@ define([
 						ProjectController.updateEntry(_project.projectId, _project, function (data) {
 
 							if (data === "OK") {
-
-								update( function (){
-									Logger.log("update project entry done");
-									window.location.hash = "#admin/projects";
-								});
+								window.location.hash = "#admin/projects";
 							} else {
 								_view.find(".update-text").css("display", "block");
 								_view.find(".loading-spinner").css("display", "none");

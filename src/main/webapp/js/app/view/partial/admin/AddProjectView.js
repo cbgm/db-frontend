@@ -129,11 +129,7 @@ define([
 					ProjectController.postEntry(_project, function (data) {
 
 						if (data === "OK") {
-
-							update( function (){
-								Logger.log("update guestbook entries done");
-								window.location.hash = "#admin/projects";
-							});
+							window.location.hash = "#admin/projects";
 						} else {
 							_view.find(".post-text").css("display", "block");
 							_view.find(".loading-spinner").css("display", "none");

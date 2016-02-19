@@ -71,11 +71,7 @@ define([
 						GuestbookController.updateEntry(_guestbookEntry.guestbookEntryId, _guestbookEntry, function (data) {
 
 							if (data === "OK") {
-
-								update( function (){
-									Logger.log("update guestbook entries done");
-									window.location.hash = "#admin/guestbook";
-								});
+								window.location.hash = "#admin/guestbook";
 							} else {
 								_view.find(".update-text").css("display", "block");
 								_view.find(".loading-spinner").css("display", "none");
