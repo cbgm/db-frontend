@@ -31,7 +31,7 @@ define([
 					"<div id='content' class='visitor'>" +
 						"<div id='content-spacer' class='guestbook'>" +
 							"<div id='entry-navigation-top' class='section'>" +
-								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a id='expand-new-entry-button' class='specialColor'>" + Strings.newentry_button_text + " &#9660;</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
+								"<a id='expand-new-entry-button' class='specialColor'>" + Strings.newentry_button_text + " &#9660;</a>" +
 								"<div id='new-entry-container' class='section'>" +
 									"<div id='entry-form-container'>" +
 										"<form class='entry-form' onsubmit='return false' autocomplete='on'>" +
@@ -60,7 +60,15 @@ define([
 							"<div id='entries' class='section'>" +
 							"</div>" +
 							"<div id='entry-navigation-bottom' class='section'>" +
-								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
+								"<div id='center-box'>" +
+									"<span class='plus'>+</span>" +
+									"<div id='spinner-holder'>" +
+										"<div class='spinner-container'>" +
+											"<div class='loadmore-spinner'></div>" +
+										"</div>" +
+									"</div>" +
+									"<a class='loadMore'>" + Strings.loadmore_button_text + "</a>" +
+								"</div>" +
 							"</div>" +
 							"<div style='clear:both;'></div>" +
 						"</div>" +
@@ -103,32 +111,16 @@ define([
 
 			});
 
-			$view.find(".nextPage").on('click', function () {
-
-				if(!_preEnd){
-
-					if (_nextEnd) {
-						_nextEnd =false;
-					}
-					--_currentPage;
-
-					update(_currentPage, function (){
-						Logger.log("reloading guestbook entries done");
-					});
-				}
-			});
-
-			$view.find(".prePage").on('click', function () {
+			$view.find(".loadMore").on('click', function () {
 
 				if(!_nextEnd){
-
-					if (_preEnd) {
-						_preEnd =false;
-					}
 					++_currentPage;
-
+					$view.find(".plus").hide();
+					$view.find("#spinner-holder").css("display", "inline-block");
 					update(_currentPage, function (){
-						Logger.log("reloading guestbook entries done");
+						Logger.log("reloading news entries done");
+						$view.find("#spinner-holder").css("display", "none");
+						$view.find(".plus").show();
 					});
 				}
 			});
@@ -139,22 +131,26 @@ define([
 
 			GuestbookController.getPaginatedEntries(page, function (data) {
 				_guestbook = data;
+				_view.find("#entry-navigation-bottom").css("display", "inline-block");
+
+				if (typeof _news !== "undefined") {
+					_guestbook = _guestbook.concat(data);
+				} else {
+					_guestbook = data;
+				}
 
 				if (_guestbook.length === 0) {
 					_nextEnd = true;
 					_currentPage--;
+					_view.find("#entry-navigation-bottom").css("display", "none");
 				}
 
-				if (_guestbook.length < 20) {
+				if (_guestbook.length < 15) {
 					_nextEnd = true;
-				}
-
-				if (_currentPage === 1) {
-					_preEnd = true;
+					_view.find("#entry-navigation-bottom").css("display", "none");
 				}
 
 				if (_guestbook.length > 0) {
-					_view.find('#entries').empty();
 					//set pages count
 					var result = "";
 					//pages add
@@ -175,10 +171,10 @@ define([
 		}
 
 		this.updateEntries = function (callback){
+
 			update(_currentPage, function () {
 				callback();
 			});
-			
 		}
 
 		this.get = function () {

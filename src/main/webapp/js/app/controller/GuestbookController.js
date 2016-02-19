@@ -18,7 +18,7 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 	function getPaginatedEntries(ix, callback) {
 
 		Request.doGetWithParams(Configuration.get("API_URL")
-				+ "/guestbook/page", "guestbook", "start=" + ((ix * 20) - 20) + "&end=" + (ix * 20) + "",
+				+ "/guestbook/page", "guestbook", "start=" + ((ix * 15) - 15) + "&end=" + (ix * 15) + "",
 
 		function(data) {
 			var json = jQuery.parseJSON(data);

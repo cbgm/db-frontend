@@ -77,6 +77,7 @@ define([
 				if (_projects.length === 0) {
 					_nextEnd = true;
 					_currentPage--;
+					_view.find("#entry-navigation-bottom").css("display", "none");
 				}
 
 				if (_projects.length < 20) {
