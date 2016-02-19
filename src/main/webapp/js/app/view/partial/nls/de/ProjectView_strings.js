@@ -1,6 +1,5 @@
 define({
-	"nextpage_button_text" : "Neuer &#9654;",
-	"prepage_button_text" : "&#9664; Älter",
+	"loadmore_button_text" : "MEHR EINTRÄGE LADEN",
 	"add_button_text" : "Projekt hinzufügen",
 	"add_sub_button_text" : "Artikel hinzufügen",
 	"edit_button_text" : "Bearbeiten",

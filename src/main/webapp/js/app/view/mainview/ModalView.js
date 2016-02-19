@@ -1,12 +1,10 @@
 define([
 	'lib/mobile-nav',
 	'lib/i18n!mainview/nls/ModalView_strings',
-	'lib/highlight',
 	'lib/jquery'
 ], function (
 	MobileNav,
 	Strings,
-	highlight,
 	jQuery
 ) {
 	'use strict';
@@ -29,7 +27,6 @@ define([
 								Strings.developer_text +
 								"</br><span style='font-size: 0.8em;'>" + Strings.creative_text + "</span>" +
 								"</br><span style='font-size: 0.7em;'>" + Strings.space_text + "</span>" +
-//								"Because creativity is infinite" +
 							"</div>" +
 						"</div>" +
 					"</div>" +
@@ -104,8 +101,6 @@ define([
 			}
 			contentContainer.empty();
 			contentContainer.append(content.get());
-			contentContainer.find('.visitor pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
-
 		};
 
 		this.get = function () {

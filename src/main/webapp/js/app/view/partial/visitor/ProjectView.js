@@ -4,6 +4,7 @@ define([
 	'util/Locale',
 	'lib/gallery-cb',
 	'lib/i18n!partialview/nls/ProjectView_strings',
+	'lib/highlight',
 	'lib/jquery'
 ], function (
 	ProjectController,
@@ -11,6 +12,7 @@ define([
 	Locale,
 	gallery,
 	Strings,
+	highlight,
 	jQuery
 ) {
 	'use strict';
@@ -32,43 +34,34 @@ define([
 			var $view = jQuery(
 					"<div id='content' class='visitor'>" +
 						"<div id='content-spacer' class='project'>" +
-							"<div id='entry-navigation-top' class='section'>" +
-								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
-							"</div>" +
 							"<div style='clear: both;'></div>" +
 							"<div id='entries' class='section'>" +
 							"</div>" +
 							"<div id='entry-navigation-bottom' class='section'>" +
-								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
+								"<div id='center-box'>" +
+									"<span class='plus'>+</span>" +
+									"<div id='spinner-holder'>" +
+										"<div class='spinner-container'>" +
+											"<div class='loadmore-spinner'></div>" +
+										"</div>" +
+									"</div>" +
+									"<a class='loadMore'>" + Strings.loadmore_button_text + "</a>" +
+								"</div>" +
 							"</div>" +
 							"<div style='clear: both;'></div>" +
 						"</div>" +
 					"</div>");
 
-			$view.find(".nextPage").on('click', function () {
-
-				if(!_preEnd){
-
-					if (_nextEnd) {
-						_nextEnd = false;
-					}
-					--_currentPage;
-					update(_currentPage, function (){
-						Logger.log("reloading news project done");
-					});
-				}
-			});
-
-			$view.find(".prePage").on('click', function () {
+			$view.find(".loadMore").on('click', function () {
 
 				if(!_nextEnd){
-
-					if (_preEnd) {
-						_preEnd =false;
-					}
 					++_currentPage;
+					$view.find(".plus").hide();
+					$view.find("#spinner-holder").css("display", "inline-block");
 					update(_currentPage, function (){
-						Logger.log("reloading project entries done");
+						Logger.log("reloading news entries done");
+						$view.find("#spinner-holder").css("display", "none");
+						$view.find(".plus").show();
 					});
 				}
 			});
@@ -88,10 +81,7 @@ define([
 
 				if (_projects.length < 20) {
 					_nextEnd = true;
-				}
-
-				if (_currentPage === 1) {
-					_preEnd = true;
+					_view.find("#entry-navigation-bottom").css("display", "none");
 				}
 
 				if (_projects.length > 0) {
@@ -129,7 +119,9 @@ define([
 									"</div>";
 					}
 
-					_view.find('#entries').append(result);
+					var jres = jQuery(result);
+					jres.find('pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
+					_view.find('#entries').append(jres);
 
 					_view.find(".sub-entry-ref").bind('click', function () {
 						var split = this.id.split("/"); 

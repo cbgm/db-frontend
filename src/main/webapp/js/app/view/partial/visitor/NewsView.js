@@ -4,6 +4,7 @@ define([
 	'util/Locale',
 	'lib/gallery-cb',
 	'lib/i18n!partialview/nls/NewsView_strings',
+	'lib/highlight',
 	'lib/jquery'
 ], function (
 	NewsController,
@@ -11,6 +12,7 @@ define([
 	Locale,
 	gallery,
 	Strings,
+	highlight,
 	jQuery
 ) {
 	'use strict';
@@ -26,49 +28,41 @@ define([
 			_lastPageEntryCount = 0,
 			_preEnd = false,
 			_nextEnd = false,
+			_lastIndex = 0,
 			_news;
 
 		_view = (function () {
 			var $view = jQuery(
 					"<div id='content' class='visitor'>" +
 						"<div id='content-spacer' class='news'>" +
-							"<div id='entry-navigation-top' class='section'>" +
-								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
-							"</div>" +
 							"<div style='clear: both;'></div>" +
 							"<div id='entries' class='section'>" +
 							"</div>" +
 							"<div id='entry-navigation-bottom' class='section'>" +
-								"<a class='prePage specialColor'>" + Strings.prepage_button_text + "</a><a class='nextPage specialColor'>" + Strings.nextpage_button_text + "</a>" +
+								"<div id='center-box'>" +
+									"<span class='plus'>+</span>" +
+									"<div id='spinner-holder'>" +
+										"<div class='spinner-container'>" +
+											"<div class='loadmore-spinner'></div>" +
+										"</div>" +
+									"</div>" +
+									"<a class='loadMore'>" + Strings.loadmore_button_text + "</a>" +
+								"</div>" +
 							"</div>" +
 							"<div style='clear: both;'></div>" +
 						"</div>" +
 					"</div>");
 
-			$view.find(".nextPage").on('click', function () {
-
-				if(!preEnd){
-
-					if (_nextEnd) {
-						_nextEnd =false;
-					}
-					--_currentPage;
-					update(_currentPage, function (){
-						Logger.log("reloading news entries done");
-					});
-				}
-			});
-
-			$view.find(".prePage").on('click', function () {
+			$view.find(".loadMore").on('click', function () {
 
 				if(!_nextEnd){
-
-					if (_preEnd) {
-						_preEnd =false;
-					}
 					++_currentPage;
+					$view.find(".plus").hide();
+					$view.find("#spinner-holder").css("display", "inline-block");
 					update(_currentPage, function (){
 						Logger.log("reloading news entries done");
+						$view.find("#spinner-holder").css("display", "none");
+						$view.find(".plus").show();
 					});
 				}
 			});
@@ -79,34 +73,29 @@ define([
 		function update (page, callback){
 //			var entries;
 			NewsController.getPaginatedEntries(page, function (data) {
-				_news = data;
+				if (typeof _news !== "undefined") {
+					_news = _news.concat(data);
+				} else {
+					_news = data;
+				}
 				if (_news.length === 0) {
 					_nextEnd = true;
 					_currentPage--;
 				}
 
-				if (_news.length < 20) {
+				if (data.length < 5) {
 					_nextEnd = true;
-				}
-
-				if (_currentPage === 1) {
-					_preEnd = true;
+					_view.find("#entry-navigation-bottom").css("display", "none");
 				}
 
 				if (_news.length > 0) {
-					_view.find('#entries').empty();
-					
-					//set pages count
-	
+
 					var result =	"";
 					
 					//pages add
-					for (var i = 0; i < _news.length; i++) {
+					for (var i = _lastIndex; i < _news.length; i++) {
 						result +=	"<div class='entry'>" +
-//										"<div><h4>" + entries[i].newsId + "</h4></div>" +
 										"<div><h2>" + Locale.setContentByLocale(_news[i].title, _news[i].titleAlt) + "</h2></div>" +
-//										"<h2>#" + entries[i].newsId + "&nbsp;&nbsp;|&nbsp;&nbsp;" + entries[i].title + "</h2>" +
-										
 										"<ul class='taglist'>";
 						var tags = _news[i].tags;
 										for (var x =0; x < tags.length; x++) {
@@ -120,9 +109,12 @@ define([
 											"<div style='clear: both;'></div>" +
 										"</div>" +
 									"</div>";
+						++_lastIndex;
 					}
 
-					_view.find('#entries').append(result);
+					var jres = jQuery(result);
+					jres.find('pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
+					_view.find('#entries').append(jres);
 					_view.galleryInit();
 				}
 				callback();

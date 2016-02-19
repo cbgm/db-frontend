@@ -4,6 +4,7 @@ define([
 	'util/Locale',
 	'lib/gallery-cb',
 	'lib/i18n!partialview/nls/ProjectView_strings',
+	'lib/highlight',
 	'lib/jquery'
 ], function (
 	ProjectController,
@@ -11,6 +12,7 @@ define([
 	Locale,
 	gallery,
 	Strings,
+	highlight,
 	jQuery
 ) {
 	'use strict';
@@ -73,6 +75,7 @@ define([
 							"</div>";
 
 				_view.find('#entries').append(result);
+				_view.find('pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
 
 				_view.find(".sub-entry-ref").bind('click', function () {
 					var split = this.id.split("/"); 

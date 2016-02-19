@@ -1,7 +1,6 @@
 define({
 	"root" : {
-		"nextpage_button_text" : "Newer &#9654;",
-		"prepage_button_text" : "&#9664; Older",
+		"loadmore_button_text" : "LOAD MORE POSTS",
 		"add_button_text" : "Add Project",
 		"add_sub_button_text" : "Add Article",
 		"edit_button_text" : "Edit",

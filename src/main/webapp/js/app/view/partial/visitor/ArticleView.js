@@ -4,6 +4,7 @@ define([
 	'util/Locale',
 	'lib/gallery-cb',
 	'lib/i18n!partialview/nls/ArticleView_strings',
+	'lib/highlight',
 	'lib/jquery'
 ], function (
 	ArticleController,
@@ -11,6 +12,7 @@ define([
 	Locale,
 	gallery,
 	Strings,
+	highlight,
 	jQuery
 ) {
 	'use strict';
@@ -65,6 +67,7 @@ define([
 									"</div>";
 
 					_view.find('#entries').append(result);
+					_view.find('pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
 				}
 				callback();
 			});

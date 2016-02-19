@@ -3,12 +3,14 @@ define([
 	'util/Logger',
 	'util/Locale',
 	'lib/gallery-cb',
+	'lib/highlight',
 	'lib/jquery'
 ], function (
 	NewsController,
 	Logger,
 	Locale,
 	gallery,
+	highlight,
 	jQuery
 ) {
 	'use strict';
@@ -61,6 +63,7 @@ define([
 									"</div>";
 
 					_view.find('#entries').append(result);
+					_view.find('pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
 				}
 				callback();
 			});

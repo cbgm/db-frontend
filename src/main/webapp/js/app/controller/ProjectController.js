@@ -23,7 +23,7 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 	function getPaginatedEntries(ix, callback) {
 
 		Request.doGetWithParams(Configuration.get("API_URL")
-				+ "/projects/page", "projects", "start=" + ((ix * 20) - 20) + "&end=" + (ix * 20) + "",
+				+ "/projects/page", "projects", "start=" + ((ix * 5) - 5) + "&end=" + (ix * 5) + "",
 
 		function(data) {
 			var json = jQuery.parseJSON(data);
