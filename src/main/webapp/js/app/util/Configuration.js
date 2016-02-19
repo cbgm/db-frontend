@@ -8,8 +8,8 @@ define([
 	var _configuration = {
 				DEBUG: true,
 				LOG_USER: false,
-				API_URL: "http://localhost:8080/backend",
-//				API_URL: "http://jbossews-creativesp.rhcloud.com/backend",
+//				API_URL: "http://localhost:8080/backend",
+				API_URL: "http://jbossews-creativesp.rhcloud.com/backend",
 //				API_URL: "http://creativespace.ddns.net:8080/backend",
 
 				LOADING_CANVAS_SPEED: 20

@@ -76,12 +76,12 @@ define([
 										"<img src='img/designs/banner-salzbad.jpg' style='display: none;' rel='designs' alt=''/>" +
 										"<img src='img/designs/c-enter.jpg' style='display: none;' rel='designs' alt=''/>" +
 										"<img src='img/designs/cad.jpg' rel='designs' alt=''/>" +
-										"<img src='img/designs/construct-omg.jpg' style='display: none;' rel='designs' alt=''/>" +
+//										"<img src='img/designs/construct-omg.jpg' style='display: none;' rel='designs' alt=''/>" +
 										"<img src='img/designs/holger-portfolio.jpg' rel='designs' alt=''/>" +
-										"<img src='img/designs/logo-my-web.jpg' style='display: none;' rel='designs' alt=''/>" +
+//										"<img src='img/designs/logo-my-web.jpg' style='display: none;' rel='designs' alt=''/>" +
 										"<img src='img/designs/mystic-clan.jpg' style='display: none;' rel='designs' alt=''/>" +
 										"<img src='img/designs/skate.jpg' rel='designs' alt=''/>" +
-										"<img src='img/designs/high.jpg' style='display: none;' rel='designs' alt=''/>" +
+//										"<img src='img/designs/high.jpg' style='display: none;' rel='designs' alt=''/>" +
 									"</div>" +
 									"<div style='clear: both;'></div>" +
 								"</div>" +
