@@ -91,11 +91,7 @@ define([
 					GalleryController.postEntry(_gallery, function (data) {
 
 						if (data === "OK") {
-
-							update( function (){
-								Logger.log("update gallery entries done");
-								window.location.hash = "#admin/galleries";
-							});
+							window.location.hash = "#admin/galleries";
 						} else {
 							_view.find(".post-text").css("display", "block");
 							_view.find(".loading-spinner").css("display", "none");
