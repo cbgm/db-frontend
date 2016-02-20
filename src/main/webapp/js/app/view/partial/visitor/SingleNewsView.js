@@ -1,6 +1,7 @@
 define([
 	'controller/NewsController',
 	'util/Logger',
+	'util/Configuration',
 	'util/Locale',
 	'lib/gallery-cb',
 	'lib/highlight',
@@ -8,6 +9,7 @@ define([
 ], function (
 	NewsController,
 	Logger,
+	Configuration,
 	Locale,
 	gallery,
 	highlight,
@@ -63,6 +65,7 @@ define([
 									"</div>";
 
 					_view.find('#entries').append(result);
+					_view.galleryInit({ originalPath: Configuration.get('API_URL') + "/img/" });
 					_view.find('pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
 				}
 				callback();
@@ -76,7 +79,6 @@ define([
 		}
 
 		this.get = function () {
-			_view.galleryInit();
 			return _view;
 		};
 

@@ -149,7 +149,7 @@ define([
 						_view.find(".show-text").css("display", "block");
 						_view.find(".loading-spinner").css("display", "none");
 					};
-					imageObj.src = Configuration.get("API_URL") + "/images/" + this.id;
+					imageObj.src = Configuration.get("API_URL") + "/images/thumb/" + this.id;
 				});
 
 				_view.find("#imageLoader").on("change", function (e) {

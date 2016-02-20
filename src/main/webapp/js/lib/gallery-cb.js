@@ -1,15 +1,19 @@
 define([
+	'util/Configuration',
  	'lib/jquery'
  
 ], function (
+	Configuration,
 	jQuery
 ) {
 	'use strict';
+	var settings = null;
 
-	jQuery.fn.galleryInit = function() {
+	jQuery.fn.galleryInit = function(options) {
 		var _body = jQuery('body'),
 			_affectedElement,
 			_galleryOverlay,
+			_originalPath = Configuration.get('API_URL') + "/images/",
 			_closeButton,
 			_nextButton,
 			_preButton,
@@ -22,6 +26,12 @@ define([
 			_gallerySize = 0,
 			_pictureInfo,
 			_waterMark = (window.location.href).indexOf("creative--space.de") === -1 ? true: false; 
+		
+		var defaults = {
+			originalPath : null
+		}
+
+		settings = jQuery.extend({}, defaults, options );
 
 		jQuery(".gallery-overlay").remove();
 		var result = "<div class='gallery-overlay'>" +
@@ -102,7 +112,7 @@ define([
 		_images.unbind("click");
 		_images.bind("click", function () {
 			doSizing();
-			_galleryImage.attr("src", this.src);
+			_galleryImage.attr("src", correctSrc(this.src));
 			loadImages(this);
 			findCurrentIndex(this);
 			_pictureInfo.html((_currentIndex+1) + " / " + _gallerySize);
@@ -193,8 +203,24 @@ define([
 						
 					}); 
 				}); 
-			_galleryImage.attr("src", src);
+			_galleryImage.attr("src", correctSrc(src));
 			}); 
+		}
+
+		function correctSrc(thumbSrc) {
+
+			if (_originalPath !== null) {
+
+				if (thumbSrc.indexOf(_originalPath) !== -1) {
+					var splitThumb = thumbSrc.split("/");
+					var originalSrc = _originalPath + splitThumb[splitThumb.length-1];
+					return originalSrc;
+				} else {
+					return thumbSrc;
+				}
+			} else {
+				return thumbSrc;
+			}
 		}
 	}
 	return this;

@@ -1,6 +1,7 @@
 define([
 	'controller/ProjectController',
 	'util/Logger',
+	'util/Configuration',
 	'util/Locale',
 	'lib/gallery-cb',
 	'lib/i18n!partialview/nls/ProjectView_strings',
@@ -9,6 +10,7 @@ define([
 ], function (
 	ProjectController,
 	Logger,
+	Configuration,
 	Locale,
 	gallery,
 	Strings,
@@ -122,6 +124,7 @@ define([
 					var jres = jQuery(result);
 					jres.find('pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
 					_view.find('#entries').append(jres);
+					_view.galleryInit({ originalPath: Configuration.get('API_URL') + "/img/" });
 
 					_view.find(".sub-entry-ref").bind('click', function () {
 						var split = this.id.split("/"); 
@@ -141,7 +144,6 @@ define([
 		}
 
 		this.get = function () {
-			_view.galleryInit();
 			return _view;
 		};
 

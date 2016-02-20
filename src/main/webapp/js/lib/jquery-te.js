@@ -745,7 +745,7 @@ define([
 			//costumization
 			function linkImage() {
 				var select_val = jQuery( ".images_select option:selected" ).val();
-				var html = "<img src='" + Configuration.get("API_URL") + "/images/"+ select_val + "' alt=''>";
+				var html = "<img src='" + Configuration.get("API_URL") + "/images/thumb/"+ select_val + "' alt=''>";
 				jQuery(".imagetext").val(html);
 				// focus to link-input
 //				var editor = jQuery('#jqtetext');
@@ -775,9 +775,9 @@ define([
 				for (var i = 0; i < images.length; i++) {
 
 					if (i === 0) {
-						html += "<img width='70' src='" + Configuration.get("API_URL") + "/images/"+ images[i].imageId + "' alt='' rel='" + gallery.name + "'>";
+						html += "<img width='70' src='" + Configuration.get("API_URL") + "/images/thumb/"+ images[i].imageId + "' alt='' rel='" + gallery.name + "'>";
 					} else {
-						html += "<img width='70' style='display: none;' src='" + Configuration.get("API_URL") + "/images/"+ images[i].imageId + "' alt='' rel='" + gallery.name + "'>";
+						html += "<img width='70' style='display: none;' src='" + Configuration.get("API_URL") + "/images/thumb/"+ images[i].imageId + "' alt='' rel='" + gallery.name + "'>";
 					}
 				}
 				jQuery(".gallerytext").val(html);

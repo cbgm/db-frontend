@@ -1,6 +1,7 @@
 define([
 	'controller/ArticleController',
 	'util/Logger',
+	'util/Configuration',
 	'util/Locale',
 	'lib/gallery-cb',
 	'lib/i18n!partialview/nls/ArticleView_strings',
@@ -9,6 +10,7 @@ define([
 ], function (
 	ArticleController,
 	Logger,
+	Configuration,
 	Locale,
 	gallery,
 	Strings,
@@ -67,6 +69,7 @@ define([
 									"</div>";
 
 					_view.find('#entries').append(result);
+					_view.galleryInit({ originalPath: Configuration.get('API_URL') + "/img/" });
 					_view.find('pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
 				}
 				callback();

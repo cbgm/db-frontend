@@ -62,7 +62,7 @@ define([
 									"<ul class='imagelist'>";
 		
 				for (var i = 0; i < _images.length; i++) {					
-										result += "<li><div class='image' id='" + _images[i].imageId + "'><img alt='' src='" + Configuration.get("API_URL") + "/images/" + _images[i].imageId + "'/><div></li>";
+										result += "<li><div class='image' id='" + _images[i].imageId + "'><img alt='' src='" + Configuration.get("API_URL") + "/images/thumb/" + _images[i].imageId + "'/><div></li>";
 				}
 				result +=			"</ul>" +
 									"<div style='clear: both;'></div>" +

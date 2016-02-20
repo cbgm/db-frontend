@@ -121,11 +121,11 @@ define([
 						"</div>" +
 					"</div>");
 
+			$view.galleryInit(null);
 			return $view;
 		})();
 
 		this.get = function () {
-			_view.galleryInit();
 			return _view;
 		};
 

@@ -1,6 +1,7 @@
 define([
 	'controller/NewsController',
 	'util/Logger',
+	'util/Configuration',
 	'util/Locale',
 	'lib/gallery-cb',
 	'lib/i18n!partialview/nls/NewsView_strings',
@@ -9,6 +10,7 @@ define([
 ], function (
 	NewsController,
 	Logger,
+	Configuration,
 	Locale,
 	gallery,
 	Strings,
@@ -115,6 +117,8 @@ define([
 					var jres = jQuery(result);
 					jres.find('pre.code').highlightCode({source:0, zebra:1, indent:'tabs', list:'ol'});
 					_view.find('#entries').append(jres);
+					_view.galleryInit({ originalPath: Configuration.get('API_URL') + "/img/" });
+
 					_view.galleryInit();
 				}
 				callback();
