@@ -20,6 +20,8 @@ define([
 			_imageHolder,
 			_galleryModal,
 			_galleryImage,
+			_imageLoader,
+			_spinner,
 			_images,
 			_affectedGallery,
 			_currentIndex = 0,
@@ -40,6 +42,13 @@ define([
 								"<span class='helper'></span>" +
 								"<img src= ''>" +
 							"</div>" +
+							"<div class='image-loader'>" +
+								"<div id='spinner-holder'>" +
+									"<div class='spinner-container'>" +
+										"<div class='loading-spinner'></div>" +
+									"</div>" +
+								"</div>" +
+							"</div>" +
 							"<div class='gallery-button-close'></div>" +
 							"<div class='gallery-button-left'></div>" +
 							"<div class='gallery-button-right'></div>" +
@@ -59,6 +68,8 @@ define([
 		_nextButton =  _body.find(".gallery-button-right");
 		_preButton =  _body.find(".gallery-button-left");
 		_imageHolder =  _body.find(".gallery-image");
+		_imageLoader =  _body.find(".image-loader");
+		_spinner = _body.find(".spinner-container");
 		_galleryModal =  _body.find(".gallery-modal");
 		_galleryImage =  _body.find(".gallery-image img");
 		_pictureInfo =  _body.find(".picture-info");
@@ -167,7 +178,10 @@ define([
 					.css('width', _imageHolderWidth)
 					.css('margin-left', imageLeft)
 					.css('margin-top', imageTop);
-
+				_imageLoader.css('height', _imageHolderHeight)
+					.css('width', _imageHolderWidth)
+					.css('margin-left', imageLeft)
+					.css('margin-top', imageTop);
 				//image
 				_galleryImage.css('max-height', _imageHolderHeight);
 				_galleryImage.css('max-width', _imageHolderWidth);
@@ -185,7 +199,10 @@ define([
 					.css('width', _imageHolderWidth)
 					.css('margin-left', imageLeft)
 					.css('margin-top', imageTop);
-
+				_imageLoader.css('height', _imageHolderHeight)
+					.css('width', _imageHolderWidth)
+					.css('margin-left', imageLeft)
+					.css('margin-top', imageTop);
 				//image
 				_galleryImage.css('max-height', _imageHolderHeight);
 				_galleryImage.css('max-width', _imageHolderWidth);
@@ -197,14 +214,16 @@ define([
 		}
 
 		function doImageFade(src) {
-			_galleryImage.fadeOut(function() { 
+			
+			_galleryImage.fadeOut(function() {
+				_spinner.show();
 				jQuery(this).load(function() {
+					_spinner.hide();
 					jQuery(this).fadeIn(function () {
-						
-					}); 
-				}); 
+					});
+				});
 			_galleryImage.attr("src", correctSrc(src));
-			}); 
+			});
 		}
 
 		function correctSrc(thumbSrc) {

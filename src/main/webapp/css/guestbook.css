@@ -137,7 +137,6 @@
 
 .guestbook #entry-form-container .entry-text {
 	height: 120px;
-	line-height: 16px;
 	resize: none;
 	overflow: hidden;
 }
