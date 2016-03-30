@@ -9,6 +9,12 @@
 	background-color: rgba(0,0,0,0.5); /*dim the background*/
 }
 
+.gallery-overlay:after
+{
+	content: url(../img/gallery-right-hover.png) url(../img/gallery-left-hover.png) url(../img/gallery-close-hover.png);
+	display: none;
+}
+
 .gallery-modal {
 
 	background-color: rgba(0,0,0,0.8);

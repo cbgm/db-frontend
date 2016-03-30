@@ -44,6 +44,12 @@ body {
 	color: #575757;
 }
 
+body:after
+{
+	content: url('../img/admin-button-hover.png') url('../img/logout-button-hover.png') url('../img/visitor-button-hover.png');
+	display: none;
+}
+
 table {
 	border-collapse: collapse;
 }
