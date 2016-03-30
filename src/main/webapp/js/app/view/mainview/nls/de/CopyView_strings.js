@@ -1,4 +1,5 @@
 define({
-	"rightsreserved_text" : "Alle Rechte vorbehalten"
+	"rightsreserved_text" : "Alle Rechte vorbehalten",
+	"imprint_button_text" : "Impressum"
 
 });

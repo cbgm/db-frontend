@@ -123,7 +123,7 @@ define([
 		_images.unbind("click");
 		_images.bind("click", function () {
 			doSizing();
-			_galleryImage.attr("src", correctSrc(this.src));
+			doImageFade(correctSrc(this.src));
 			loadImages(this);
 			findCurrentIndex(this);
 			_pictureInfo.html((_currentIndex+1) + " / " + _gallerySize);

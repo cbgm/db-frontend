@@ -10,6 +10,8 @@ define([
 	_URLMap.set('newsSingle', '^#news\/[0-9]{1,}$');
 	_URLMap.set('newsOverview', '^#news$');
 	_URLMap.set('aboutOverview', '^#about$');
+	_URLMap.set('imprintOverview', '^#imprint$');
+	_URLMap.set('privacyOverview', '^#privacy$');
 	_URLMap.set('projectsOverview', '^#projects$');
 	_URLMap.set('projectsSingle', '^#projects\/[0-9]{1,}$');
 	_URLMap.set('projectsArticleSingle', '^#projects\/[0-9]{1,}\/articles\/[0-9]{1,}$');

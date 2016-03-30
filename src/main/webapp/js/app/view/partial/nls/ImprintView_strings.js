@@ -1,0 +1,11 @@
+define({
+	"root" : {
+		"imprint_text" : "<h2>Imprint</h2><br><h3>Publisher</h3><p>Christian Bergmann<br>christian(.)bergmann(at)kunstadt(.)de<br>Germany<br>96215 Lichtenfels<br>Leuchsenweg 12</p>" +
+		"" +
+		"<br><h2>Disclaimer</h2><p><br><strong>Online contents</strong></p> <p>The author reserves the right not to be responsible for the topicality, correctness, completeness or quality of the information provided. Liability claims regarding damage caused by the use of any information provided, including any kind of information which is incomplete or incorrect, will therefore be rejected. All offers are not-binding and without obligation. Parts of the pages or the complete publication including all offers and information might be extended, changed or partly or completely deleted by the author without separate announcement.  </p> <p><br><strong>Copyright</strong></p> <p>The author intended not to use any copyrighted material for the publication or, if not possible, to indicate the copyright of the respective object. The copyright for any material created by the author is reserved. Any duplication or use of such diagrams, sounds or texts in other electronic or printed publications is not permitted without the author's agreement. </p><p> </p>" +
+		"" +
+		"<br><strong>Data security</strong></p> <p>If the possibility for the input of personal or business data (email addresses, name, addresses) exists, the input of these data takes place voluntarily. The use and payment of all offered services are permitted - if and so far technically possible and reasonable - without specification of such data or under specification of anonymizated data or an alias. </p><p> </p><p><br><strong>Cookies</strong></p> <p>To optimize our web presence, we use cookies. These are small text files stored in your computer's main memory. These cookies are deleted after you close the browser. Other cookies remain on your computer (long-term cookies) and permit its recognition on your next visit. This allows us to improve your access to our site. You can prevent storage of cookies by choosing a 'disable cookies' option in your browser settings. But this can limit the functionality of our Internet offers as a result.</p><p> </p>"
+
+	},
+	"de" : true
+});

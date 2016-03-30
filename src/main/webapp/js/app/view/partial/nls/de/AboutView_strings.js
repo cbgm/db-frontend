@@ -7,24 +7,24 @@ define({
 	"extreme_text" : "Zur aller erst Extremsportarten. Es ist faszinierend, was mit dem Körper möglich ist, " +
 						"wenn man ans Limit geht. Man kann hier nichts erreichen, wenn man nicht seine ganze Energie und Herzblut hinein steckt. ",
 
-	"skate_head_text" : "#Skateboarding",
+	"skate_head_text" : "#Skateboarden",
 	"skate_text" : "Das Skateboarden ist mein Favorit. Angefangen habe ich im Alter von 15 Jahren, " +
 					"und es ist (dominiert) immer noch mein Leben, mein Ruhepol und Stück Himmel. Der Auslöser war damals ein Videospiel. " +
 					"&quotWie ein Videospiel? Wie kann das sein?&quot Auch Videospiele können den Energiefluss " +
 					"und die Einstellung einer Sportart wiedergeben. Seit ich damit angefangen habe hat es mir durch einige schwere Zeiten geholfen " +
 					"und ermöglicht neue Freunde zu finden, die einen durchs Leben begleiten. Außerdem ist das Gefühl der Freiheit unbeschreiblich und man lernt nie aus. " +
 					"<img id='sk8-img' src='img/skateboard_me.png' alt=''/>" +
-					"</br></br>Es gibt einige Dokumentationsfilme die das Gefühl auf den vier Rollen wiederspielgen können. Folgenden kann ich empfehlen, ...falls Interesse besteht. <i>'<a href='https://vimeo.com/1353988' target='_blank'>Born to skate</a>'</i>, dokumentiert einen Roadtrip von zwei deutschen Freunden " +
-					". Dieser Film war zudem Bestandteil ihrer Masterarbeit. Natürlich kann man nichts von dem Sport zurück erwarten, wenn man nicht mit dem Herz bei der Sache ist und ja " +
+					"</br></br>Es gibt einige Dokumentationsfilme die das Gefühl auf den vier Rollen wiederspiegeln können. Folgenden kann ich empfehlen, ...falls Interesse besteht. <i>'<a href='https://vimeo.com/1353988' target='_blank'>Born to skate</a>'</i>, dokumentiert einen Road Trip von zwei deutschen Freunden. " +
+					"Dieser Film war zudem Bestandteil ihrer Masterarbeit. Natürlich kann man nichts von dem Sport zurück erwarten, wenn man nicht mit dem Herz bei der Sache ist und ja " +
 					" ...es gibt auch schmerzhafte Zeiten. Aber wie es im Leben so ist, mit harter Arbeit zahlt sich das aus. " +
 					
-					"</br></br>Spricht man über die Gemeinschaft so lässt sich sagen, dass es keinen Hass gibt, wie in manch anderer Sportart. Jeder ist wilkommen der Interesse hat es zu lernen " +
-					"Man unterstützt sich und feiert seine Freunde, wenn sie einen harten Trick landen. Es gibt keinen richtigen Wettbewerb, sogar auf professionellem Niveau. Es geht vor allem darum mit Leuten Zeit zu verbringen, die die selbe Einstellung zu diesem Sport besitzen und es lieben. " +
-					"</br>Vielleicht konnte ich jetzt etwas die Vorstellung vermitteln, warum ich süchtig danach bin?. Vielen Dank an meine Untersützter! (<a href='http://www.darkstarskate.com/' target='_blank'>Darkstar</a>, <a href='http://www.sampleskate.com/' target='_blank'>Sample</a>)",
+					"</br></br>Spricht man über die Gemeinschaft so lässt sich sagen, dass es keinen Hass gibt, wie in manch anderer Sportart. Jeder ist willkommen der Interesse hat es zu lernen " +
+					"Man unterstützt sich und feiert seine Freunde, wenn sie einen harten Trick landen. Es gibt keinen richtigen Wettbewerb, sogar auf professionellem Niveau. Es geht vor allem darum mit Leuten Zeit zu verbringen, die dieselbe Einstellung zu diesem Sport besitzen und es lieben. " +
+					"</br>Vielleicht konnte ich jetzt etwas die Vorstellung vermitteln, warum ich süchtig danach bin? Vielen Dank an meine Unterstützer! (<a href='http://www.darkstarskate.com/' target='_blank'>Darkstar</a>, <a href='http://www.sampleskate.com/' target='_blank'>Sample</a>)",
 
 	"snow_head_text" : "#Snowboarden",
 	"snow_text" : "Ich würde nicht so weit gehen und sagen, dass Snowboarden die gleiche Bedeutung wie Skateboarden für mich hat. Aber" +
-					"es ist an manchen Tagen eine der besten alternativen im Winter, wenn man mal keine Halle zur Verfügung hat in der man skaten kann." +
+					" es ist an manchen Tagen eine der besten alternativen im Winter, wenn man mal keine Halle zur Verfügung hat in der man skaten kann. " +
 					"Vor allem, wenn man in einer kleinen Stadt wie ich lebt.",
 
 	"music_head_text" : "#Musik",
@@ -42,29 +42,29 @@ define({
 	"drums_text" : "Seit dem ich ein Kind war hat mich dieses starke Instrument fasziniert und ehrlich gesagt kann ich nicht den Grund dafür nennen. " +
 					"Allerdings habe ich erst 2011 wirklich richtig dazu gefunden und mir meine erste E-Drum gekauft. Da ich zu dieser Zeit ein armer Student war" +
 					", blieb mir nichts anderes übrig, als learning by doing anzuwenden. Glücklicherweise habe ich eine gute Webseite gefunden die das Wissen kostenlos vermittelt (<a href='http://www.freedrumlessons.com/' target='_blank'>freedrumlessons.com</a>). " +
-					"Mit viel Ausdauer und Schweiss bin ich nun in der Lage Songs meiner Lieblingsband (<a href='http://www.avengedsevenfold.com' target='_blank'>Avenged Sevenfold</a>) zu spielen. Es hat sich also wirklich ausgezahlt. ",
+					"Mit viel Ausdauer und Schweiß bin ich nun in der Lage Songs meiner Lieblingsband (<a href='http://www.avengedsevenfold.com' target='_blank'>Avenged Sevenfold</a>) zu spielen. Es hat sich also wirklich ausgezahlt. ",
 
 	"technology_head_text" : "#Technologie",
 	"technology_text" : "So, jetzt sind wir ganz in der Nähe der Zeit, in der die Wahl meiner Studienrichtung relativ klar war, oder? Vielleicht ..., glücklicherweise hatten meine Eltern vor Technik keine Angst. Der erste Fremdkontakt war mit dem Geschenk eines elektronischen Mikrokontroller," +
-						" Cosmos Kit. Ich hatte jetzt die Möglichkeit ein Alarmsystem zu bauen , yay :). "+" </ br> Die nächste neue Erfahrung begann damit," +
+						" Cosmos Kit. Ich hatte jetzt die Möglichkeit ein Alarmsystem zu bauen, yay :). "+" </ br> Die nächste neue Erfahrung begann damit," +
 								" als meine Freunde und ich versuchten, unsere Fotos online zu stellen, die wir beim Skateboarden gemacht hatten. Zuerst mit Hilfe von Frontpage" +
 								" (was heutzutage relativ beschissen ist). Aber nach einiger Zeit schon, habe ich meine ersten Schritte mit HTML und Macromedia Flash ( Actionscript ) versucht," +
 								" (ich mag Flash immer noch, auch entgegen gesetzt der Meinung von anderen). "+" <br><br> Die Jahre vergingen und ich kam stetig mit anderen Technologien in Berührung," +
-								" ob die Programmierung und ihre verschiedenen Sprachen oder Hardware (-Design). Aber im eigentlichen bin ich vor allem beim programmieren und Webdesign bzw. oder den verteilten Systeme hängen geblieben. Ich brauche einfach Vielfalt und Abwechslung ... ",
+								" ob die Programmierung und ihre verschiedenen Sprachen oder Hardware (-Design). Aber im eigentlichen bin ich vor allem beim programmieren und Webdesign bzw. oder den verteilten Systeme hängen geblieben. Ich brauche einfach Vielfalt und Abwechslung... ",
 
 	"programming_head_text" : "#Programmieren",
 	"programming_text" : "Also, welche Art von Dingen habe ich mit meinen Programmierkenntnissen bisher eigentlich so gemacht? Es begann mit den ersten Schritten in der Web-Entwicklung, einfache statische HTML-Seiten. " +
-							"Nach diesen Schritten entdeckte ich für mich Adobe Flash und versuchte mein Bestes, meine erste dynamische Seite mit einigen Animationen zu definieren. Dann, Jahre nachdem meine Ausbildung begonnen hatte, tauchte ich in die C-Welt, Datenbanken, etc. ein. Kleine Programme wie z.B. ein Datei-Manager oder ein automatisches Daten Update-Tool, waren meine ersten Errungenschaften. Mittlerweile bin ich in der Lage, alles zu basteln was ich so möchte -.. von komplexen Websites, bis hin zu einer Bewegungserkennung mittels Sensoren (auch dank meines Studiums).",
+							"Nach diesen Schritten entdeckte ich für mich Adobe Flash und versuchte mein Bestes, meine erste dynamische Seite mit einigen Animationen zu definieren. Dann, Jahre nachdem meine Ausbildung begonnen hatte, tauchte ich in die C-Welt, Datenbanken, etc. ein. Kleine Programme wie z.B. ein Datei-Manager oder ein automatisches Daten Update-Tool, waren meine ersten Errungenschaften. Mittlerweile bin ich in der Lage, alles zu basteln was ich so möchte - von komplexen Websites, bis hin zu einer Bewegungserkennung mittels Sensoren (auch dank meines Studiums).",
 
 	"design_head_text" : "#Design",
-	"design_text" : "An dieser Stelle gibt es nicht so viel zu sagen. Sehen Sie sich einfach die folgende Galerie an in der mein Prozess ein bischen deutlich wird. Nur eines noch - ich bin <u> kein </u> Designer, aber ich gebe mein Bestes.",
+	"design_text" : "An dieser Stelle gibt es nicht so viel zu sagen. Sehen Sie sich einfach die folgende Galerie an in der mein Prozess ein bisschen deutlich wird. Nur eines noch - ich bin <u> kein </u> Designer, aber ich gebe mein Bestes.",
 
 	"filming_head_text" : "#Filmen",
 	"filming_text" : "Ich bin eigentlich durch meine Leidenschaft des Skateboardens zum Filmen gekommen. Natürlich will man, wenn man einen neuen Trick gemeistert hat, diesen auch für immer festhalten. Bei meinem aktuellen Camcorder handelt es sich um den Canon Legria HF200. Es ist zwar keine professionelle Ausrüstung, aber es passt für meine Bedürfnisse. Beispiele folgen!",
 
 	"editing_head_text" : "#Editieren",
 	"editing_text" : "Filmen ist nicht alles. Es macht zwar von Zeit zu Zeit Spaß alte Tricks anzusehen, aber es ist doppelt so befriedigend, wenn diese auch ins rechte Licht gerückt sind. " +
-						"Ich sage dazu nur Babyschritte mit Windwos Movie Maker und mittlerweile Semi-Profesionell mit Sony Vegas. Beispiele folgen!",
+						"Ich sage dazu nur Babyschritte mit Windows Movie Maker und mittlerweile Semi-Profesionell mit Sony Vegas. Beispiele folgen!",
 
 	"academic_head_text" : "So, jetzt da Sie wissen, was mich antreibt, etwas mehr über meine akademische Laufbahn",
 
@@ -94,7 +94,7 @@ define({
 										"</li>" +
 										"<li class='event'>" +
 											"<p>" +
-												"Start des Bachelor Studiums <i>Inforamtik</i> an der University of Applied Sciences, " +
+												"Start des Bachelor Studiums <i>Informatik</i> an der University of Applied Sciences, " +
 												"Coburg" +
 											"</p>" +
 											"<span>Oktober 2008</span>" +
@@ -129,7 +129,7 @@ define({
 										"</li>" +
 										"<li class='graduate'>" +
 											"<p>" +
-												"Ende des Master Studiums <i>Inforamtik</i> an der University of Applied Sciences, " +
+												"Ende des Master Studiums <i>Informatik</i> an der University of Applied Sciences, " +
 												"Coburg</br><i>Master of Science</i>" +
 												"</br></br>Thema der Abschlussarbeit: <i>Untersuchung der Möglichkeiten zur drahtlosen Erkennung von Bewegungen am Körper</i>" +
 											"</p>" +

@@ -23,6 +23,8 @@ define([
 			           {hash: "#about"},
 			           {hash: "#projects"},
 			           {hash: "#guestbook"},
+			           {hash: "#imprint"},
+			           {hash: "#privacy"},
 			           {hash: "#login"},
 			           {hash: "#error"},
 			           {hash: "#timeout"},

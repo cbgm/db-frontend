@@ -1,5 +1,5 @@
 define([
-	'lib/i18n!mainview/nls/CopyView_strings',
+	'lib/i18n!partialview/nls/ImprintView_strings',
 	'lib/jquery'
 ], function (
 	Strings,
@@ -16,10 +16,13 @@ define([
 
 		_view = (function () {
 			var $view = jQuery(
-					"<div id='copy' style='padding-top: 5px; padding-bottom: 5px;'>" +
-						"<p id='copy-text'>Copyright &copy; " + new Date().getFullYear() + " &middot; " + Strings.rightsreserved_text + " &middot; <a href='http://creative--space.de/' >creative_</a>.</p><p><a href='#imprint' >" + Strings.imprint_button_text + "</a></p>" +
+					"<div id='content' class='visitor'>" +
+						"<div id='content-spacer' class='about'>" +
+							Strings.imprint_text +
+						"</div>" +
 					"</div>");
 
+			$view.galleryInit(null);
 			return $view;
 		})();
 

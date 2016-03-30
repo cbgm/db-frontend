@@ -14,6 +14,7 @@ define([
 	'partialview/visitor/ProjectView',
 	'partialview/visitor/SingleProjectView',
 	'partialview/visitor/ArticleView',
+	'partialview/visitor/ImprintView',
 	'partialview/visitor/ErrorView',
 	'partialview/visitor/TimeoutView',
 	'lib/jquery'
@@ -34,6 +35,7 @@ define([
 	VisitorProjectView,
 	VisitorSingleProjectView,
 	VisitorArticleView,
+	VisitorImprintView,
 	ErrorView,
 	TimeoutView,
 	jQuery
@@ -70,6 +72,11 @@ define([
 
 			if(URLDefinition.checkkUrl(route, 'aboutOverview')) {
 				_contentView = new VisitorAboutView();
+				_mainView.appendContent(_contentView.get());
+			}
+
+			if(URLDefinition.checkkUrl(route, 'imprintOverview')) {
+				_contentView = new VisitorImprintView();
 				_mainView.appendContent(_contentView.get());
 			}
 
