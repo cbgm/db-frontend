@@ -240,8 +240,8 @@ module.exports = function(grunt) {
 	});
 
 //	grunt.registerTask('production', []);
-	grunt.registerTask('production', ['clean:all', 'bowercopy', 'copy', 'env:prod', 'preprocess', 'concat', 'clean:css', 'requirejs','clean:js', 'clean:template', 'cacheBust', 'imagemin', 'clean:psd']);
-//	grunt.registerTask('production', ['clean:all', 'bowercopy', 'copy', 'env:dev', 'preprocess']);
+//	grunt.registerTask('production', ['clean:all', 'bowercopy', 'copy', 'env:prod', 'preprocess', 'concat', 'clean:css', 'requirejs','clean:js', 'clean:template', 'cacheBust', 'imagemin', 'clean:psd']);
+	grunt.registerTask('production', ['clean:all', 'bowercopy', 'copy', 'env:dev', 'preprocess']);
 
 
 };

@@ -146,15 +146,21 @@ ul.timeline p {
 	padding-right: 4px;
 	padding-left: 4px;
 	z-index: -16;
+	padding: 10px;
+	background: #498388;
+	color: white;
+}
+
+ul.timeline p:before {
 }
 
 ul.timeline li:nth-child(odd) p {
-	background: #e3e3e3;
+	/*background: #e3e3e3;*/
 	margin-right: 40px;
 }
 
 ul.timeline li:nth-child(even) p {
-	background: #e3e3e3;
+	/*background: #e3e3e3;*/
 	margin-left: 40px;
 }
 
@@ -247,4 +253,15 @@ ul.timeline li:nth-child(even) span {
 		background-size: 30px 30px;
 		right: -17px;
 	}
+	
+	/*
+	content: '';
+position: absolute;
+top: 35%;
+left: 27px;
+border-top: 15px solid transparent;
+border-bottom: 15px solid transparent;
+border-right: 15px solid #498388;
+	
+	*/
 }

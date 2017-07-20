@@ -1,10 +1,8 @@
 define([
-	'util/Locale',
 	'lib/search-cb',
 	'lib/i18n!mainview/nls/NavigationView_strings',
 	'lib/jquery'
 ], function (
-	Locale,
 	Search,
 	Strings,
 	jQuery
@@ -17,106 +15,77 @@ define([
 	return function () {
 		//some vars
 		var _view,
-			_moved =false,
-			_locales = Locale.getAvailableLocalizations();
+			_moved =false;
 
 		_view = (function () {
 			var $view = jQuery(
 					"<div id='navigation-shadowbox' class='visitor'>" +
-						"<div id='navigation-big'>" +
-							"<div id='visitor-logo'><img src='img/visitor-logo.png' alt=''/></div>" +
+						"<div id='navigation'>" +
 							"<div class='list'>" +
 								"<ul>" +
-									"<li><a href='#news'>" + Strings.news_button_text + "</a></li>" +
-									"<li><a href='#about'>" + Strings.about_button_text + "</a></li>" +
+									"<li><a href='#about'>" + Strings.home_button_text + "</a></li>" +
+									"<li><a href='#news'>" + Strings.blog_button_text + "</a></li>" +
 									"<li><a href='#projects'>" + Strings.projects_button_text + "</a></li>" +
-									"<li><a href='#guestbook'>" + Strings.guestbook_button_text + "</a></li>" +
-									"<li><a href='#admin/news'></a></li>" +
-									"<li><div id='search-box'><div><input type='text' id='text-search' placeholder='" + Strings.livesearch_placeholder_text + "' autofocus/><img alt='' src='img/search-icon.png'></div></div></li>" +
-//									"<li class='locales' style='width: 100%; display: inline-block; color: rgb(87, 87, 87); line-height: 50px; vertical-align: middle; background: white none repeat scroll 0% 0%;'></li>" +
-								"</ul>" +
-							"</div>" +
-							"<div class='locales locales-big'></div>" +
-						"</div>" +
-						"<div id='navigation-small'>" +
-							"<div id='static-logo'><img src='img/visitor-logo.png' alt=''/></div>" +
-							"<div id='navigation-small-button'>" +
-								"<div id='navigation-small-stripe-container'>" +
-									"<div class='navigation-small-stripe'></div>" +
-									"<div class='navigation-small-stripe'></div>" +
-									"<div class='navigation-small-stripe'></div>" +
-								"</div>" +
-							"</div>" +
-							"<div id='navigation-small-divider'></div>" +
-							"<div class='list'>" +
-								"<ul>" +
-									"<li><a id='bla' href='#news'>" + Strings.news_button_text + "</a></li>" +
-									"<li><a href='#about'>" + Strings.about_button_text + "</a></li>" +
-									"<li><a href='#projects'>" + Strings.projects_button_text + "</a></li>" +
-									"<li><a href='#guestbook'>" + Strings.guestbook_button_text + "</a></li>" +
-									"<li><a href='#admin/news'>" + Strings.admin_button_text + "</a></li>" +
-									"<li class='locales locales-small'></li>" +
 								"</ul>" +
 							"</div>" +
 						"</div>" +
 					"</div>");
 
-			
+			var location = window.location.hash;
+			$view.find("a[href=" + location + "]").addClass('active-link');
+
 
 			jQuery('#navigation-container').addClass('bottom-shadow');
-			$view.find('#navigation-small').mobileNavButton();
 			$view.find('#search-box input').initSearch("#content-container");
 
-			for (var i = 0; i < _locales.length; i++) {
-
-				if (i > 0) {
-					$view.find('.locales').append("<span class='locale-delimiter'>|</span>");
-				}
-
-				var $localeButton = jQuery("<span class='locale-button'>" + _locales[i].toUpperCase() + "</span>")
-						.on('click', (function (locale) {
-							return function () {
-								Locale.setLocale(locale);
-							}
-						})(_locales[i]));
-
-				$view.find('.locales').append($localeButton);
-			}
+			$view.find("a").bind('click' , function() {
+				var href = this.hash;
+				jQuery("a").removeClass('active-link');
+				jQuery("a[href=" + href + "]").addClass('active-link');
+			});
 
 			jQuery(window).bind('scroll', function () {
 				var num = jQuery('#header-container').height();
-				var currentScroll = jQuery(window).scrollTop()
-				//back to top _moved herre because not to have two scroll binds
+				var currentScroll = jQuery(window).scrollTop();
+				//back to top _moved here because not to have two scroll binds
 				if (jQuery(window).scrollTop() > 500 ) {
 					jQuery('#back-to-top').addClass('show');
 				} else {
 					jQuery('#back-to-top').removeClass('show');
 				}
+				//hiding header_moved here because not to have two scroll binds
+				if (jQuery(window).scrollTop() > 50 ) {
+					jQuery('#header').css('height',"0");
+					jQuery('#header-base-container').css('display','none');
+					jQuery("#navigation-container").css('margin-top','0px');
+					jQuery("#navigation-container").css('background-color', 'white');
+				} else {
+					jQuery('#header').css('height',"auto");
+					jQuery('#header-base-container').css('display','flex');
+					jQuery("#navigation-container").css('margin-top','-54px');
+					jQuery("#navigation-container").css('margin-top','-54px');
+					jQuery("#navigation-container").css('background-color', 'rgba(255, 255, 255, 0.7)');
+				}
 
 				if (currentScroll > num) {
 
 					if(!_moved){
-						jQuery("#content-container").css('padding-top',"100px");
+						jQuery('#navigation-shadowbox').css('border-bottom','1px solid #01484F');
 						_moved = true;
-						var logo = jQuery("#visitor-logo");
-						logo.show();
-						logo.animate({'opacity':1},1500);
 					}
 					jQuery('#navigation-container').addClass('fixed');
-					jQuery('#navigation-shadowbox').addClass('navigation-down');
 				} else {
 
 					if(_moved){
 						_moved = false;
-						var logo = jQuery("#visitor-logo");
-						logo.hide();
-						logo.css({'opacity':'0'});
 					}
+					jQuery('#content-container').css('padding-top','180px');
 					jQuery('#navigation-container').removeClass('fixed');
-					jQuery('#navigation-shadowbox').removeClass('navigation-down');
-					jQuery("#content-container").css('padding-top',"0px");
+					jQuery('#search-box').css('visibility','hidden');
+					jQuery('#navigation-shadowbox').css('border-bottom','3px solid #01484F');
 				}
 			});
+
 			return $view;
 		})();
 

@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<properties>
-		<maven-frontend.version>0.0.23</maven-frontend.version>
+		<maven-frontend.version>1.4</maven-frontend.version>
 		<nodejs.version>v0.10.18</nodejs.version>
 		<npm.version>1.3.8</npm.version>
 	</properties>

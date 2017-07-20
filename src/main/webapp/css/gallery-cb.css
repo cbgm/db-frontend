@@ -170,7 +170,7 @@
 	margin: 0 auto;
 	height: 30px;
 	width: 30px;
-	animation: rotate 0.8s infinite linear;
+	animation: imagerotate 0.8s infinite linear;
 	border: 2px solid #575757;
 	border-right-color: transparent;
 	border-radius: 50%;
@@ -181,7 +181,7 @@
 	display: none;
 }
 
-@keyframes rotate {
+@keyframes imagerotate {
   0%    { transform: rotate(0deg); }
   100%  { transform: rotate(360deg); }
 }

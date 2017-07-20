@@ -2,11 +2,13 @@ define([
 	'util/Locale',
 	'controller/LoginController',
 	'lib/i18n!mainview/nls/NavigationView_strings',
+	'lib/mobile-nav',
 	'lib/jquery'
 ], function (
 	Locale,
 	LoginController,
 	Strings,
+	MobileNav,
 	jQuery
 ) {
 	'use strict';

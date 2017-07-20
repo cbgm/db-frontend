@@ -27,6 +27,9 @@ define([
 											"<a href='https://plus.google.com/103699542999127150153' target='_blank'><img src='img/googleplus-rnd.png' title='me on Google+' alt=''/></a>" +
 										"</div>" +
 										"<div class='social-img-box'>" +
+											"<a href='https://github.com/cbgm' target='_blank'><img src='img/github-rnd.png' title='me on Google+' alt=''/></a>" +
+										"</div>" +
+										"<div class='social-img-box'>" +
 											"<a href='https://www.xing.com/profile/Christian_Bergmann45' target='_blank'><img src='img/xing-rnd.png' title='me on Xing' alt=''/></a>" +
 										"</div>" +
 										"<div class='social-img-box'>" +

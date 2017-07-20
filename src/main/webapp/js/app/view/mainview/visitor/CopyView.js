@@ -17,7 +17,7 @@ define([
 		_view = (function () {
 			var $view = jQuery(
 					"<div id='copy' style='padding-top: 5px; padding-bottom: 5px;'>" +
-						"<p id='copy-text'>Copyright &copy; " + new Date().getFullYear() + " &middot; " + Strings.rightsreserved_text + " &middot; <a href='http://creative--space.de/' >creative_</a>.</p><p><a href='#imprint' >" + Strings.imprint_button_text + "</a></p>" +
+						"<p id='copy-text'>Copyright &copy; " + new Date().getFullYear() + " &middot; " + Strings.rightsreserved_text + " &middot; <a href='http://creative--space.de/' >creative_</a>.</p><p><a href='#imprint' >" + Strings.imprint_button_text + "</a> &middot; <a href='#admin/news'>Admin</a></p>" +
 					"</div>");
 
 			return $view;

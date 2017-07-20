@@ -42,6 +42,8 @@
 	overflow: hidden;
 	height: auto;
 	display: block;
+	text-align: justify;
+	/*margin-left: 20%*/
 }
 
 .about .anchor{
@@ -63,6 +65,50 @@
 	float:right;
 	opacity: 0.7;
 	margin: 5px;
+}
+
+
+.about .intro-section img {
+	margin: 0 15px 15px 0;
+	width: 150px;
+	float: left;
+	border-radius: 5px;
+}
+
+.about h2 {
+	margin-bottom: 20px;
+	margin-top: 20px;
+	
+	border-bottom: 1px solid #575757;
+	
+	/*border-bottom: 1px solid #F7F7F7;*/
+}
+
+.about #cv-button {
+	display: flex;
+}
+
+.about #cv-button a {
+	display: flex;
+	align-items: center;
+	color: #498388;
+}
+
+.about #cv-button img {
+	width: 40px;
+	margin: 20px;
+	display: block;
+}
+
+.about h2 span {
+	/*border-left: 3px solid #575757;
+	padding: 4px 4px 4px 4px;
+	border-bottom: 3px solid #575757;
+	border-top: 3px solid #575757;*/
+	
+	font-size: 1.5em;
+padding-right: 2px;
+	
 }
 
 @media only screen and (max-width: 430px) {

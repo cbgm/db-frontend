@@ -1,9 +1,7 @@
 define([
-	'lib/mobile-nav',
 	'lib/i18n!mainview/nls/ModalView_strings',
 	'lib/jquery'
 ], function (
-	MobileNav,
 	Strings,
 	jQuery
 ) {
@@ -14,22 +12,11 @@ define([
 	 */
 	return function () {
 		//some vars
-		var _view;
+		var _view,
+			 first_time = true;
 
 		_view = (function () {
 			var $view = jQuery(
-					"<div id='banner-container'>" +
-						"<div id='banner'>" +
-							"<div id='banner-logo'>" +
-								"<img src='img/logo4.png' alt=''/>" +
-							"</div>" +
-							"<div id='banner-slogan'>" +
-								Strings.developer_text +
-								"</br><span style='font-size: 0.8em;'>" + Strings.creative_text + "</span>" +
-								"</br><span style='font-size: 0.7em;'>" + Strings.space_text + "</span>" +
-							"</div>" +
-						"</div>" +
-					"</div>" +
 					"<div id='wrapper'>" +
 						"<div id='header-container'>" +
 						"</div>" +
@@ -44,10 +31,31 @@ define([
 						"<a href='#' id='back-to-top' title='Back to top'>&uarr;</a>" +
 					"</div>");
 
+			$view.find('#back-to-top').on('click', function (e) {
+				e.preventDefault();
+				jQuery('#header').css('height',"0");
+				jQuery('#header-base-container').css('display','none');
+				jQuery('html,body').animate({ scrollTop: 51 }, 'slow');
+			});
+
 			return $view;
 		})();
 
 		//public functions
+		this.setDummy = function (show) {
+
+			if (show === false) {
+
+				if (first_time === false) {
+					jQuery('#header').css('height',"0");
+					jQuery('#header-base-container').css('display','none');
+					jQuery('#content-container').css('padding-top','120px');
+					jQuery(window).scrollTop(51)
+				}
+				first_time = false;
+			}
+		}
+
 		this.appendCopy = function (copy) {
 			var copyContainer = _view.find('#copy-container');
 
@@ -104,12 +112,6 @@ define([
 		};
 
 		this.get = function () {
-			_view.find('#back-to-top').on('click', function (e) {
-				e.preventDefault();
-				jQuery('html,body').animate({
-					scrollTop: 0
-				}, 700);
-			});
 			return _view;
 		};
 		

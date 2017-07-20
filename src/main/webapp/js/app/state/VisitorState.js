@@ -54,7 +54,8 @@ define([
 			_navigationView = null,
 			_footerView = null,
 			_copyView = null,
-			_contentView = null;
+			_contentView = null,
+			_init = true;
 
 		//private functions
 		this.updateState =function (route) {
@@ -72,62 +73,77 @@ define([
 
 			if(URLDefinition.checkkUrl(route, 'aboutOverview')) {
 				_contentView = new VisitorAboutView();
+				_mainView.setDummy(true);
 				_mainView.appendContent(_contentView.get());
+				_mainView.setDummy(false);
 			}
 
 			if(URLDefinition.checkkUrl(route, 'imprintOverview')) {
 				_contentView = new VisitorImprintView();
+				_mainView.setDummy(true);
 				_mainView.appendContent(_contentView.get());
+				_mainView.setDummy(false);
 			}
 
 			if(URLDefinition.checkkUrl(route, 'newsSingle')) {
 				_contentView = new VisitorSingleNewsView();
+				_mainView.setDummy(true);
 				_mainView.appendContent(_loadingView);
 				_loadingView.animate();
 				_contentView.updateEntries(function(){
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
+					_mainView.setDummy(false);
 				});
 				
 			}
 
 			if(URLDefinition.checkkUrl(route, 'newsOverview')) {
 				_contentView = new VisitorNewsView();
+				_mainView.setDummy(true);
 				_mainView.appendContent(_loadingView);
 				_loadingView.animate();
 				_contentView.updateEntries(function(){
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
+					_mainView.setDummy(false);
 				});
 			}
 
 			if(URLDefinition.checkkUrl(route, 'projectsOverview')) {
 				_contentView = new VisitorProjectView();
+				_mainView.setDummy(true);
 				_mainView.appendContent(_loadingView);
 				_loadingView.animate();
 				_contentView.updateEntries(function(){
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
+					_mainView.setDummy(false);
+
 				});
 			}
 
 			if(URLDefinition.checkkUrl(route, 'projectsSingle')) {
 				_contentView = new VisitorSingleProjectView();
+				_mainView.setDummy(true);
 				_mainView.appendContent(_loadingView);
 				_loadingView.animate();
 				_contentView.updateEntries(function(){
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
+					_mainView.setDummy(false);
 				});
 			}
 
 			if(URLDefinition.checkkUrl(route, 'projectsArticleSingle')) {
 				_contentView = new VisitorArticleView();
+				_mainView.setDummy(true);
 				_mainView.appendContent(_loadingView);
 				_loadingView.animate();
 				_contentView.updateEntries(function(){
 					_mainView.appendContent(_contentView.get());
 					_loadingView.disable();
+					_mainView.setDummy(false);
 				});
 			}
 
@@ -153,6 +169,8 @@ define([
 			_mainView.appendFooter(_footerView);
 			_copyView =  new VisitorCopyView();
 			_mainView.appendCopy(_copyView);
+			jQuery('#content-container').scrollTop(0);
+
 			callback(_mainView);
 		};
 	};

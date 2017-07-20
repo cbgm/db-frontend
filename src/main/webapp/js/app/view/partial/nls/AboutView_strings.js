@@ -1,15 +1,15 @@
 define({
 	"root" : {
-		"head_text" : "&quotSo you're wondering &quotWho is this guy behind the website?&quot",
-		"shortdescription_text" : "Glad you aked! I'm the kind of person who had to fight for dreams. I'm a complex human being that needs the challenge in life. This also reflects in the variety of things I'm interested in, such as:",
-		"shortdescription2_text" : "Not that I'm only interested in various things, although I have an <a href='#academic_career'><i>academic career</i></a> behind me.",
+		"head_text" : "<span>T</span>hat's me",
+		"shortdescription_text" : "Hi my name is Christian Bergmann. I'm a 31 year old Software -/ Webdeveloper from Germany based in beautiful Bavaria. Doing this for several years now I can say it is more than just a job - it has become one of my passions. Not forgetting to mention that i always was interested into programming and designing stuff, I especially setteled in Webdevelopment the last years. Down below you can find some more information about my skills, experiences, education and interests. Enough said - feel free to scroll :).",
+		"cv_text" : "Curriculum Vitae for download",
 
-		"extreme_head_text" : "#Extreme sports",
+		"extreme_head_text" : "Extreme sports",
 		"extreme_text" : "First of all extreme sports. It's facinating what is possible with your body, " +
 							"when you push yourself to the limit. You can't reach anything in these sports if you don't " +
 							"put all of your energy and heart in. ",
 
-		"skate_head_text" : "#Skateboarding",
+		"skate_head_text" : "Skateboarding",
 		"skate_text" : "Especially skateboarding is my favorite one. Started fairly late in the age of 15, " +
 						"it's still (dominating) my life, my energy saver and haven of peace. The originally trigger was " +
 						"a video game that lead me into it. &quotWhat a video game? How can that be?&quot Even a video game can " +
@@ -29,22 +29,22 @@ define({
 						"people and friends who love what they do. " +
 						"</br>Maybe now you can imagine why I'm addicted to it?. Thanks to my supporters! (<a href='http://www.darkstarskate.com/' target='_blank'>Darkstar</a>, <a href='http://www.sampleskate.com/' target='_blank'>Sample</a>)",
 
-		"snow_head_text" : "#Snowboarding",
+		"snow_head_text" : "Snowboarding",
 		"snow_text" : "I would not go as far as to say, that snowboarding has the same importance as skateboarding. But " +
 						"well, of course it is fun and the best alternative to me if there is no place to skate on some days in winter. " +
 						"Especially if you live in a small town like me, with less indoor parks.",
 
-		"music_head_text" : "#Music",
+		"music_head_text" : "Music",
 		"music_text" : "Of course everyone loves music but it's not only that I listen to it. First of all I don't like songs which don't make" +
 						" sense and there are quiet alot of them. Furthermore I try to be creativ within my possibilities. And so today I play multiple instruments.",
 
-		"keyboard_head_text" : "#Keyboard",
+		"keyboard_head_text" : "Keyboard",
 		"keyboard_text" : "In the age of 7 I started playing keyboard with a bit influence of my grandpa ;), but I've never regretted that. " +
 							"Since then I have fun with it but my play also changed into piano style. " +
 							"Today I love to play pieces of Evanescence or Whitin Temptation but especially ballads. " +
 							"They are in my opinion kind of it's own.",
 
-		"drums_head_text" : "#Drums",
+		"drums_head_text" : "Drums",
 
 		"drums_text" : "Since I was kid I always had a special bind to drums. If I'm honest I don't know exactly the reason. " +
 						"But I couldn't forget this strong instrument until 2011. From this point I bought my first e-drum " +
@@ -52,7 +52,7 @@ define({
 						"a good webiste which helped me alot (<a href='http://www.freedrumlessons.com/' target='_blank'>freedrumlessons.com</a>). " +
 						"With endurance and a lot of sweat I'm now able to play along songs of my favorite band (<a href='http://www.avengedsevenfold.com' target='_blank'>Avenged Sevenfold</a>), so it really paid out. ",
 
-		"technology_head_text" : "#Technology",
+		"technology_head_text" : "Technology",
 		"technology_text" : "So now we're getting pretty close at the time in which the choice of study my direction was quit " +
 							"clear, right? Maybe..., Gladly my parents were not afraid of technology. " +
 							"So the first foreign-contact began with the gift of an electronic microcontroller, Cosmos Kit. " +
@@ -64,31 +64,27 @@ define({
 							"different languages, or hardware(-desgin). But actually programming and design, or distributed systems " +
 							"are really interesting to me. I need to have diversity...",
 
-		"programming_head_text" : "#Programming",
+		"programming_head_text" : "Programming",
 		"programming_text" : "So what kind of stuff did I do with my programming knowledge since day one? It all started with the first steps in web development, simple static html pages." +
 								" After these steps I discovered Adobe Flash for me and tried my best to define my first dynamic single page with some animations. Then years after my apprenticeship " +
 								"began and I dived into the C-Wolrd, databases and so on. Little programs like a file-manager or an automatic data update tool, held me up. Now I'm pretty much able" +
 								" to write down everything I want - from complexe websites to mocap applications, thanks to my university study.",
 
-		"design_head_text" : "#Design",
+		"design_head_text" : "Design",
 		"design_text" : "I dont' want to say much at this point. Just watch the following gallery to see my process. I just have to say, I'm <u>not</u> a designer but I do my best.",
 
-		"filming_head_text" : "#Filming",
+		"filming_head_text" : "Filming",
 		"filming_text" : "I got into filming through my pasion skateboarding. Of course when you achieve an new trick you want to bann it forever on tape." +
 								" My current camcorder is a Canon Legria HF 200. You see it's not profesional equipment but it fits my needs. Examples will follow!",
 
-		"editing_head_text" : "#Editing",
+		"editing_head_text" : "Editing",
 		"editing_text" : "Filming is not all. It's from time to time enjoyable to watch old tricks, but it gets more exiting if they are set into the correct light. " +
 							"I just say baysteps with Windwos Movie Maker and for a few years now getting semi professional with Sony Vegas. Examples will follow!",
 
 		"academic_head_text" : "So now that you now what drives me, something more about my academic career",
 
-		"documents_head_text" : "#Documents",
+		"documents_head_text" : "Documents",
 		"documents_text" : "Last but no least some documents for you to download if you are interested in me. Thank you for visiting my website!</br>",
-
-		"bachelor_button_text" : "&#9654; Bachelor certificate",
-		"master_button_text" : "&#9654; Master certificate",
-		"cv_button_text" : "&#9654; Curriculum vitae",
 
 		"timeline" : "" +
 										"<div class='timeline-container'>" +
@@ -96,33 +92,33 @@ define({
 											"<li class='other'>" +
 											"</li>" +
 											"<li class='graduate'>" +
-												"<p>" +
+												"<p class='animate' data-animation='fade'>" +
 													"Training college, Lichtenfels</br> <i>Training for state-union tested " +
 													"technical assistant for computer science</i>" +
 												"</p>" +
 												"<span>September 2005 - July 2007</span>" +
 											"</li>" +
 											"<li class='graduate'>" +
-												"<p>" +
+												"<p class='animate' data-animation='fade'>" +
 													"Vocational High School, Coburg</br> <i>Subject-specific university entrance</i>" +
 												"</p>" +
 												"<span>September 2007 - June 2008</span>" +
 											"</li>" +
 											"<li class='event'>" +
-												"<p>" +
+												"<p class='animate' data-animation='fade'>" +
 													"Started Bachelor Degree <i>computer science</i> at the University of Applied Sciences, " +
 													"Coburg" +
 												"</p>" +
 												"<span>October 2008</span>" +
 											"</li>" +
 											"<li class='other'>" +
-												"<p>" +
+												"<p class='animate' data-animation='fade'>" +
 													"Fraunhofer IIS, Nuremberg</br> <i>Research Assistant / Intern</i>" +
 												"</p>" +
 												"<span>September 2010 - February 2011</span>" +
 											"</li>" +
 											"<li class='graduate'>" +
-												"<p>" +
+												"<p class='animate' data-animation='fade'>" +
 													"Finished Bachelor Degree <i>computer science</i> at the University of Applied " +
 													"Sciences, Coburg</br><i>Bachelor of Science</i>" +
 													"</br></br>Topic of final thesis: <i>Specification and implementation of an agent " +
@@ -132,20 +128,20 @@ define({
 												"<span>February 2012</span>" +
 											"</li>" +
 											"<li class='event'>" +
-												"<p>" +
+												"<p class='animate' data-animation='fade'>" +
 													"Started Master Degree <i>computer science</i> at the University of Applied Sciences, Coburg" +
 												"</p>" +
 												"<span>March 2012</span>" +
 											"</li>" +
 											"<li class='other'>" +
-												"<p>" +
+												"<p class='animate' data-animation='fade'>" +
 													"University of Applied Sciences Coburg and HUK Coburg, Coburg</br><i>Student Assistant " +
 													"(Research project SecMine)</i>" +
 												"</p>" +
 												"<span>September 2010 - February 2011</span>" +
 											"</li>" +
 											"<li class='graduate'>" +
-												"<p>" +
+												"<p class='animate' data-animation='fade'>" +
 													"Finished Master Degree <i>computer science</i> at the University of Applied Sciences, " +
 													"Coburg</br><i>Master of Science</i>" +
 													"</br></br>Topic of final thesis: <i>Investigation of technical possibilities for " +
@@ -154,16 +150,20 @@ define({
 												"<span>October 2013</span>" +
 											"</li>" +
 											"<li class='event'>" +
-												"<p>Fraunhofer IIS (Application Center Coburg), Coburg</br><i>Researcher</i></p>" +
+												"<p class='animate' data-animation='fade'>Fraunhofer IIS (Application Center Coburg), Coburg</br><i>Researcher</i></p>" +
 												"<span>December 2013 - May 2014</span>" +
 											"</li>" +
 											"<li class='event'>" +
-												"<p>ecsec GmbH, Michelau</br><i>Computer scientist</i></p>" +
+												"<p class='animate' data-animation='fade'>ecsec GmbH, Michelau</br><i>Computer scientist</i></p>" +
 												"<span>July 2014</span>" +
 											"</li>" +
 											"<li class='event'>" +
-											"<p>DELL Software GmbH</br><i>Software Solutions Consultant</i></p>" +
-											"<span>October 2015</span>" +
+												"<p class='animate' data-animation='fade'>DELL Software GmbH</br><i>Software Solutions Consultant</i></p>" +
+												"<span>October 2015</span>" +
+											"</li>" +
+											"<li class='event'>" +
+												"<p class='animate' data-animation='fade'>HUK Coburg, Coburg</br><i>Sr. Software Developer</i></p>" +
+												"<span>August 2016</span>" +
 											"</li>" +
 											"<li class='end'>" +
 											"</li>" +
@@ -171,25 +171,8 @@ define({
 										"</div>" +
 									"</div>" +
 								"</div>" +
-							"",
+							""
 
-		"anker" : "" +
-					"<ul class='taglist'>" +
-						"<li><a href='#extreme_sports'>#Extreme sports</a></li>" +
-						"<li><a href='#skateboarding'>#Skateboarding</a></li>" +
-						"<li><a href='#snowboarding'>#Snowboarding</a></li>" +
-						"<li><a href='#music'>#Music</a></li>" +
-						"<li><a href='#keyboard'>#Keyboard</a></li>" +
-						"<li><a href='#drums'>#Drums</a></li>" +
-						"<li><a href='#technology'>#Technology</a></li>" +
-						"<li><a href='#programming'>#Programming</a></li>" +
-						"<li><a href='#design'>#Design</a></li>" +
-						"<li><a href='#filming'>#Filming</a></li>" +
-						"<li><a href='#editing'>#Editing</a></li>" +
-				//		"<li><a href='#remote_controled_vehicles'>#Remote controled vehicles</a></li>" +
-					"</ul>" +
-					""
-	
 	},
 	"de" : true
 });

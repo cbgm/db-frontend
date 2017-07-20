@@ -78,7 +78,7 @@ define([
 
 //		}
 
-		_images = _affectedElement.find("img");
+		_images = _affectedElement.find("img:not(.no-gallery)");
 
 		_closeButton.bind("click", function () {
 			_galleryOverlay.fadeToggle( "slow");

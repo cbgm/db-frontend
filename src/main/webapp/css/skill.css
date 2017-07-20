@@ -1,0 +1,379 @@
+.skill-list {
+	list-style: none;
+	width: 100%;
+	padding: 5px;
+}
+.skill-list li {
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%
+}
+
+.skill-container {
+	width: 50%;
+	float: left;
+}
+
+.skill-container h4{
+	padding: 5px;
+	width: 90%;
+	float: right;
+}
+
+.skill {
+	width: 90%;
+	height: 15px;
+	background: #eee;
+	border-radius: 5px;
+	overflow: hidden;
+
+}
+
+.skill-name {
+	float: left;
+	height: 100%;
+	background: #BDBDBD;
+	width: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.skill-bar {
+	width: 75%;
+	height: 100%;
+	float: left;
+	
+}
+
+.fill {
+	height: 100%;
+}
+
+.css {
+	width: 95%;
+	background-color: #498388;
+	-moz-animation: css 1s ease-out;
+	-webkit-animation: css 1s ease-out;
+}
+
+.js {
+	width: 95%;
+	background-color: #498388;
+	-moz-animation: js 1s ease-out;
+	-webkit-animation: js 1s ease;
+}
+
+.html {
+	width: 100%;
+	background-color: #498388;
+	-moz-animation: html 1s ease-out;
+	-webkit-animation: html 1s ease-out;
+}
+
+.ajax {
+	width: 95%;
+	background-color: #498388;
+	-moz-animation: ajax 1s ease-out;
+	-webkit-animation: ajax 1s ease-out;
+}
+
+.c {
+	width: 70%;
+	background-color: #498388;
+	-moz-animation: c 1s ease-out;
+	-webkit-animation: c 1s ease-out;
+}
+
+.mysql {
+	width: 75%;
+	background-color: #498388;
+	-moz-animation: mysql 1s ease-out;
+	-webkit-animation: mysql 1s ease;
+}
+
+.java {
+	width: 95%;
+	background-color: #498388;
+	-moz-animation: java 1s ease-out;
+	-webkit-animation: java 1s ease-out;
+}
+
+.vb {
+	width: 80%;
+	background-color: #498388;
+	-moz-animation: vb 1s ease-out;
+	-webkit-animation: vb 1s ease-out;
+}
+
+.junit {
+	width: 80%;
+	background-color: #498388;
+	-moz-animation: junit 1s ease-out;
+	-webkit-animation: junit 1s ease;
+}
+
+.selenium {
+	width: 70%;
+	background-color: #498388;
+	-moz-animation: selenium 1s ease-out;
+	-webkit-animation: selenium 1s ease-out;
+}
+
+.silktest {
+	width: 90%;
+	background-color: #498388;
+	-moz-animation: silktest 1s ease-out;
+	-webkit-animation: silktest 1s ease-out;
+}
+
+.angular {
+	width: 70%;
+	background-color: #498388;
+	-moz-animation: angular 1s ease-out;
+	-webkit-animation: angular 1s ease;
+}
+
+.spring {
+	width: 80%;
+	background-color: #498388;
+	-moz-animation: spring 1s ease-out;
+	-webkit-animation: spring 1s ease-out;
+}
+
+.hibernate {
+	width: 80%;
+	background-color: #498388;
+	-moz-animation: hibernate 1s ease-out;
+	-webkit-animation: hibernate 1s ease-out;
+}
+
+.git {
+	width: 100%;
+	background-color: #498388;
+	-moz-animation: git 1s ease-out;
+	-webkit-animation: git 1s ease-out;
+}
+
+.maven {
+	width: 85%;
+	background-color: #498388;
+	-moz-animation: maven 1s ease-out;
+	-webkit-animation: maven 1s ease-out;
+}
+
+.bower {
+	width: 90%;
+	background-color: #498388;
+	-moz-animation: bower 1s ease-out;
+	-webkit-animation: bower 1s ease;
+}
+
+.grunt {
+	width: 90%;
+	background-color: #498388;
+	-moz-animation: grunt 1s ease-out;
+	-webkit-animation: grunt 1s ease-out;
+}
+
+.android {
+	width: 90%;
+	background-color: #498388;
+	-moz-animation: android 1s ease-out;
+	-webkit-animation: android 1s ease-out;
+}
+
+@-webkit-keyframes git {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 100%;
+	};
+}
+
+@-webkit-keyframes maven {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 85%;
+	};
+}
+
+@-webkit-keyframes bower {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+	width: 90%;
+	};
+}
+
+@-webkit-keyframes grunt {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 85%;
+	};
+}
+
+@-webkit-keyframes android {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+	width: 90%;
+	};
+}
+
+@-webkit-keyframes junit {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 70%;
+	};
+}
+
+@-webkit-keyframes selenium {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 70%;
+	};
+}
+
+@-webkit-keyframes silktest {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 90%;
+	};
+}
+
+@-webkit-keyframes angular {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 70%;
+	};
+}
+
+@-webkit-keyframes spring {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 80%;
+	};
+}
+
+@-webkit-keyframes hibernate {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 80%;
+	};
+}
+
+@-webkit-keyframes c {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 70%;
+	};
+}
+
+@-webkit-keyframes mysql {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 75%;
+	};
+}
+
+@-webkit-keyframes java {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 95%;
+	};
+}
+
+@-webkit-keyframes vb {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 80%;
+	};
+}
+
+@-webkit-keyframes css {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 95%;
+	};
+}
+
+@-webkit-keyframes js {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 95%;
+	};
+}
+
+@-webkit-keyframes html {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 100%;
+	};
+}
+
+@-webkit-keyframes ajax {
+	0% {
+		width: 0px;
+	}
+
+	100% {
+		width: 95%;
+	};
+}
