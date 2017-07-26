@@ -26,7 +26,6 @@ define([
 					"<div id='header'>" +
 						"<div id='header-base-container'>" +
 							"<div id='header-logo'><img src='img/logo4.png' alt='' title='creative--space.de'/></div>" +
-//							"<div id='header-contact'><a class='envelope' href='#'></a></div>" +
 							"<div id='header-link-container'>" +
 								"<div id='header-social-container'>" +
 									"<a href='https://plus.google.com/103699542999127150153' target='_blank'><img src='img/googleplus-rnd-white.png' title='" + Strings.google_tip_text + "' alt=''/></a>" +
@@ -35,20 +34,15 @@ define([
 								"</div>" +
 								"<div class='locales'></div>" +
 							"</div>" +
-							"<div class='noselect' id='header-phrase-container-sizer'>" +
-								"<div id='phrase-container-sizer-left'>" +
-//										"<img src='img/me.png' alt='' style='max-width: 200px; height: 100%'/>" +
-								"</div>" +
-								"<div id='phrase-container-sizer-right'>" +
-									"<div id='sizer-right-container'>" +
-										"<div id='sizer-right-container-heading'>" + Strings.shout_text + "</div>" +
-											"<div id='sizer-right-container-words'>" +
-												"<span>" + Strings.creative_text + "</span>" +
-												"<span>" + Strings.developer_text + "</span>" +
-												"<span>" + Strings.solver_text + "</span>" +
-												"<span>" + Strings.right_text + "</span>" +
-												"<p class='typing'>" + Strings.job_text + "</p>" +
-											"</div>" +
+							"<div class='noselect' id='header-phrase-container'>" +
+								"<div id='phrase-sizer'>" +
+									"<div id='sizer-heading'>" + Strings.shout_text + "</div>" +
+										"<div id='sizer-words'>" +
+											"<span>" + Strings.creative_text + "</span>" +
+											"<span>" + Strings.developer_text + "</span>" +
+											"<span>" + Strings.solver_text + "</span>" +
+											"<span>" + Strings.right_text + "</span>" +
+											"<p class='typing'>" + Strings.job_text + "</p>" +
 										"</div>" +
 									"</div>" +
 								"</div>" +

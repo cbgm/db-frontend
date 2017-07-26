@@ -92,29 +92,35 @@ define([
 					var result =	"";
 					//pages add
 					for (var i = 0; i < _projects.length; i++) {
+						var projectTitle = Locale.setContentByLocale(_projects[i].title, _projects[i].titleAlt)
+						var projectContent = Locale.setContentByLocale(_projects[i].description, _projects[i].descriptionAlt);
+
 						result +=	"<div class='entry'>" +
-										"<div><h2>" + Locale.setContentByLocale(_projects[i].title, _projects[i].titleAlt) + "</h2></div>" +
+										"<div><h2>" + projectTitle + "</h2></div>" +
 										"<ul class='taglist'>";
 						var tags = _projects[i].tags;
 										for (var x =0; x < tags.length; x++) {
 											result += "<li><a href=''>#" + tags[x].name + "</a></li>";
 										}
 						result +=		"</ul>" +
-										"<div class='section'>" + Locale.setContentByLocale(_projects[i].description, _projects[i].descriptionAlt) + "</div>" +
+										"<div class='section'>" + projectContent + "</div>" +
 										"<div>" +
 										"<p class='sub-entry-description'>" + Strings.relatedarticles_text + "</p>";
 						var articles = _projects[i].articles;
 
 						for (var x = 0; x < articles.length; x++) {
+							var articleTitle = Locale.setContentByLocale(articles[x].title, articles[x].titleAlt);
+							var articleContent = Locale.setContentByLocale(articles[x].content, articles[x].contentAlt);
+
 							result +=		"<div class='sub-sentry-holder'>" +
 												"<div class='box'>&#9654; &nbsp;</div>" +
-												"<div class='box'><a class='sub-entry-ref' id='" + Locale.setContentByLocale(_projects[i].title, _projects[i].titleAlt) + "/"  + Locale.setContentByLocale(articles[x].title, articles[x].titleAlt) + "'>" + Locale.setContentByLocale(articles[x].title, articles[x].titleAlt) + "</a></div>" +
+												"<div class='box'><a class='sub-entry-ref' id='" + projectTitle + "/"  + articleTitle + "'>" + articleTitle + "</a></div>" +
 												"<div style='clear: both;'></div>" +
 											"</div>"; 
 						}
 						result +=		"</div>" +
 										"<div class='entry-info'>" +
-											"<div class='permalink'><a href='#projects/" + Locale.setContentByLocale(_projects[i].title, _projects[i].titleAlt) + "'>Permalink</a></div>" +
+											"<div class='permalink'><a href='#projects/" + projectTitle + "'>Permalink</a></div>" +
 											"<div class='posted-date'>" + Strings.posted_text + ": " + _projects[i].date + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +

@@ -50,7 +50,9 @@ define([
 
 				if (_article != null) {
 					_view.find('#entries').empty();
-					
+					var articleTitle = Locale.setContentByLocale(_article.title, _article.titleAlt);
+					var articleContent = Locale.setContentByLocale(_article.content, _article.contentAlt);
+
 					var result =	"<div class='entry'>" +
 										"<div><h2>" + Locale.setContentByLocale(_article.title, _article.titleAlt) + "</h2></div>" +
 										"<ul class='taglist'>";
@@ -60,9 +62,9 @@ define([
 										}
 						result +=		"</ul>" +
 										"<div class='to-project'>&#9654; &nbsp;<a href='#projects/" + projectTitle + "'>" + Strings.relatedproject_button_text + "</a></div>" +
-										"<div class='section'>" + Locale.setContentByLocale(_article.content, _article.contentAlt) + "</div>" +
+										"<div class='section'>" + articleContent + "</div>" +
 										"<div class='entry-info'>" +
-											"<div class='permalink'><a href='#projects/" + projectTitle + "/articles/" + Locale.setContentByLocale(_article.title, _article.titleAlt) + "'>Permalink</a></div>" +
+											"<div class='permalink'><a href='#projects/" + projectTitle + "/articles/" + articleTitle + "'>Permalink</a></div>" +
 											"<div class='posted-date'>" + Strings.posted_text + ": " + _article.date + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +

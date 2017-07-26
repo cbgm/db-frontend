@@ -66,7 +66,7 @@ define([
 													"<div class='loading-spinner'></div>" +
 												"</div>" +
 											"</div>" +
-											"<div class='entry-edit' id='" + _projects[i].projectId + "'>" + Strings.edit_button_text + "</div>" +
+											"<div class='entry-edit' id='" + _projects[i].title + "'>" + Strings.edit_button_text + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +
 										"<div class='entry-show-table'>" +
@@ -87,7 +87,7 @@ define([
 															"<div class='loading-spinner'></div>" +
 														"</div>" +
 													"</div>" +
-													"<div class='entry-edit-sub' id='" + _projects[i].projectId + "/"  + articles[x].articleId + "'" + articles[x].articleId + "'>" + Strings.edit_button_text + "</div>" +
+													"<div class='entry-edit-sub' id='" + _projects[i].title + "/"  + articles[x].title + "'" + articles[x].articleId + "'>" + Strings.edit_button_text + "</div>" +
 													"<div style='clear: both;'></div>" +
 												"</div>";
 						}						
@@ -171,8 +171,8 @@ define([
 				});
 
 				_view.find(".entry-edit").bind('click', function () {
-					var projectId = this.id;
-					window.location.hash = "#admin/projects/" + projectId;
+					var projectTitle = this.id;
+					window.location.hash = "#admin/projects/" + projectTitle;
 				});
 				callback();
 			});

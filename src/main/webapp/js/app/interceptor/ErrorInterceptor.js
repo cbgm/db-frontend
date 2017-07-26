@@ -29,34 +29,34 @@ define([
 						}, 1000);
 					}
 				},
-				404: function (data, textStatus, jqxhr) {
-
-					if (data.status === 404) {
-						window.location.hash = "#error";
-					}
-				},
-				401: function (data, textStatus, jqXHR) {
-
-					if (data.status === 401) {
-						var cookie = JSON.stringify({method: 'GET', url: '/', csrf: data.getResponseHeader('X-CSRF-TOKEN')});
-						if (cookie !== null)
-							jQuery.cookie('cb-auth', cookie);
-			 
-						window.location.hash = '#login';
-					}
-				},
-				400: function (data, textStatus, jqxhr) {
-
-					if (data.status === 400) {
-						window.location.hash = "#error";
-					}
-				},
-				0: function (data, textStatus, jqxhr) {
-
-					if(textStatus === "timeout") {
-						window.location.hash = '#timeout';
-					}
-				}
+//				404: function (data, textStatus, jqxhr) {
+//
+//					if (data.status === 404) {
+//						window.location.hash = "#error";
+//					}
+//				},
+//				401: function (data, textStatus, jqXHR) {
+//
+//					if (data.status === 401) {
+//						var cookie = JSON.stringify({method: 'GET', url: '/', csrf: data.getResponseHeader('X-CSRF-TOKEN')});
+//						if (cookie !== null)
+//							jQuery.cookie('cb-auth', cookie);
+//			 
+//						window.location.hash = '#login';
+//					}
+//				},
+//				400: function (data, textStatus, jqxhr) {
+//
+//					if (data.status === 400) {
+//						window.location.hash = "#error";
+//					}
+//				},
+//				0: function (data, textStatus, jqxhr) {
+//
+//					if(textStatus === "timeout") {
+//						window.location.hash = '#timeout';
+//					}
+//				}
 				
 			}
 		});

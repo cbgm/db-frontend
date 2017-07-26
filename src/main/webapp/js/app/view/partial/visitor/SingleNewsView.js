@@ -46,19 +46,21 @@ define([
 				_news = data;
 
 				if (_news != null) {
+					var newsTitle = Locale.setContentByLocale(_news.title, _news.titleAlt);
+					var newsContent = Locale.setContentByLocale(_news.content, _news.contentAlt);
 					_view.find('#entries').empty();
 
 					var result =	"<div class='entry'>" +
-										"<div><h2>" + Locale.setContentByLocale(_news.title, _news.titleAlt) + "</h2></div>" +										
+										"<div><h2>" + newsTitle + "</h2></div>" +
 										"<ul class='taglist'>";
 						var tags = _news.tags;
 										for (var x =0; x < tags.length; x++) {
 											result += "<li><a href=''>#" + tags[x].name + "</a></li>";
 										}
 						result +=		"</ul>" +
-										"<div class='section'>" + Locale.setContentByLocale(_news.content, _news.contentAlt) + "</div>" +
+										"<div class='section'>" + newsContent + "</div>" +
 										"<div class='entry-info'>" +
-											"<div class='permalink'><a href='#news/" + Locale.setContentByLocale(_news.title, _news.titleAlt) + "'>Permalink</a></div>" +
+											"<div class='permalink'><a href='#news/" + newsTitle + "'>Permalink</a></div>" +
 											"<div class='posted-date'>Posted: " + _news.date + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +

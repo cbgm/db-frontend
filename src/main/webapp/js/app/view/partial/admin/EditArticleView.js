@@ -61,10 +61,10 @@ define([
 
 		function update (callback){
 			var split = window.location.hash.split("/"); 
-			var projectId = split[split.length-3];
-			var articleId = split[split.length-1];
+			var projectTitle = split[split.length-3];
+			var articleTitle = split[split.length-1];
 
-			ArticleController.getEntry(projectId, articleId, function (data1) {
+			ArticleController.getEntry(btoa(projectTitle), btoa(articleTitle), function (data1) {
 
 				TagController.getEntries(function (data2) {
 					_article = data1;

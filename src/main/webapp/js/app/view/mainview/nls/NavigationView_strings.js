@@ -1,5 +1,6 @@
 define({
 	"root" : {
+		"news_button_text" : "News",
 		"home_button_text" : "Home",
 		"blog_button_text" : "Blog",
 		"projects_button_text" : "Projects",

@@ -232,6 +232,7 @@
 
 .project .entry-info .permalink {
 	float: left;
+	text-decoration: underline;
 }
 
 .project .entry-info .posted-date {

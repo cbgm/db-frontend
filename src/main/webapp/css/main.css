@@ -300,7 +300,7 @@ img {
 	opacity: 0.6;
 }
 
-#header-phrase-container-sizer {
+#header-phrase-container {
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -316,15 +316,6 @@ img {
 	font-style: italic;	
 }
 
-#phrase-container-sizer-left {
-	float: left;
-	max-width: 200px;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 #phrase-container-sizer-right {
 	float: right;
 	display: flex;
@@ -334,13 +325,13 @@ img {
 	align-items: center;
 }
 
-#sizer-right-container-heading {
+#sizer-heading {
 	color:  white;
 	font-size: 4.5em;
 	display: block;'
 }
 
-#sizer-right-container-words {
+#sizer-words {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -370,7 +361,7 @@ to { opacity: 1; } }
 @-webkit-keyframes remove-caret { 100% { border-color: transparent; } }
 
 
-#sizer-right-container-words span{
+#sizer-words span{
 	color :white;
 	position: absolute;
 	text-shadow: 1px 1px black;
@@ -381,19 +372,19 @@ to { opacity: 1; } }
 	animation: rotateWords 8s linear 1 0s forwards;
 }
 
-#sizer-right-container-words span:nth-child(2) { 
+#sizer-words span:nth-child(2) { 
 	animation-delay: 2s; 
 }
-#sizer-right-container-words span:nth-child(3) { 
+#sizer-words span:nth-child(3) { 
 	animation-delay: 4s; 
 }
-#sizer-right-container-words span:nth-child(4) { 
+#sizer-words span:nth-child(4) { 
 	animation-delay: 6s; 
 }
-#sizer-right-container-words span:nth-child(5) { 
+#sizer-words span:nth-child(5) { 
 	animation-delay: 8s; 
 }
-#sizer-right-container-words span:nth-child(6) {  
+#sizer-words span:nth-child(6) {  
 	animation-delay: 10s; 
 }
 
@@ -1227,15 +1218,11 @@ width: 70px;
 		font-size: 1em;	
 	}
 
-	#phrase-container-sizer-left {
-		display: none;
-	}
-
-	#sizer-right-container-heading {
+	#sizer-heading {
 		font-size: 2.5em;
 	}
 
-	#sizer-right-container-words span{
+	#sizer-words span{
 		font-size: 2em;
 	}
 
@@ -1272,11 +1259,11 @@ width: 70px;
 		font-size: 0.7em;
 	}
 
-	#sizer-right-container-heading {
+	#sizer-heading {
 		font-size: 2em;
 	}
 
-	#sizer-right-container-words span{
+	#sizer-words span{
 		font-size: 1.5em;
 	}
 

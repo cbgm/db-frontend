@@ -96,17 +96,20 @@ define([
 					
 					//pages add
 					for (var i = _lastIndex; i < _news.length; i++) {
+						var newsTitle = Locale.setContentByLocale(_news[i].title, _news[i].titleAlt);
+						var newsContent = Locale.setContentByLocale(_news[i].content, _news[i].contentAlt);
+
 						result +=	"<div class='entry'>" +
-										"<div><h2>" + Locale.setContentByLocale(_news[i].title, _news[i].titleAlt) + "</h2></div>" +
+										"<div><h2>" + newsTitle + "</h2></div>" +
 										"<ul class='taglist'>";
 						var tags = _news[i].tags;
 										for (var x =0; x < tags.length; x++) {
 											result += "<li><a href=''>#" + tags[x].name + "</a></li>";
 										}
 						result +=		"</ul>" +
-										"<div class='section'>" + Locale.setContentByLocale(_news[i].content, _news[i].contentAlt) + "</div>" +
+										"<div class='section'>" + newsContent + "</div>" +
 										"<div class='entry-info'>" +
-											"<div class='permalink'><a href='#news/" + Locale.setContentByLocale(_news[i].title, _news[i].titleAlt) + "'>Permalink</a></div>" +
+											"<div class='permalink'><a href='#news/" + newsTitle + "'>Permalink</a></div>" +
 											"<div class='posted-date'>" + Strings.posted_text + ": " + _news[i].date + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +

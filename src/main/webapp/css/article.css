@@ -172,6 +172,7 @@
 
 .article .entry-info .permalink {
 	float: left;
+	text-decoration: underline;
 }
 
 .article .entry-info .posted-date {

@@ -7,7 +7,6 @@ define([
 	'use strict';
 	var _URLMap = new Map();
 	//visitor
-//	_URLMap.set('newsSingle', '^#news\/[0-9]{1,}$');
 	_URLMap.set('newsSingle', '^#news\/.*$');
 	_URLMap.set('newsOverview', '^#news$');
 	_URLMap.set('aboutOverview', '^#about$');
@@ -23,15 +22,15 @@ define([
 	//admin
 	_URLMap.set('adminNewsOverview', '^#admin\/news$');
 	_URLMap.set('adminNewsAdd', '^#admin\/news\/add$');
-	_URLMap.set('adminNewsEdit', '^#admin\/news\/.*$');
+	_URLMap.set('adminNewsEdit', '^#admin\/news\/.[^ /]*$');
 	_URLMap.set('adminTagsOverview', '^#admin\/tags$');
 	_URLMap.set('adminGuestbookOverview', '^#admin\/guestbook$');
 	_URLMap.set('adminGuestbookEdit', '^#admin\/guestbook\/[0-9]{1,}$');
 	_URLMap.set('adminProjectsOverview', '^#admin\/projects$');
 	_URLMap.set('adminProjectsAdd', '^#admin\/projects\/add$');
-	_URLMap.set('adminProjectsEdit', '^#admin\/projects\/.*$');
-	_URLMap.set('adminArticlesAdd', '^#admin\/projects\/.*\/articles\/add$');
-	_URLMap.set('adminArticlesEdit', '^#admin\/projects\/.*\/articles\/.*$');
+	_URLMap.set('adminProjectsEdit', '^#admin\/projects\/.[^ /]*$');
+	_URLMap.set('adminArticlesAdd', '^#admin\/projects\/.[^ /]*\/articles\/add$');
+	_URLMap.set('adminArticlesEdit', '^#admin\/projects\/.[^ /]*\/articles\/.[^ /]*$');
 	_URLMap.set('adminImagesOverview', '^#admin\/images$');
 	_URLMap.set('adminGalleriesOverview', '^#admin\/galleries$');
 	_URLMap.set('adminGalleriesAdd', '^#admin\/galleries\/add$');
