@@ -1,7 +1,15 @@
 define({
 	"root" : {
 		"head_text" : "<span>T</span>hat's me",
-		"shortdescription_text" : "Hi my name is Christian Bergmann. I'm a 31 year old Software -/ Webdeveloper from Germany based in beautiful Bavaria. Doing this for several years now I can say it is more than just a job - it has become one of my passions. Not forgetting to mention that i always was interested into programming and designing stuff, I especially setteled in Webdevelopment the last years. Down below you can find some more information about my skills, experiences, education and interests. Enough said - feel free to scroll :).",
+		"languages_head_text" : "Languages",
+		"web_head_text" : "Web",
+		"different_head_text" : "Different",
+		"frameworks_head_text" : "Frameworks",
+		"test_head_text" : "Test",
+		"educationex_head_text" : "<span>E</span>ducation & experience",
+		"skills_head_text" : "<span>S</span>kills",
+		"interests_head_text" : "<span>I</span>nterests",
+		"shortdescription_text" : "Hi my name is Christian Bergmann. I'm a 31 year old Software -/ Webdeveloper from Germany based in beautiful Bavaria. Doing this for several years now I can say it is more than just a job - it has become one of my passions. Not forgetting to mention that i always was interested into programming and designing stuff, I especially setteled in Webdevelopment the last years. Down below you can find some more information about my <a href='#skills-anc'>skills</a>, <a href='#experience-anc'>experiences, education</a> and <a href='#interests-anc'>interests</a>. Enough said - feel free to scroll :).",
 		"cv_text" : "Curriculum Vitae for download",
 
 		"extreme_head_text" : "Extreme sports",
@@ -53,8 +61,7 @@ define({
 						"With endurance and a lot of sweat I'm now able to play along songs of my favorite band (<a href='http://www.avengedsevenfold.com' target='_blank'>Avenged Sevenfold</a>), so it really paid out. ",
 
 		"technology_head_text" : "Technology",
-		"technology_text" : "So now we're getting pretty close at the time in which the choice of study my direction was quit " +
-							"clear, right? Maybe..., Gladly my parents were not afraid of technology. " +
+		"technology_text" : "Maybe..., Gladly my parents were not afraid of technology. " +
 							"So the first foreign-contact began with the gift of an electronic microcontroller, Cosmos Kit. " +
 							"I had now the chance to built an alarm system, yay, that was fun. " +
 							"</br>The next new experience I had was when my friends " +
@@ -81,97 +88,98 @@ define({
 		"editing_text" : "Filming is not all. It's from time to time enjoyable to watch old tricks, but it gets more exiting if they are set into the correct light. " +
 							"I just say baysteps with Windwos Movie Maker and for a few years now getting semi professional with Sony Vegas. Examples will follow!",
 
-		"academic_head_text" : "So now that you now what drives me, something more about my academic career",
-
-		"documents_head_text" : "Documents",
-		"documents_text" : "Last but no least some documents for you to download if you are interested in me. Thank you for visiting my website!</br>",
-
-		"timeline" : "" +
-										"<div class='timeline-container'>" +
-										"<ul class='timeline'>" +
-											"<li class='other'>" +
-											"</li>" +
-											"<li class='graduate'>" +
-												"<p class='animate' data-animation='fade'>" +
-													"Training college, Lichtenfels</br> <i>Training for state-union tested " +
-													"technical assistant for computer science</i>" +
-												"</p>" +
-												"<span>September 2005 - July 2007</span>" +
-											"</li>" +
-											"<li class='graduate'>" +
-												"<p class='animate' data-animation='fade'>" +
-													"Vocational High School, Coburg</br> <i>Subject-specific university entrance</i>" +
-												"</p>" +
-												"<span>September 2007 - June 2008</span>" +
-											"</li>" +
-											"<li class='event'>" +
-												"<p class='animate' data-animation='fade'>" +
-													"Started Bachelor Degree <i>computer science</i> at the University of Applied Sciences, " +
-													"Coburg" +
-												"</p>" +
-												"<span>October 2008</span>" +
-											"</li>" +
-											"<li class='other'>" +
-												"<p class='animate' data-animation='fade'>" +
-													"Fraunhofer IIS, Nuremberg</br> <i>Research Assistant / Intern</i>" +
-												"</p>" +
-												"<span>September 2010 - February 2011</span>" +
-											"</li>" +
-											"<li class='graduate'>" +
-												"<p class='animate' data-animation='fade'>" +
-													"Finished Bachelor Degree <i>computer science</i> at the University of Applied " +
-													"Sciences, Coburg</br><i>Bachelor of Science</i>" +
-													"</br></br>Topic of final thesis: <i>Specification and implementation of an agent " +
-													"monitoring system for the analysis and manipulation " +
-													"of data for the mobile awiloc® technology</i>" +
-												"</p>" +
-												"<span>February 2012</span>" +
-											"</li>" +
-											"<li class='event'>" +
-												"<p class='animate' data-animation='fade'>" +
-													"Started Master Degree <i>computer science</i> at the University of Applied Sciences, Coburg" +
-												"</p>" +
-												"<span>March 2012</span>" +
-											"</li>" +
-											"<li class='other'>" +
-												"<p class='animate' data-animation='fade'>" +
-													"University of Applied Sciences Coburg and HUK Coburg, Coburg</br><i>Student Assistant " +
-													"(Research project SecMine)</i>" +
-												"</p>" +
-												"<span>September 2010 - February 2011</span>" +
-											"</li>" +
-											"<li class='graduate'>" +
-												"<p class='animate' data-animation='fade'>" +
-													"Finished Master Degree <i>computer science</i> at the University of Applied Sciences, " +
-													"Coburg</br><i>Master of Science</i>" +
-													"</br></br>Topic of final thesis: <i>Investigation of technical possibilities for " +
-													"wireless detecting of movements on the body</i>" +
-												"</p>" +
-												"<span>October 2013</span>" +
-											"</li>" +
-											"<li class='event'>" +
-												"<p class='animate' data-animation='fade'>Fraunhofer IIS (Application Center Coburg), Coburg</br><i>Researcher</i></p>" +
-												"<span>December 2013 - May 2014</span>" +
-											"</li>" +
-											"<li class='event'>" +
-												"<p class='animate' data-animation='fade'>ecsec GmbH, Michelau</br><i>Computer scientist</i></p>" +
-												"<span>July 2014</span>" +
-											"</li>" +
-											"<li class='event'>" +
-												"<p class='animate' data-animation='fade'>DELL Software GmbH</br><i>Software Solutions Consultant</i></p>" +
-												"<span>October 2015</span>" +
-											"</li>" +
-											"<li class='event'>" +
-												"<p class='animate' data-animation='fade'>HUK Coburg, Coburg</br><i>Sr. Software Developer</i></p>" +
-												"<span>August 2016</span>" +
-											"</li>" +
-											"<li class='end'>" +
-											"</li>" +
-										"</ul>" +
-										"</div>" +
+		"timeline" :	"<div class='timeline-container'>" +
+							"<ul class='timeline'>" +
+								"<li class='other'>" +
+								"</li>" +
+								"<li class='graduate'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>Training college, Lichtenfels</p>" +
+										"<p class='time-task'>Training for state-union tested technical assistant for computer science</p>" +
 									"</div>" +
-								"</div>" +
-							""
+									"<span>September 2005 - July 2007</span>" +
+								"</li>" +
+								"<li class='graduate'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>Vocational High School, Coburg</p>" +
+										"<p class='time-task'>Subject-specific university entrance</p>" +
+									"</div>" +
+									"<span>September 2007 - June 2008</span>" +
+								"</li>" +
+								"<li class='event'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>University of Applied Sciences, Coburg</p>" +
+										"<p class='time-task'>Started Bachelor Degree computer science</p>" +
+									"</div>" +
+									"<span>October 2008</span>" +
+								"</li>" +
+								"<li class='other'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>Fraunhofer IIS, Nuremberg</p>" +
+										"<p class='time-task'>Research Assistant / Intern</p>" +
+									"</div>" +
+									"<span>September 2010 - February 2011</span>" +
+								"</li>" +
+								"<li class='graduate'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>University of Applied Sciences, Coburg</p>" +
+										"<p class='time-task'>Finished Bachelor Degree computer science<br><br>Topic of final thesis: Specification and implementation of an agent " +
+										"monitoring system for the analysis and manipulation " +
+										"of data for the mobile awiloc® technology</p>" +
+									"</div>" +
+									"<span>February 2012</span>" +
+								"</li>" +
+								"<li class='event'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>University of Applied Sciences, Coburg</p>" +
+										"<p class='time-task'>Started Master Degree computer science</p>" +
+									"</div>" +
+									"<span>March 2012</span>" +
+								"</li>" +
+								"<li class='other'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>University of Applied Sciences Coburg and HUK Coburg, Coburg</p>" +
+										"<p class='time-task'>Student Assistant (Research project SecMine)</p>" +
+									"</div>" +
+									"<span>September 2010 - February 2011</span>" +
+								"</li>" +
+								"<li class='graduate'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>University of Applied Sciences, Coburg</p>" +
+										"<p class='time-task'>Finished Master Degree computer science</br></br>Topic of final thesis: Investigation of technical possibilities for wireless detecting of movements on the body</p>" +
+									"</div>" +
+									"<span>October 2013</span>" +
+								"</li>" +
+								"<li class='event'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>Fraunhofer IIS (Application Center Coburg), Coburg</p>" +
+										"<p class='time-task'>Researcher</p>" +
+									"</div>" +
+								"</li>" +
+								"<li class='event'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>ecsec GmbH, Michelau</p>" +
+										"<p class='time-task'>IT Consultant</p>" +
+									"</div>" +
+								"</li>" +
+								"<li class='event'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>DELL Software GmbH, Berlin</p>" +
+										"<p class='time-task'>Software Solutions Consultant</p>" +
+									"</div>" +
+									"<span>October 2015</span>" +
+								"</li>" +
+								"<li class='event'>" +
+									"<div class='animate' data-animation='fade'>" +
+										"<p class='time-header'>HUK Coburg, Coburg</p>" +
+										"<p class='time-task'>Sr. Software Developer</p>" +
+									"</div>" +
+									"<span>August 2016</span>" +
+								"</li>" +
+								"<li class='end'>" +
+								"</li>" +
+							"</ul>" +
+						"</div>"
 
 	},
 	"de" : true

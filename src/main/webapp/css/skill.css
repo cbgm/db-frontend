@@ -34,7 +34,7 @@
 .skill-name {
 	float: left;
 	height: 100%;
-	background: #BDBDBD;
+	background: /*#BDBDBD*/ #498388;
 	width: 25%;
 	display: flex;
 	justify-content: center;
@@ -57,133 +57,228 @@
 
 .css {
 	width: 95%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: css 1s ease-out;
 	-webkit-animation: css 1s ease-out;
 }
 
 .js {
 	width: 95%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: js 1s ease-out;
 	-webkit-animation: js 1s ease;
 }
 
 .html {
 	width: 100%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: html 1s ease-out;
 	-webkit-animation: html 1s ease-out;
 }
 
 .ajax {
 	width: 95%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: ajax 1s ease-out;
 	-webkit-animation: ajax 1s ease-out;
 }
 
 .c {
 	width: 70%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: c 1s ease-out;
 	-webkit-animation: c 1s ease-out;
 }
 
 .mysql {
 	width: 75%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: mysql 1s ease-out;
 	-webkit-animation: mysql 1s ease;
 }
 
 .java {
 	width: 95%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: java 1s ease-out;
 	-webkit-animation: java 1s ease-out;
 }
 
 .vb {
 	width: 80%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: vb 1s ease-out;
 	-webkit-animation: vb 1s ease-out;
 }
 
 .junit {
 	width: 80%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: junit 1s ease-out;
 	-webkit-animation: junit 1s ease;
 }
 
 .selenium {
 	width: 70%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: selenium 1s ease-out;
 	-webkit-animation: selenium 1s ease-out;
 }
 
 .silktest {
 	width: 90%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: silktest 1s ease-out;
 	-webkit-animation: silktest 1s ease-out;
 }
 
 .angular {
 	width: 70%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: angular 1s ease-out;
 	-webkit-animation: angular 1s ease;
 }
 
 .spring {
 	width: 80%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: spring 1s ease-out;
 	-webkit-animation: spring 1s ease-out;
 }
 
 .hibernate {
 	width: 80%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: hibernate 1s ease-out;
 	-webkit-animation: hibernate 1s ease-out;
 }
 
 .git {
 	width: 100%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: git 1s ease-out;
 	-webkit-animation: git 1s ease-out;
 }
 
 .maven {
 	width: 85%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: maven 1s ease-out;
 	-webkit-animation: maven 1s ease-out;
 }
 
 .bower {
 	width: 90%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: bower 1s ease-out;
 	-webkit-animation: bower 1s ease;
 }
 
 .grunt {
 	width: 90%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: grunt 1s ease-out;
 	-webkit-animation: grunt 1s ease-out;
 }
 
 .android {
 	width: 90%;
-	background-color: #498388;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
 	-moz-animation: android 1s ease-out;
 	-webkit-animation: android 1s ease-out;
 }
@@ -377,3 +472,10 @@
 		width: 95%;
 	};
 }
+
+
+/*background: -webkit-linear-gradient( to left top, blue, red);
+background: -moz-linear-gradient( to right, #498388, #01484F);
+background: -ms-linear-gradient( to left top, blue, red);
+background: -o-linear-gradient( to left top, blue, red);
+background: linear-gradient( to left top, blue, right);*/

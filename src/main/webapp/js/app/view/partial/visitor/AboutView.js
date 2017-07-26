@@ -32,12 +32,13 @@ define([
 									"<div id='cv-button'><a href='" + Configuration.get('API_URL') + "/download/bachelorcert'><img class='no-gallery' src='img/cv.png' alt=''>" + Strings.cv_text + "</a></div>" +
 								"</div>" +
 							"</div>" +
+							"<a class='anchor' id='skills-anc'/>" +
 							"<div id='skill' class='skill-section'>" +
-								"<h2><span>S</span>kills</h2>" +
+								"<h2>" + Strings.skills_head_text + "</h2>" +
 								"<div class='inner-container'>" +
 									"<div class='skill-wrapper'>" +
 										"<div class='skill-container'>" +
-											"<h4>Sprachen</h4>" +
+											"<h4>" + Strings.languages_head_text + "</h4>" +
 											"<ul class='skill-list' style='list-style: none;'>" +
 												"<li>" +
 													"<div class='skill'>" +
@@ -82,7 +83,7 @@ define([
 											"</ul>" +
 										"</div>" +
 										"<div class='skill-container'>" +
-											"<h4>Web</h4>" +
+											"<h4>" + Strings.web_head_text + "</h4>" +
 											"<ul class='skill-list' style='list-style: none;'>" +
 												"<li>" +
 													"<div class='skill'>" +
@@ -127,7 +128,7 @@ define([
 											"</ul>" +
 										"</div>" +
 										"<div class='skill-container'>" +
-											"<h4>Frameworks</h4>" +
+											"<h4>" + Strings.frameworks_head_text + "</h4>" +
 											"<ul class='skill-list'>" +
 												"<li>" +
 													"<div class='skill'>" +
@@ -156,7 +157,7 @@ define([
 											"</ul>" +
 										"</div>" +
 										"<div class='skill-container'>" +
-											"<h4>Test</h4>" +
+											"<h4>" + Strings.test_head_text + "</h4>" +
 											"<ul class='skill-list' style='list-style: none;'>" +
 												"<li>" +
 													"<div class='skill'>" +
@@ -185,7 +186,7 @@ define([
 											"</ul>" +
 										"</div>" +
 										"<div class='skill-container'>" +
-											"<h4>Sonstiges</h4>" +
+											"<h4>" + Strings.different_head_text + "</h4>" +
 											"<ul class='skill-list' style='list-style: none;'>" +
 												"<li>" +
 													"<div class='skill'>" +
@@ -232,13 +233,15 @@ define([
 									"</div>" +
 								"</div>" +
 							"</div>" +
-							"<a class='anchor' id='academic_career'/>" +
+							"<a class='anchor' id='experience-anc'/>" +
 							"<div id='work' class='work-section ' >" +
 								"<div id='timeline' >" +
-									"<h2><span>E</span>ducation & experience</h2>" +
+									"<h2>" + Strings.educationex_head_text + "</h2>" +
 									"<div class='inner-container'>" + Strings.timeline + "</div>" +
+								"</div>" +
+							"<a class='anchor' id='interests-anc'/>" +
 							"<div id='interests' class='interests-section'>" +
-								"<h2><span>I</span>nterests</h2>" +
+								"<h2>" + Strings.interests_head_text + "</h2>" +
 								"<a class='anchor' id='extreme_sports'/>" +
 								"<div id='extreme' class='descriptive-section '  >" +
 									"<h3>" + Strings.extreme_head_text + "</h3>" +
@@ -285,16 +288,11 @@ define([
 								"<h3>" + Strings.design_head_text + "</h3>" +
 									"<div class='inner-container'>" +
 										"<p>" + Strings.design_text + "" +
-										"<div style='margin-top: 10px; text-align: center;'>" +
-											"<img src='img/designs/banner-salzbad.jpg' style='display: none;' rel='designs' alt=''/>" +
+										"<div style='margin-top: 30px; text-align: center;'>" +
 											"<img src='img/designs/c-enter.jpg' style='display: none;' rel='designs' alt=''/>" +
 											"<img src='img/designs/cad.jpg' rel='designs' alt=''/>" +
-	//										"<img src='img/designs/construct-omg.jpg' style='display: none;' rel='designs' alt=''/>" +
 											"<img src='img/designs/holger-portfolio.jpg' rel='designs' alt=''/>" +
-	//										"<img src='img/designs/logo-my-web.jpg' style='display: none;' rel='designs' alt=''/>" +
-											"<img src='img/designs/mystic-clan.jpg' style='display: none;' rel='designs' alt=''/>" +
 											"<img src='img/designs/skate.jpg' rel='designs' alt=''/>" +
-	//										"<img src='img/designs/high.jpg' style='display: none;' rel='designs' alt=''/>" +
 										"</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>" +

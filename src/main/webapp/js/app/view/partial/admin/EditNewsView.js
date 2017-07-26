@@ -61,9 +61,9 @@ define([
 		
 		function update (callback){
 			var split = window.location.hash.split("/"); 
-			var newsId = split[split.length-1];
+			var newsTitle = split[split.length-1];
 
-			NewsController.getEntry(newsId, function (data1) {
+			NewsController.getEntryByTitle(btoa(newsTitle), function (data1) {
 
 				TagController.getEntries(function (data2) {
 					_news = data1;

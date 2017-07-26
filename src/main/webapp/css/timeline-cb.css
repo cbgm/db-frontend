@@ -18,7 +18,8 @@ ul.timeline {
 	padding: 0;
 	display:block;
 	list-style-type: none;
-	border-right: 6px solid #575757;
+	/*border-right: 6px solid #575757;*/
+	border-right: 3px solid #575757;
 	width: 50%;
 }
 
@@ -44,12 +45,19 @@ ul.timeline li:nth-child(odd):after {
 }
 
 ul.timeline li.end:nth-child(odd):after {
-	width: 58px;
+	/*width: 58px;
 	height: 58px;
 	background-image: url("../img/end.png");
 	background-size: 58px 58px;
 	top: calc(50% - 40px);
 	right: -33px;
+	-webkit-border-radius: none;
+	border-radius: none;*/
+	top: calc(50% - 40px);
+	left: -14px;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-top: 22px solid #575757;
 }
 
 ul.timeline li.graduate:nth-child(odd):after {
@@ -67,7 +75,8 @@ ul.timeline li.event:nth-child(odd):after {
 	background-image: url("../img/event.png");
 	background-size: 30px 30px;
 	top: calc(50% - 18px);
-	right: -18px;
+	/*right: -18px;*/
+	right: -16px;
 }
 
 ul.timeline li.other:nth-child(odd):after {
@@ -75,7 +84,10 @@ ul.timeline li.other:nth-child(odd):after {
 	height: 10px;
 	border: 3px solid #575757;
 	top: calc(50% - 8px);
-	right: -11px;
+	/*right: -11px;*/
+	right: -10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 	
 }
 
@@ -95,17 +107,23 @@ ul.timeline li:nth-child(even):before {
 	display: block;
 	float: right;
 	background-color: #fff;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
+	/*-webkit-border-radius: 10px;
+	border-radius: 10px;*/
 }
 
 ul.timeline li.end:nth-child(even):before {
-	width: 58px;
+	/*width: 58px;
 	height: 58px;
 	background-image: url("../img/end.png");
 	background-size: 58px 58px;
 	top: calc(50% - 40px);
-	left: -31px;
+	left: -31px;*/
+	top: calc(50% - 40px);
+	left: -14px;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-top: 22px solid #575757;
+	
 }
 
 ul.timeline li.other:nth-child(even):before {
@@ -113,7 +131,10 @@ ul.timeline li.other:nth-child(even):before {
 	height: 10px;
 	border: 3px solid #575757;
 	top: calc(50% - 8px);
-	left: -11px;
+	/*left: -11px;*/
+	left: -12px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 
 ul.timeline li.graduate:nth-child(even):before {
@@ -131,7 +152,8 @@ ul.timeline li.event:nth-child(even):before {
 	background-image: url("../img/event.png");
 	background-size: 30px 30px;
 	top: calc(50% - 18px);
-	left: -18px;
+	/*left: -18px;*/
+	left: -20px;
 }
 
 /*
@@ -139,27 +161,72 @@ ul.timeline li.event:nth-child(even):before {
 all list descriptors
 */
 
-ul.timeline p {
+ul.timeline li div {
 	border-radius: 5px;
+	/*padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 4px;
+	padding-left: 4px;*/
+	z-index: -16;
+	/*padding: 10px;*/
+	/*background: #498388;*/
+	color: white;
+	border: 2px solid /*#01484F*/ #498388;
+	cursor: pointer;
+}
+
+ul.timeline li div .time-header {
+	margin-bottom: 10px;
+	font-weight: bold;
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-right: 4px;
 	padding-left: 4px;
-	z-index: -16;
-	padding: 10px;
-	background: #498388;
+	background: /*#01484F*/ #498388;
+	
+}
+
+ul.timeline li div .time-task {
+	font-style: italic;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 4px;
+	padding-left: 4px;
+	color: black;
+}
+
+
+ul.timeline li div:hover {
+	background: /*#01484F*/ #498388;
 	color: white;
 }
 
-ul.timeline p:before {
+ul.timeline li:nth-child(even) div:after {
+	content: '';
+	position: absolute;
+	top: calc(50% - 11px);
+	left: 32px;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-right: 8px solid /*#01484F*/ #498388;
 }
 
-ul.timeline li:nth-child(odd) p {
+ul.timeline li:nth-child(odd) div:after {
+	content: '';
+	position: absolute;
+	top: calc(50% - 11px);
+	right: 32px;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-left: 8px solid /*#01484F*/ #498388;
+}
+
+ul.timeline li:nth-child(odd) div {
 	/*background: #e3e3e3;*/
 	margin-right: 40px;
 }
 
-ul.timeline li:nth-child(even) p {
+ul.timeline li:nth-child(even) div {
 	/*background: #e3e3e3;*/
 	margin-left: 40px;
 }
@@ -216,6 +283,7 @@ ul.timeline li:nth-child(even) span {
 		width: 25px;
 		height: 25px;
 		background-size: 25px 25px;
+		/*left: -17px;*/
 		left: -17px;
 	}
 
@@ -224,6 +292,7 @@ ul.timeline li:nth-child(even) span {
 		height: 25px;
 		background-size: 25px 25px;
 		right: -14px;
+		
 	}
 
 	ul.timeline li.other:nth-child(2n+1)::after {
@@ -238,30 +307,32 @@ ul.timeline li:nth-child(even) span {
 		height: 8px;
 		border: 3px solid #575757;
 		right: -9px;
+		
 	}
 
 	ul.timeline li.end:nth-child(2n+1)::after {
-		width: 30px;
+		/*width: 30px;
 		height: 30px;
 		background-size: 30px 30px;
-		right: -17px;
+		right: -17px;*/
 	}
 
 	ul.timeline li.end:nth-child(2n)::before {
-		width: 30px;
+		/*width: 30px;
 		height: 30px;
 		background-size: 30px 30px;
-		right: -17px;
+		right: -17px;*/
 	}
 	
 	/*
-	content: '';
+content: '';
 position: absolute;
-top: 35%;
+top: 30%;
 left: 27px;
 border-top: 15px solid transparent;
 border-bottom: 15px solid transparent;
-border-right: 15px solid #498388;
+border-right: 15px solid #01484F;
+
 	
 	*/
 }

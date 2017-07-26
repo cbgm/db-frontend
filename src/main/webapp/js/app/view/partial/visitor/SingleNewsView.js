@@ -40,9 +40,9 @@ define([
 		
 		function update (callback){
 			var split = window.location.hash.split("/"); 
-			var newsId = split[split.length-1];
+			var newsTitle = split[split.length-1];
 
-			NewsController.getEntry(newsId, function (data) {
+			NewsController.getEntryByTitle(btoa(newsTitle), function (data) {
 				_news = data;
 
 				if (_news != null) {
@@ -58,7 +58,7 @@ define([
 						result +=		"</ul>" +
 										"<div class='section'>" + Locale.setContentByLocale(_news.content, _news.contentAlt) + "</div>" +
 										"<div class='entry-info'>" +
-											"<div class='permalink'><a href='#news/" + _news.newsId + "'>Permalink</a></div>" +
+											"<div class='permalink'><a href='#news/" + Locale.setContentByLocale(_news.title, _news.titleAlt) + "'>Permalink</a></div>" +
 											"<div class='posted-date'>Posted: " + _news.date + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +

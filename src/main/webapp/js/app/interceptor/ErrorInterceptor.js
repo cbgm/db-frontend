@@ -45,11 +45,17 @@ define([
 						window.location.hash = '#login';
 					}
 				},
+				400: function (data, textStatus, jqxhr) {
+
+					if (data.status === 400) {
+						window.location.hash = "#error";
+					}
+				},
 				0: function (data, textStatus, jqxhr) {
 
-//					if(textStatus === "timeout") {
-//						window.location.hash = '#timeout';
-//					}
+					if(textStatus === "timeout") {
+						window.location.hash = '#timeout';
+					}
 				}
 				
 			}

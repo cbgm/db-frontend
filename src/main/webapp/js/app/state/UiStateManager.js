@@ -26,7 +26,10 @@ define([
 			_loginState = new LoginState();
 
 		this.updateState =function (route) {
-			_currentState.updateState(route);
+		
+			if(_currentState !== null) {
+				_currentState.updateState(route);
+			}
 		}
 
 		this.initState = function (state, callback) {

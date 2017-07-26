@@ -40,7 +40,7 @@ define([
 						"<div class='gallery-modal'>" +
 							"<div class='gallery-image'>" +
 								"<span class='helper'></span>" +
-								"<img src= ''>" +
+								"<img src='#' alt=''>" +
 							"</div>" +
 							"<div class='image-loader'>" +
 								"<div id='spinner-holder'>" +

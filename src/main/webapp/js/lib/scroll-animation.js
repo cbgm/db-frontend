@@ -24,11 +24,11 @@ define([
 
 			for (var i = 0; i < elements.length; i++) {
 //				jQuery(elements).addClass('hide');
-				elements[i].setAttribute('animation-id', i)
+				elements[i].setAttribute('data-animation-id', i)
 				
 				var top_of_element = jQuery(elements[i]).offset().top;
 				var bottom_of_element = jQuery(elements[i]).offset().top + jQuery(elements[i]).outerHeight();
-				var id = elements[i].getAttribute("animation-id");
+				var id = elements[i].getAttribute("data-animation-id");
 				var animation_type = elements[i].getAttribute("data-animation")
 
 				var obj = {
@@ -62,8 +62,8 @@ define([
 
 				if (elementInView(ar[i])) {
 					inside = true;
-					jQuery('[animation-id="' + ar[i].id + '"]').addClass(ar[i].animation_type);
-					jQuery('[animation-id="' + ar[i].id + '"]').removeClass('hide');
+					jQuery('[data-animation-id="' + ar[i].id + '"]').addClass(ar[i].animation_type);
+					jQuery('[data-animation-id="' + ar[i].id + '"]').removeClass('hide');
 				} else {
 //					jQuery('[animation-id="' + ar[i].id + '"]').removeClass(ar[i].animation_type);
 //					jQuery('[animation-id="' + ar[i].id + '"]').addClass('hide');

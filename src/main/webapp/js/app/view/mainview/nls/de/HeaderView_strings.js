@@ -4,6 +4,7 @@ define({
 	"solver_text" : "#Problemlöser",
 	"right_text" : "#Der richtige für den Job",
 	"creative_text" : "#Kreativer Kopf",
+	"job_text" : "Software- / Webentwickler",
 	"google_tip_text" : "Ich auf Google+",
 	"xing_tip_text" : "Ich auf Xing",
 	"github_tip_text" : "Ich auf Github"

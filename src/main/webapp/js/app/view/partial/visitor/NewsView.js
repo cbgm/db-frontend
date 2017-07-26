@@ -106,7 +106,7 @@ define([
 						result +=		"</ul>" +
 										"<div class='section'>" + Locale.setContentByLocale(_news[i].content, _news[i].contentAlt) + "</div>" +
 										"<div class='entry-info'>" +
-											"<div class='permalink'><a href='#news/" + _news[i].newsId + "'>Permalink</a></div>" +
+											"<div class='permalink'><a href='#news/" + Locale.setContentByLocale(_news[i].title, _news[i].titleAlt) + "'>Permalink</a></div>" +
 											"<div class='posted-date'>" + Strings.posted_text + ": " + _news[i].date + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +

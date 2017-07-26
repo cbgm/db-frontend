@@ -32,7 +32,19 @@ define([
 					"</div>");
 
 			var location = window.location.hash;
-			$view.find("a[href=" + location + "]").addClass('active-link');
+			var highlightButton = "";
+
+			if (location.indexOf("about") !== -1) {
+				highlightButton = "#about";
+			} else if (location.indexOf("projects") !== -1) {
+				highlightButton = "#projects";
+			} else if (location.indexOf("news") !== -1) {
+				highlightButton = "#news";
+			} else {
+				highlightButton = "#none";
+			}
+
+			$view.find("a[href=" + highlightButton + "]").addClass('active-link');
 
 
 			jQuery('#navigation-container').addClass('bottom-shadow');

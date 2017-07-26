@@ -66,7 +66,7 @@ define([
 												"<div class='loading-spinner'></div>" +
 											"</div>" +
 										"</div>" +
-										"<div class='entry-edit' id='" + _news[i].newsId + "'>" + Strings.edit_button_text + "</div>" +
+										"<div class='entry-edit' id='" + Locale.setContentByLocale(_news[i].title, _news[i].titleAlt) + "'>" + Strings.edit_button_text + "</div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>";
 					}

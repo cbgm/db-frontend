@@ -73,6 +73,21 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 		});
 	}
 
+	function getEntryByTitle(title, callback) {
+
+		Request.doGet(Configuration.get("API_URL") + "/projects/" + title,
+				"projects",
+
+		function(data) {
+			var json = jQuery.parseJSON(data);
+			json.articles.sort(SortByIDSub);
+			var articles = json.articles;
+			articles.sort(SortByIDSub);
+			json.articles = articles;
+			callback(json);
+		});
+	}
+
 	function updateEntry(id, entry, callback) {
 		var json = JSON.stringify(entry);
 		Request.doUpdate(Configuration.get("API_URL") + "/admin/projects/" + id,
@@ -101,6 +116,7 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 		deleteEntry: deleteEntry,
 		updateEntry: updateEntry,
 		getEntry: getEntry,
+		getEntryByTitle: getEntryByTitle,
 		getPaginatedEntries : getPaginatedEntries,
 		postEntry : postEntry,
 		endOfEntries: endOfEntries

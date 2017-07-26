@@ -1,6 +1,14 @@
 define({
 	"head_text" : "<span>D</span>as bin ich",
-	"shortdescription_text" : "Hi mein Name ist Christian Bergmann. Ich bin ein 31 jähriger Software - / Webentwickler aus Deutschland, stammend aus dem schönen Bayern. Nachdem ich das was ich tue schon einige Jahre mache, kann ich behaupten, dass es mehr ist als nur ein Job - sondern eine meiner Leidenschaften. Ich war schon immer am programmieren und designen interessiert, habe mich aber die letzten Jahre vor allem in der Webentwicklung niedergelassen. Folgend sind noch ein paar mehr Informationen über meine Fähigkeiten, Erfahrungen, Bildung und Interessen zu finden. Genug gesagt - das Mausrad kann nun zum glühen gebracht werden :).",
+	"languages_head_text" : "Sprachen",
+	"web_head_text" : "Web",
+	"different_head_text" : "Sonstiges",
+	"frameworks_head_text" : "Frameworks",
+	"test_head_text" : "Test",
+	"educationex_head_text" : "<span>A</span>usbildung & Erfahrung",
+	"skills_head_text" : "<span>F</span>ähigkeiten",
+	"interests_head_text" : "<span>I</span>nteressen",
+	"shortdescription_text" : "Hi mein Name ist Christian Bergmann. Ich bin ein 31 jähriger Software - / Webentwickler aus Deutschland, stammend aus dem schönen Bayern. Nachdem ich das was ich tue schon einige Jahre mache, kann ich behaupten, dass es mehr ist als nur ein Job - sondern eine meiner Leidenschaften. Ich war schon immer am programmieren und designen interessiert, habe mich aber die letzten Jahre vor allem in der Webentwicklung niedergelassen. Folgend sind noch ein paar mehr Informationen über meine <a href='#skills-anc'>Fähigkeiten</a>, <a href='#experience-anc'>Erfahrungen, Bildung</a> und <a href='#interests-anc'>Interessen</a> zu finden. Genug gesagt - das Mausrad kann nun zum glühen gebracht werden :).",
 	"cv_text" : "Curriculum Vitae zum Download",
 
 	"extreme_head_text" : "Extremsport",
@@ -45,7 +53,7 @@ define({
 					"Mit viel Ausdauer und Schweiß bin ich nun in der Lage Songs meiner Lieblingsband (<a href='http://www.avengedsevenfold.com' target='_blank'>Avenged Sevenfold</a>) zu spielen. Es hat sich also wirklich ausgezahlt. ",
 
 	"technology_head_text" : "Technologie",
-	"technology_text" : "So, jetzt sind wir ganz in der Nähe der Zeit, in der die Wahl meiner Studienrichtung relativ klar war, oder? Vielleicht ..., glücklicherweise hatten meine Eltern vor Technik keine Angst. Der erste Fremdkontakt war mit dem Geschenk eines elektronischen Mikrokontroller," +
+	"technology_text" : "Vielleicht ..., glücklicherweise hatten meine Eltern vor Technik keine Angst. Der erste Fremdkontakt war mit dem Geschenk eines elektronischen Mikrokontroller," +
 						" Cosmos Kit. Ich hatte jetzt die Möglichkeit ein Alarmsystem zu bauen, yay :). "+" </ br> Die nächste neue Erfahrung begann damit," +
 								" als meine Freunde und ich versuchten, unsere Fotos online zu stellen, die wir beim Skateboarden gemacht hatten. Zuerst mit Hilfe von Frontpage" +
 								" (was heutzutage relativ beschissen ist). Aber nach einiger Zeit schon, habe ich meine ersten Schritte mit HTML und Macromedia Flash ( Actionscript ) versucht," +
@@ -56,8 +64,8 @@ define({
 	"programming_text" : "Also, welche Art von Dingen habe ich mit meinen Programmierkenntnissen bisher eigentlich so gemacht? Es begann mit den ersten Schritten in der Web-Entwicklung, einfache statische HTML-Seiten. " +
 							"Nach diesen Schritten entdeckte ich für mich Adobe Flash und versuchte mein Bestes, meine erste dynamische Seite mit einigen Animationen zu definieren. Dann, Jahre nachdem meine Ausbildung begonnen hatte, tauchte ich in die C-Welt, Datenbanken, etc. ein. Kleine Programme wie z.B. ein Datei-Manager oder ein automatisches Daten Update-Tool, waren meine ersten Errungenschaften. Mittlerweile bin ich in der Lage, alles zu basteln was ich so möchte - von komplexen Websites, bis hin zu einer Bewegungserkennung mittels Sensoren (auch dank meines Studiums).",
 
-	"design_head_text" : "#Design",
-	"design_text" : "An dieser Stelle gibt es nicht so viel zu sagen. Sehen Sie sich einfach die folgende Galerie an in der mein Prozess ein bisschen deutlich wird. Nur eines noch - ich bin <u> kein </u> Designer, aber ich gebe mein Bestes.",
+	"design_head_text" : "Design",
+	"design_text" : "An dieser Stelle gibt es nicht so viel zu sagen. Folgende eine kleine Galerie an der mein Prozess ein bisschen deutlich wird. Nur eines noch - ich bin <u> kein </u> Designer, aber ich gebe mein Bestes.",
 
 	"filming_head_text" : "Filmen",
 	"filming_text" : "Ich bin eigentlich durch meine Leidenschaft des Skateboardens zum Filmen gekommen. Natürlich will man, wenn man einen neuen Trick gemeistert hat, diesen auch für immer festhalten. Bei meinem aktuellen Camcorder handelt es sich um den Canon Legria HF200. Es ist zwar keine professionelle Ausrüstung, aber es passt für meine Bedürfnisse. Beispiele folgen!",
@@ -66,93 +74,94 @@ define({
 	"editing_text" : "Filmen ist nicht alles. Es macht zwar von Zeit zu Zeit Spaß alte Tricks anzusehen, aber es ist doppelt so befriedigend, wenn diese auch ins rechte Licht gerückt sind. " +
 						"Ich sage dazu nur Babyschritte mit Windows Movie Maker und mittlerweile Semi-Profesionell mit Sony Vegas. Beispiele folgen!",
 
-	"academic_head_text" : "So, jetzt da Sie wissen, was mich antreibt, etwas mehr über meine akademische Laufbahn",
-
-	"documents_head_text" : "Dokumente",
-	"documents_text" : "Zum Schluss noch ein paar Dokumente zum Download, falls Sie an mir interessiert sind. Vielen Dank für den Besuch auf meiner Webseite!</br>",
-
-	"timeline" : "" +
-									"<div class='timeline-container'>" +
-									"<ul class='timeline'>" +
-										"<li class='other'>" +
-										"</li>" +
-										"<li class='graduate'>" +
-											"<p>" +
-												"Berufsfachschule, Lichtenfels</br> <i>Ausbildung zum technischen Assistenten für Informatik</i>" +
-											"</p>" +
-											"<span>September 2005 - Juli 2007</span>" +
-										"</li>" +
-										"<li class='graduate'>" +
-											"<p>" +
-												"Berufsoberschule, Coburg</br> <i>Fachgebundene Hochschulreife</i>" +
-											"</p>" +
-											"<span>September 2007 - Juni 2008</span>" +
-										"</li>" +
-										"<li class='event'>" +
-											"<p>" +
-												"Start des Bachelor Studiums <i>Informatik</i> an der University of Applied Sciences, " +
-												"Coburg" +
-											"</p>" +
-											"<span>Oktober 2008</span>" +
-										"</li>" +
-										"<li class='other'>" +
-											"<p>" +
-												"Fraunhofer IIS, Nürnberg</br> <i>Wissenschaftlicher Mitarbeiter / Praktikant</i>" +
-											"</p>" +
-											"<span>September 2010 - Februar 2011</span>" +
-										"</li>" +
-										"<li class='graduate'>" +
-											"<p>" +
-												"Ende des Bachelor Studiums <i>Informatik</i> an der University of Applied " +
-												"Sciences, Coburg</br><i>Bachelor of Science</i>" +
-												"</br></br>Thema der Abschlussarbeit: <i>Spezifizierung und Implementierung eines Agenten Monitoring Systems zur Anayse und" +
-												" Manipulation von Messdaten für die mobile awiloc® Technologie</i>" +
-											"</p>" +
-											"<span>Februar 2012</span>" +
-										"</li>" +
-										"<li class='event'>" +
-											"<p>" +
-												"Start des Master Studiums <i>Informatik</i> an der University of Applied Sciences, Coburg" +
-											"</p>" +
-											"<span>März 2012</span>" +
-										"</li>" +
-										"<li class='other'>" +
-											"<p>" +
-												"University of Applied Sciences Coburg und HUK Coburg, Coburg</br><i>Studentische Hilfskraft " +
-												"(Forschungsprojekt SecMine)</i>" +
-											"</p>" +
-											"<span>September 2010 - Februar 2011</span>" +
-										"</li>" +
-										"<li class='graduate'>" +
-											"<p>" +
-												"Ende des Master Studiums <i>Informatik</i> an der University of Applied Sciences, " +
-												"Coburg</br><i>Master of Science</i>" +
-												"</br></br>Thema der Abschlussarbeit: <i>Untersuchung der Möglichkeiten zur drahtlosen Erkennung von Bewegungen am Körper</i>" +
-											"</p>" +
-											"<span>Oktober 2013</span>" +
-										"</li>" +
-										"<li class='event'>" +
-											"<p>Fraunhofer IIS (Anwendungszentrum Coburg), Coburg</br><i>Wissenschaftlicher Mitarbeiter</i></p>" +
-											"<span>Dezember 2013 - Mai 2014</span>" +
-										"</li>" +
-										"<li class='event'>" +
-											"<p>ecsec GmbH, Michelau</br><i>Informatiker</i></p>" +
-											"<span>Juli 2014</span>" +
-										"</li>" +
-										"<li class='event'>" +
-											"<p>DELL Software GmbH, Berlin</br><i>Software Solutions Consultant</i></p>" +
-											"<span>Oktober 2015</span>" +
-										"</li>" +
-										"<li class='event'>" +
-											"<p>HUK Coburg, Coburg</br><i>Sr. Softwareentwickler</i></p>" +
-											"<span>Oktober 2015</span>" +
-										"</li>" +
-										"<li class='end'>" +
-										"</li>" +
-									"</ul>" +
-									"</div>" +
+	"timeline" : 	"<div class='timeline-container'>" +
+						"<ul class='timeline'>" +
+							"<li class='other'>" +
+							"</li>" +
+							"<li class='graduate'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>Berufsfachschule, Lichtenfels</p>" +
+									"<p class='time-task'>Ausbildung zum technischen Assistenten für Informatik</p>" +
 								"</div>" +
-							"</div>" +
-						"",
-
+								"<span>September 2005 - July 2007</span>" +
+							"</li>" +
+							"<li class='graduate'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>Berufsoberschule, Coburg</p>" +
+									"<p class='time-task'>Fachgebundene Hochschulreife</p>" +
+								"</div>" +
+								"<span>September 2007 - June 2008</span>" +
+							"</li>" +
+							"<li class='event'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>University of Applied Sciences, Coburg</p>" +
+									"<p class='time-task'>Start des Bachelor Studiums Informatik</p>" +
+								"</div>" +
+								"<span>Oktober 2008</span>" +
+							"</li>" +
+							"<li class='other'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>Fraunhofer IIS, Nuremberg</p>" +
+									"<p class='time-task'>Wissenschaftlicher Mitarbeiter / Praktikant</p>" +
+								"</div>" +
+								"<span>September 2010 - February 2011</span>" +
+							"</li>" +
+							"<li class='graduate'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>University of Applied Sciences, Coburg</p>" +
+									"<p class='time-task'>Ende des Bachelor Studiums Informatik<br><br>Thema der Abschlussarbeit: Spezifizierung und Implementierung eines Agenten Monitoring Systems zur Anayse und Manipulation von Messdaten für die mobile awiloc® Technologie</p>" +
+								"</div>" +
+								"<span>Februar 2012</span>" +
+							"</li>" +
+							"<li class='event'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>University of Applied Sciences, Coburg</p>" +
+									"<p class='time-task'>Start des Master Studiums Informatik</p>" +
+								"</div>" +
+								"<span>März 2012</span>" +
+							"</li>" +
+							"<li class='other'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>University of Applied Sciences Coburg und HUK Coburg, Coburg</p>" +
+									"<p class='time-task'>Studentische Hilfskraft (Forschungsprojekt SecMine)</p>" +
+								"</div>" +
+								"<span>September 2010 - February 2011</span>" +
+							"</li>" +
+							"<li class='graduate'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>University of Applied Sciences, Coburg</p>" +
+									"<p class='time-task'>Ende des Master Studiums Informatik</br></br>Thema der Abschlussarbeit: Untersuchung der Möglichkeiten zur drahtlosen Erkennung von Bewegungen am Körper</p>" +
+								"</div>" +
+								"<span>Oktober 2013</span>" +
+							"</li>" +
+							"<li class='event'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>Fraunhofer IIS (Application Center Coburg), Coburg</p>" +
+									"<p class='time-task'>Wissenschaftlicher Mitarbeiter</p>" +
+								"</div>" +
+							"</li>" +
+							"<li class='event'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>ecsec GmbH, Michelau</p>" +
+									"<p class='time-task'>IT Consultant</p>" +
+								"</div>" +
+							"</li>" +
+							"<li class='event'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>DELL Software GmbH, Berlin</p>" +
+									"<p class='time-task'>Software Solutions Consultant</p>" +
+								"</div>" +
+								"<span>Oktober 2015</span>" +
+							"</li>" +
+							"<li class='event'>" +
+								"<div class='animate' data-animation='fade'>" +
+									"<p class='time-header'>HUK Coburg, Coburg</p>" +
+									"<p class='time-task'>Sr. Softwareentwickler</p>" +
+								"</div>" +
+								"<span>August 2016</span>" +
+							"</li>" +
+							"<li class='end'>" +
+							"</li>" +
+						"</ul>" +
+					"</div>",
 });

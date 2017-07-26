@@ -1,5 +1,5 @@
 .fade {
-	transition: all 1s ease-in;
+	transition: opacity 1s ease-in;
 	opacity: 1;
 }
 

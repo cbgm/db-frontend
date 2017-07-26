@@ -41,9 +41,9 @@ define([
 
 		function update (callback){
 			var split = window.location.hash.split("/"); 
-			var projectId = split[split.length-1];
+			var projectTitle = split[split.length-1];
 
-			ProjectController.getEntry(projectId, function (data) {
+			ProjectController.getEntryByTitle(btoa(projectTitle), function (data) {
 				_project = data;
 
 				_view.find('#entries').empty();
@@ -64,13 +64,13 @@ define([
 				for (var x = 0; x < articles.length; x++) {
 					result +=		"<div class='sub-sentry-holder'>" +
 										"<div class='box'>&#9654; &nbsp;</div>" +
-										"<div class='box'><a class='sub-entry-ref' id='" + _project.projectId + "/"  + articles[x].articleId + "'>" + Locale.setContentByLocale(articles[x].title, articles[x].titleAlt) + "</a></div>" +
+										"<div class='box'><a class='sub-entry-ref' id='" + Locale.setContentByLocale(_project.title, _project.titleAlt) + "/"  + Locale.setContentByLocale(articles[x].title, articles[x].titleAlt) + "'>" + Locale.setContentByLocale(articles[x].title, articles[x].titleAlt) + "</a></div>" +
 										"<div style='clear: both;'></div>" +
 									"</div>"; 
 				}
 				result +=		"</div>" +
 								"<div class='entry-info'>" +
-									"<div class='permalink'><a href='#projects/" + _project.projectId + "'>Permalink</a></div>" +
+									"<div class='permalink'><a href='#projects/" + Locale.setContentByLocale(_project.title, _project.titleAlt) + "'>Permalink</a></div>" +
 									"<div class='posted-date'>" + Strings.posted_text + ": " + _project.date + "</div>" +
 									"<div style='clear: both;'></div>" +
 								"</div>" +
@@ -82,9 +82,9 @@ define([
 
 				_view.find(".sub-entry-ref").bind('click', function () {
 					var split = this.id.split("/"); 
-					var projectId = split[0];
-					var articleId = split[1];
-					window.location.hash = "#projects/" + projectId + "/articles/" + articleId;
+					var projectTitle = split[0];
+					var articleTitle = split[1];
+					window.location.hash = "#projects/" + projectTitle + "/articles/" + articleTitle;
 				});
 				callback();
 			});

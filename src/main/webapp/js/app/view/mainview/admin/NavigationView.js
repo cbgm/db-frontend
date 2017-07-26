@@ -31,7 +31,7 @@ define([
 									"<li><a href='#admin/news'>" + Strings.news_button_text + "</a></li>" +
 									"<li><a href='#admin/tags'>" + Strings.tags_button_text + "</a></li>" +
 									"<li><a href='#admin/projects'>" + Strings.projects_button_text + "</a></li>" +
-//									"<li><a href='#admin/guestbook'>#Guestbook</a></li>" +
+									"<li><a href='#admin/guestbook'>#Guestbook</a></li>" +
 									"<li><a href='#admin/galleries'>" + Strings.galleries_button_text + "</a></li>" +
 									"<li><a href='#admin/images'>" + Strings.images_button_text + "</a></li>" +
 									"<li><a href='#admin/users'>" + Strings.users_button_text + "</a></li>" +
@@ -56,7 +56,7 @@ define([
 									"<li><a id='bla' href='#admin/news'>" + Strings.news_button_text + "</a></li>" +
 									"<li><a href='#admin/tags'>" + Strings.tags_button_text + "</a></li>" +
 									"<li><a href='#admin/projects'>" + Strings.projects_button_text + "</a></li>" +
-//									"<li><a href='#admin/guestbook'>#Guestbook</a></li>" +
+									"<li><a href='#admin/guestbook'>#Guestbook</a></li>" +
 									"<li><a href='#admin/galleries'>" + Strings.galleries_button_text + "</a></li>" +
 									"<li><a href='#admin/images'>" + Strings.images_button_text + "</a></li>" +
 									"<li><a href='#admin/users'>" + Strings.users_button_text + "</a></li>" +

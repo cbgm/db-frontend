@@ -1,8 +1,16 @@
 define({
 	"root" : {
-//		"like_text" : "Like what you see?",
-		"like_text" : "Questions, suggestions, interest?",
-		"follow_text" : "So then give me a follow or get in contact with me."
+		"write_me_text" : "Write me",
+		"contact_head_text" : "Contact",
+		"nav_head_text" : "Navigation",
+		"social_head_text" : "Social",
+		"work_with_text" : "Want to work with me?",
+		"home_link_text" : "Home",
+		"blog_link_text" : "Blog",
+		"projects_link_text" : "Projects",
+		"google_tip_text" : "Me on Google+",
+		"xing_tip_text" : "Me on Xing",
+		"github_tip_text" : "Me on Github"
 
 	},
 	"de" : true

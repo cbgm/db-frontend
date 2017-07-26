@@ -59,6 +59,17 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 		});
 	}
 
+	function getEntryByTitle(title, callback) {
+
+		Request.doGet(Configuration.get("API_URL") + "/news/" + title,
+				"news",
+
+		function(data) {
+			var json = jQuery.parseJSON(data);
+			callback(json);
+		});
+	}
+
 	function updateEntry(id, entry, callback) {
 		var json = JSON.stringify(entry);
 		Request.doUpdate(Configuration.get("API_URL") + "/admin/news/"+ id,
@@ -83,6 +94,7 @@ define([ 'util/Logger', 'util/Request', 'util/Configuration', 'lib/jquery'
 		getPaginatedEntries : getPaginatedEntries,
 		postEntry : postEntry,
 		getEntry: getEntry,
+		getEntryByTitle: getEntryByTitle,
 		updateEntry: updateEntry,
 		deleteEntry: deleteEntry,
 		endOfEntries: endOfEntries

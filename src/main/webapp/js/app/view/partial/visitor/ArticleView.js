@@ -42,10 +42,10 @@ define([
 
 		function update (callback){
 			var split = window.location.hash.split("/");
-			var projectId = split[split.length-3];
-			var articleId = split[split.length-1];
+			var projectTitle = split[split.length-3];
+			var articleTitle = split[split.length-1];
 
-			ArticleController.getEntry(projectId, articleId, function (data) {
+			ArticleController.getEntryByTitle(btoa(projectTitle), btoa(articleTitle), function (data) {
 				_article = data;
 
 				if (_article != null) {
@@ -59,10 +59,10 @@ define([
 											result += "<li><a href=''>#" + tags[x].name + "</a></li>";
 										}
 						result +=		"</ul>" +
-										"<div class='to-project'>&#9654; &nbsp;<a href='#projects/" + projectId + "'>" + Strings.relatedproject_button_text + "</a></div>" +
+										"<div class='to-project'>&#9654; &nbsp;<a href='#projects/" + projectTitle + "'>" + Strings.relatedproject_button_text + "</a></div>" +
 										"<div class='section'>" + Locale.setContentByLocale(_article.content, _article.contentAlt) + "</div>" +
 										"<div class='entry-info'>" +
-											"<div class='permalink'><a href='#projects/" + projectId + "/articles/" + _article.articleId + "'>Permalink</a></div>" +
+											"<div class='permalink'><a href='#projects/" + projectTitle + "/articles/" + Locale.setContentByLocale(_article.title, _article.titleAlt) + "'>Permalink</a></div>" +
 											"<div class='posted-date'>" + Strings.posted_text + ": " + _article.date + "</div>" +
 											"<div style='clear: both;'></div>" +
 										"</div>" +

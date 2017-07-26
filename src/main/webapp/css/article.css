@@ -8,6 +8,10 @@
 	border: none;
 }
 
+.article img {
+	border: 2px solid #575757;
+}
+
 .article .entry-admin {
 	border-bottom: 1px solid lightgray;
 	background-color: white;

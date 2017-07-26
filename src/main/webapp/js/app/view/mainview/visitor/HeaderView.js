@@ -25,12 +25,12 @@ define([
 			var $view = jQuery(
 					"<div id='header'>" +
 						"<div id='header-base-container'>" +
-							"<div id='header-logo'><img src='img/logo4.png' alt='' style='max-width: 120px; height: 100%' title='creative--space.de'/></div>" +
+							"<div id='header-logo'><img src='img/logo4.png' alt='' title='creative--space.de'/></div>" +
 //							"<div id='header-contact'><a class='envelope' href='#'></a></div>" +
 							"<div id='header-link-container'>" +
 								"<div id='header-social-container'>" +
 									"<a href='https://plus.google.com/103699542999127150153' target='_blank'><img src='img/googleplus-rnd-white.png' title='" + Strings.google_tip_text + "' alt=''/></a>" +
-									"<a href='https://github.com/cbgm' target='_blank'><img src='img/github-rnd.png' title='" + Strings.github_tip_text + "' alt=''/></a>" +
+									"<a href='https://github.com/cbgm' target='_blank'><img src='img/github-rnd-white.png' title='" + Strings.github_tip_text + "' alt=''/></a>" +
 									"<a href='https://plus.google.com/103699542999127150153' target='_blank'><img src='img/xing-rnd-white.png' title='" + Strings.xing_tip_text + "' alt=''/></a>" +
 								"</div>" +
 								"<div class='locales'></div>" +
@@ -47,6 +47,7 @@ define([
 												"<span>" + Strings.developer_text + "</span>" +
 												"<span>" + Strings.solver_text + "</span>" +
 												"<span>" + Strings.right_text + "</span>" +
+												"<p class='typing'>" + Strings.job_text + "</p>" +
 											"</div>" +
 										"</div>" +
 									"</div>" +

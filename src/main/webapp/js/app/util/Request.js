@@ -11,7 +11,7 @@ define([
 
 	jQuery.support.cors = true
 	jQuery.ajaxSetup({
-//		timeout: 25000,
+		timeout: 25000,
 		beforeSend: function(xhr) {
 			var cookie = null;
 

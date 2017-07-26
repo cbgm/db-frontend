@@ -33,6 +33,7 @@
 
 .news .entry-info .permalink {
 	float: left;
+	text-decoration: underline;
 }
 
 .news .entry-info .posted-date {
@@ -185,6 +186,10 @@
 
 .news .loading-spinner.white {
 	border: 2px solid #fff;
+}
+
+.news img {
+	border: 2px solid #575757;
 }
 
 @media only screen and (max-width: 600px) {
