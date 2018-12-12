@@ -30,7 +30,7 @@ define([
 								"<div id='header-social-container'>" +
 									"<a href='https://plus.google.com/103699542999127150153' target='_blank'><img src='img/googleplus-rnd-white.png' title='" + Strings.google_tip_text + "' alt=''/></a>" +
 									"<a href='https://github.com/cbgm' target='_blank'><img src='img/github-rnd-white.png' title='" + Strings.github_tip_text + "' alt=''/></a>" +
-									"<a href='https://plus.google.com/103699542999127150153' target='_blank'><img src='img/xing-rnd-white.png' title='" + Strings.xing_tip_text + "' alt=''/></a>" +
+									"<a href='https://www.xing.com/profile/Christian_Bergmann45' target='_blank'><img src='img/xing-rnd-white.png' title='" + Strings.xing_tip_text + "' alt=''/></a>" +
 								"</div>" +
 								"<div class='locales'></div>" +
 							"</div>" +

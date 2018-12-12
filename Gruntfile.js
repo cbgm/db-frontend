@@ -13,11 +13,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-bowercopy');
+	grunt.loadNpmTasks('grunt-rename-util');
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-cache-bust');
-	grunt.loadNpmTasks('grunt-bowercopy');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
@@ -45,24 +44,21 @@ module.exports = function(grunt) {
 		PRODUCTION_PATH: 'target/grunt/',
 		PRODUCTION_CSS: 'target/grunt/css/',
 		PRODUCTION_JS: 'target/grunt/js/',
-//		<%= SOURCE_PATH %>
-		bowercopy: {
-			options: {
-//				clean: true
-			},
-			libs: {
-				options: {
-					destPrefix: '<%= SOURCE_PATH %>js/lib'
-				},  
-				files: {
-					'jquery.min.js': 'jquery/dist/jquery.min.js',
-					'jquery.js': 'jquery/dist/jquery.js',
-					'domReady.js': 'requirejs-domready/domReady.js',
-					'i18n.js': 'requirejs-i18n/i18n.js',
-					'require.js': 'requirejs/require.js'
-				}
-			}
-		},
+		
+		/**
+		 * Renames and copys libs.
+		 */
+		/*rename: {
+			  main: {
+			    files: [
+			  		{src: ['<%= SOURCE_PATH %>js/lib/jquerytt.min.js'], dest: '<%= SOURCE_PATH %>js/lib/jquery.min.js'},
+			  		{src: ['<%= BASE_PATH %>bower_components/jquery/dist/jquery.js'], dest: '<%= SOURCE_PATH %>js/lib/jquery.js'},
+			  		{src: ['<%= BASE_PATH %>bower_components/requirejs-domready/domReady.js'], dest: '<%= SOURCE_PATH %>js/lib/domReady.js'},
+			  		{src: ['<%= BASE_PATH %>bower_components/requirejs-i18n/i18n.js'], dest: '<%= SOURCE_PATH %>js/lib/i18n.js'},
+			  		{src: ['<%= BASE_PATH %>bower_components/requirejs/require.js'], dest: '<%= SOURCE_PATH %>js/lib/require.js'}
+			        ]
+			  }
+			},*/
 
 		/**
 		 * Cleans or deletes our production folder before we create a new production build.
@@ -114,6 +110,16 @@ module.exports = function(grunt) {
 				src : [ '**' ],
 				dest : '<%= PRODUCTION_PATH %>'
 			},
+			
+			libs : {
+				files: [
+					{src: '<%= BASE_PATH %>node_modules/@bower_components/jquery/dist/jquery.min.js', dest: '<%= SOURCE_PATH %>js/lib/jquery.min.js'},
+					{src: '<%= BASE_PATH %>node_modules/@bower_components/jquery/dist/jquery.js', dest: '<%= SOURCE_PATH %>js/lib/jquery.js'},
+			  		{src: '<%= BASE_PATH %>node_modules/@bower_components/requirejs-domready/domReady.js', dest: '<%= SOURCE_PATH %>js/lib/domReady.js'},
+			  		{src: '<%= BASE_PATH %>node_modules/@bower_components/requirejs-i18n/i18n.js', dest: '<%= SOURCE_PATH %>js/lib/i18n.js'},
+			  		{src: '<%= BASE_PATH %>bower_components/@bower_components/requirejs/require.js', dest: '<%= SOURCE_PATH %>js/lib/require.js'}
+					]
+			}
 
 //			csslib : {
 //				expand : true,
@@ -240,8 +246,8 @@ module.exports = function(grunt) {
 	});
 
 //	grunt.registerTask('production', []);
-//	grunt.registerTask('production', ['clean:all', 'bowercopy', 'copy', 'env:prod', 'preprocess', 'concat', 'clean:css', 'requirejs','clean:js', 'clean:template', 'cacheBust', 'imagemin', 'clean:psd']);
-	grunt.registerTask('production', ['clean:all', 'bowercopy', 'copy', 'env:dev', 'preprocess']);
+	grunt.registerTask('production', ['clean:all', 'copy:libs', 'copy:all', 'env:prod', 'preprocess', 'concat', 'clean:css', 'requirejs','clean:js', 'clean:template', 'cacheBust', /*'imagemin', 'clean:psd'*/]);
+//	grunt.registerTask('production', ['clean:all', 'bowercopy', 'copy', 'env:dev', 'preprocess']);
 
 
 };

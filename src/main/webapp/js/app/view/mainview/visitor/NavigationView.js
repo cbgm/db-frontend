@@ -44,16 +44,16 @@ define([
 				highlightButton = "#none";
 			}
 
-			$view.find("a[href=" + highlightButton + "]").addClass('active-link');
+			$view.find("#navigation a[href=" + highlightButton + "]").addClass('active-link');
 
 
 			jQuery('#navigation-container').addClass('bottom-shadow');
 			$view.find('#search-box input').initSearch("#content-container");
 
-			$view.find("a").bind('click' , function() {
+			$view.find("#navigation a").bind('click' , function() {
 				var href = this.hash;
-				jQuery("a").removeClass('active-link');
-				jQuery("a[href=" + href + "]").addClass('active-link');
+				jQuery("#navigation a").removeClass('active-link');
+				jQuery("#navigation a[href=" + href + "]").addClass('active-link');
 			});
 
 			jQuery(window).bind('scroll', function () {

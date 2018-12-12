@@ -26,9 +26,9 @@ define([
 							"<div id='sitemap-container'>" +
 								"<p>" + Strings.nav_head_text +"</p>" +
 								"<ul>" +
-									"<li>" + Strings.home_link_text +"</li>" +
-									"<li>" + Strings.blog_link_text +"</li>" +
-									"<li>" + Strings.projects_link_text +"</li>" +
+									"<li><a href='#about'>" + Strings.home_link_text +"</a></li>" +
+									"<li><a href='#news'>" + Strings.blog_link_text +"</a></li>" +
+									"<li><a href='#projects'>" + Strings.projects_link_text +"</a></li>" +
 								"</ul>" +
 							"</div>" +
 							"<div id='social-container'>" +

@@ -67,7 +67,7 @@
 	-webkit-animation: css 1s ease-out;
 }
 
-.js {
+.jscript {
 	width: 95%;
 	/*background-color: #498388;*/
 	background: -webkit-linear-gradient( to right, #498388, #01484F);
@@ -75,8 +75,8 @@
 	background: -ms-linear-gradient( to right, #498388, #01484F);
 	background: -o-linear-gradient(  to right, #498388, #01484F);
 	background: linear-gradient(  to right, #498388, #01484F);
-	-moz-animation: js 1s ease-out;
-	-webkit-animation: js 1s ease;
+	-moz-animation: jscript 1s ease-out;
+	-webkit-animation: jscript 1s ease;
 }
 
 .html {
@@ -128,6 +128,18 @@
 }
 
 .java {
+	width: 95%;
+	/*background-color: #498388;*/
+	background: -webkit-linear-gradient( to right, #498388, #01484F);
+	background: -moz-linear-gradient( to right, #498388, #01484F);
+	background: -ms-linear-gradient( to right, #498388, #01484F);
+	background: -o-linear-gradient(  to right, #498388, #01484F);
+	background: linear-gradient(  to right, #498388, #01484F);
+	-moz-animation: java 1s ease-out;
+	-webkit-animation: java 1s ease-out;
+}
+
+.kotlin {
 	width: 95%;
 	/*background-color: #498388;*/
 	background: -webkit-linear-gradient( to right, #498388, #01484F);
@@ -443,7 +455,7 @@
 	};
 }
 
-@-webkit-keyframes js {
+@-webkit-keyframes jscript {
 	0% {
 		width: 0px;
 	}

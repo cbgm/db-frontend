@@ -66,6 +66,14 @@ define([
 												"</li>" +
 												"<li>" +
 													"<div class='skill'>" +
+														"<span class='skill-name'>Kotlin</span>" +
+														"<div class='skill-bar'>" +
+															"<div data-animation='kotlin' class='fill animate'></div>" +
+														"</div>" +
+													"</div>" +
+												"</li>" +
+												"<li>" +
+													"<div class='skill'>" +
 														"<span class='skill-name'>VB .Net</span>" +
 														"<div class='skill-bar'>" +
 															"<div data-animation='vb' class='fill animate'></div>" +
@@ -105,7 +113,7 @@ define([
 													"<div class='skill'>" +
 														"<span class='skill-name'>JQuery</span>" +
 														"<div class='skill-bar'>" +
-															"<div data-animation='js' class='fill animate'></div>" +
+															"<div data-animation='jscript' class='fill animate'></div>" +
 														"</div>" +
 													"</div>" +
 												"</li>" +
